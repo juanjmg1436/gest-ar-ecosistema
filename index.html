@@ -591,19 +591,19 @@
             <div class="app-card-icon">🏛️</div>
             <p class="app-card-name">TRIBUT.AR</p>
             <p class="app-card-desc">
-              Simula la relación del contribuyente con AFIP/ARCA y la DGR provincial.
-              Cubre los dos regímenes más comunes en el aula.
+              Simula las obligaciones impositivas en <strong>dos jurisdicciones</strong>:
+              la nacional ante ARCA/AFIP (IVA, Ganancias, Monotributo, Autónomos) y la provincial
+              ante la ATM Misiones (Ingresos Brutos y otros tributos locales).
             </p>
           </div>
           <div class="app-card-body">
             <ul class="app-features">
-              <li>Alta registral (F.460/F) y perfil de contribuyente</li>
-              <li>Monotributo — categorías, cuotas y recategorización</li>
-              <li>Régimen General — IVA, Ganancias y DDJJ</li>
-              <li>Habilitación de Puntos de Venta y facturación electrónica</li>
-              <li>IIBB Misiones — ATM simulado paso a paso</li>
-              <li>Billetera Fiscal — pago de VEPs simulados</li>
-              <li>Relaciones Laborales vinculado con Sueldos 360</li>
+              <li>Alta registral (F.460/F), DIFE y Puntos de Venta (CAE)</li>
+              <li><span style="font-size:9px;font-weight:700;background:#DBEAFE;color:#1D4ED8;padding:1px 6px;border-radius:3px;flex-shrink:0;">NACIONAL</span> IVA — débito, crédito fiscal y DDJJ mensual</li>
+              <li><span style="font-size:9px;font-weight:700;background:#DBEAFE;color:#1D4ED8;padding:1px 6px;border-radius:3px;flex-shrink:0;">NACIONAL</span> Ganancias — anticipos y DDJJ anual</li>
+              <li><span style="font-size:9px;font-weight:700;background:#DBEAFE;color:#1D4ED8;padding:1px 6px;border-radius:3px;flex-shrink:0;">NACIONAL</span> Monotributo y Autónomos — cuotas y aportes</li>
+              <li><span style="font-size:9px;font-weight:700;background:#FEF3C7;color:#92400E;padding:1px 6px;border-radius:3px;flex-shrink:0;">PROVINCIAL</span> IIBB Misiones (ATM) — DDJJ, boletas y tributos locales</li>
+              <li>Billetera Fiscal (VEPs) · Relaciones Laborales (Sueldos 360)</li>
             </ul>
             <a href="https://tributar2026nuevo.vercel.app/" target="_blank" class="app-btn">
               Abrir TRIBUT.AR
@@ -685,7 +685,7 @@
           <div class="flow-node blue">
             <div class="flow-node-icon">🏛️</div>
             <div class="flow-node-name">TRIBUT.AR</div>
-            <div class="flow-node-items">Habilita PV · IIBB<br>F.931 · VEPs</div>
+            <div class="flow-node-items">IVA · Ganancias · Mono<br>IIBB · PV · F.931 · VEPs</div>
           </div>
           <div class="flow-arrow">⇄</div>
           <div class="flow-node green">
@@ -712,8 +712,15 @@
           <div class="integration-point">
             <div class="integration-point-dot" style="background: var(--green)"></div>
             <div class="integration-point-text">
-              <strong>Ventas en PyMEZ 360 → Base de IIBB</strong>
-              Las ventas registradas en PyMEZ 360 se sincronizan automáticamente como base imponible para la DDJJ de IIBB en TRIBUT.AR.
+              <strong>Ventas en PyMEZ 360 → IVA y Ganancias (ARCA/AFIP)</strong>
+              Las facturas emitidas en PyMEZ 360 alimentan automáticamente el débito fiscal de IVA y la base de ingresos para Ganancias en TRIBUT.AR, replicando el ciclo real de una empresa inscripta en Régimen General o como Autónomo.
+            </div>
+          </div>
+          <div class="integration-point">
+            <div class="integration-point-dot" style="background: #F97316"></div>
+            <div class="integration-point-text">
+              <strong>Ventas en PyMEZ 360 → Base de IIBB (ATM Misiones)</strong>
+              Esas mismas ventas se sincronizan como base imponible para la DDJJ de Ingresos Brutos ante la ATM Misiones — distinguiendo así los dos ámbitos: nacional (ARCA) y provincial (DGR).
             </div>
           </div>
           <div class="integration-point">
@@ -821,13 +828,16 @@
       </div>
 
       <!-- Créditos de autoría -->
-      <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; text-align: center;">
-        <p style="font-size: 11px; color: #475569; margin-bottom: 6px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Desarrollado por</p>
-        <p style="font-size: 17px; font-weight: 800; color: #CBD5E1; margin-bottom: 4px; letter-spacing: -0.3px;">Juan Manuel Gómez</p>
-        <p style="font-size: 12px; color: #64748B; line-height: 1.6;">
-          Profesor de Ciencias Económicas<br>
-          Facultad de Humanidades y Ciencias Sociales · UNaM<br>
-          <span style="color: #475569;">Wanda, Misiones · Argentina</span>
+      <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center;">
+        <p style="font-size: 10px; color: #475569; margin-bottom: 10px; letter-spacing: 2.5px; font-weight: 700; text-transform: uppercase;">Desarrollado por</p>
+        <p style="font-size: 19px; font-weight: 800; color: #E2E8F0; margin-bottom: 6px; letter-spacing: -0.3px;">Juan Manuel Gómez</p>
+        <p style="font-size: 12.5px; color: #94A3B8; line-height: 1.9; margin-bottom: 10px;">
+          Lic. en Educación (FASTA) · Profesor de Ciencias Económicas<br>
+          Experto en Tecnología Educativa e Inteligencia Artificial<br>
+          Facultad de Humanidades y Ciencias Sociales · UNaM
+        </p>
+        <p style="font-size: 11px; color: #475569; font-style: italic;">
+          Desarrollado desde <strong style="color: #64748B; font-style: normal;">Wanda, Misiones · Argentina</strong>
         </p>
       </div>
 
