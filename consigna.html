@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consigna Integral — NORTE Distribuciones · GEST-AR</title>
+  <meta name="description" content="Consigna integral para el aprendizaje de la gestión administrativa de una PyME comercial usando el ecosistema GEST-AR." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:    #185FA5;
+      --blue-l:  #E8F1FA;
+      --blue-d:  #0E3D6E;
+      --green:   #3B6D11;
+      --green-l: #EBF4E3;
+      --green-d: #264A0B;
+      --violet:  #534AB7;
+      --violet-l:#EEEDF8;
+      --violet-d:#342D85;
+      --amber:   #B45309;
+      --amber-l: #FEF3C7;
+      --navy:    #1C2B4A;
+      --navy-d:  #111827;
+      --slate:   #475569;
+      --border:  #E2E8F0;
+      --text:    #0F172A;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: white; line-height: 1.6; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-back { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--slate); font-size: 13px; font-weight: 600; }
+    .nav-back:hover { color: var(--blue); }
+    .nav-title { font-size: 13px; font-weight: 700; color: var(--navy); }
+    .btn-print {
+      padding: 6px 16px; border-radius: 8px; font-size: 12px; font-weight: 700;
+      background: var(--blue); color: white; border: none; cursor: pointer; transition: background 0.2s;
+    }
+    .btn-print:hover { background: var(--blue-d); }
+
+    /* ── CONTAINER ── */
+    .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-d) 0%, #1E3A5F 100%);
+      padding: 56px 24px 48px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(24,95,165,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 920px; margin: 0 auto; position: relative; }
+    .hero-tool-tag {
+      display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: #93C5FD;
+      background: rgba(24,95,165,0.2); border: 1px solid rgba(24,95,165,0.35);
+      padding: 4px 14px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .hero-title { font-size: clamp(26px, 5vw, 40px); font-weight: 900; color: white; letter-spacing: -1px; margin-bottom: 6px; }
+    .hero-subtitle { font-size: 15px; color: #94A3B8; margin-bottom: 24px; line-height: 1.6; }
+    .hero-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+    .hero-badge {
+      font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px;
+    }
+    .hb-blue   { background: rgba(24,95,165,0.25);  color: #93C5FD;  border: 1px solid rgba(24,95,165,0.4);  }
+    .hb-green  { background: rgba(59,109,17,0.25);  color: #86EFAC;  border: 1px solid rgba(59,109,17,0.4);  }
+    .hb-violet { background: rgba(83,74,183,0.25);  color: #C4B5FD;  border: 1px solid rgba(83,74,183,0.4);  }
+    .hb-amber  { background: rgba(180,83,9,0.25);   color: #FCD34D;  border: 1px solid rgba(180,83,9,0.4);   }
+
+    /* ── EMPRESA FICHA ── */
+    .ficha {
+      margin: 36px 0; background: var(--blue-l); border: 2px solid rgba(24,95,165,0.2);
+      border-radius: 18px; overflow: hidden;
+    }
+    .ficha-header {
+      background: var(--blue); padding: 16px 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .ficha-header-icon {
+      width: 40px; height: 40px; background: rgba(255,255,255,0.15); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+    .ficha-header h2 { font-size: 18px; font-weight: 900; color: white; letter-spacing: -0.3px; }
+    .ficha-header p  { font-size: 11px; color: #BFDBFE; font-weight: 600; }
+    .ficha-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0; padding: 0;
+    }
+    .ficha-item {
+      padding: 14px 20px; border-right: 1px solid rgba(24,95,165,0.1);
+      border-bottom: 1px solid rgba(24,95,165,0.1);
+    }
+    .ficha-item:nth-child(even) { background: rgba(255,255,255,0.4); }
+    .ficha-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 3px; }
+    .ficha-value { font-size: 13px; font-weight: 700; color: var(--text); }
+    .ficha-value small { font-size: 11px; font-weight: 500; color: var(--slate); }
+
+    /* ── OBJETIVO DE APRENDIZAJE ── */
+    .objetivo {
+      background: #F8FAFC; border: 1px solid var(--border); border-radius: 14px;
+      padding: 20px 24px; margin-bottom: 36px;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .objetivo-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+    .objetivo-text h3 { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+    .objetivo-text p  { font-size: 13px; color: var(--slate); line-height: 1.7; }
+
+    /* ── MÓDULOS ── */
+    section.modulo { padding: 0; margin-bottom: 32px; }
+    .modulo-header {
+      border-radius: 16px 16px 0 0; padding: 20px 24px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .mod-blue   .modulo-header { background: var(--blue); }
+    .mod-green  .modulo-header { background: var(--green); }
+    .mod-violet .modulo-header { background: var(--violet); }
+    .mod-amber  .modulo-header { background: var(--amber); }
+    .modulo-num {
+      width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.2);
+      font-size: 14px; font-weight: 900; color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .modulo-titles h2 { font-size: 16px; font-weight: 900; color: white; letter-spacing: -0.3px; }
+    .modulo-titles p  { font-size: 11px; color: rgba(255,255,255,0.75); font-weight: 600; }
+    .modulo-body {
+      border: 2px solid; border-top: none; border-radius: 0 0 16px 16px; padding: 24px;
+    }
+    .mod-blue   .modulo-body { border-color: rgba(24,95,165,0.25);  background: var(--blue-l);   }
+    .mod-green  .modulo-body { border-color: rgba(59,109,17,0.25);  background: var(--green-l);  }
+    .mod-violet .modulo-body { border-color: rgba(83,74,183,0.25);  background: var(--violet-l); }
+    .mod-amber  .modulo-body { border-color: rgba(180,83,9,0.2);    background: var(--amber-l);  }
+
+    /* ── PASOS ── */
+    .pasos { display: flex; flex-direction: column; gap: 18px; }
+    .paso {
+      background: white; border-radius: 12px; border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .paso-header {
+      padding: 12px 16px; display: flex; align-items: center; gap: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .paso-num {
+      width: 26px; height: 26px; border-radius: 50%; font-size: 11px; font-weight: 800;
+      color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .mod-blue   .paso-num { background: var(--blue); }
+    .mod-green  .paso-num { background: var(--green); }
+    .mod-violet .paso-num { background: var(--violet); }
+    .mod-amber  .paso-num { background: var(--amber); }
+    .paso-title { font-size: 13px; font-weight: 800; color: var(--text); }
+    .paso-plat  { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--slate); margin-left: auto; }
+    .paso-body  { padding: 14px 16px; }
+    .paso-body ul, .paso-body ol { padding-left: 18px; }
+    .paso-body li { font-size: 13px; color: #334155; padding: 3px 0; line-height: 1.55; }
+    .paso-body p  { font-size: 13px; color: #334155; margin-bottom: 8px; line-height: 1.6; }
+    .paso-body p:last-child { margin-bottom: 0; }
+
+    /* ── TABLAS ── */
+    .tabla-wrap { overflow-x: auto; margin: 12px 0; border-radius: 10px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    thead tr { background: var(--navy); }
+    thead th { color: white; font-weight: 700; padding: 9px 12px; text-align: left; white-space: nowrap; }
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:nth-child(even) { background: #F8FAFC; }
+    tbody td { padding: 8px 12px; color: #334155; }
+    tbody td.num { font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+    tfoot tr { background: #F1F5F9; border-top: 2px solid var(--border); }
+    tfoot td { padding: 9px 12px; font-weight: 800; color: var(--text); }
+    tfoot td.num { text-align: right; }
+    .tipo-a { display: inline-block; background: #DBEAFE; color: #1E40AF; font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 4px; }
+    .tipo-b { display: inline-block; background: #F0FDF4; color: #166534; font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 4px; }
+
+    /* ── AVISO / NOTA ── */
+    .nota {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 10px 14px; border-radius: 10px; margin: 10px 0; font-size: 12.5px;
+    }
+    .nota-warn  { background: #FEF3C7; border: 1px solid #FDE68A; color: #92400E; }
+    .nota-info  { background: #EFF6FF; border: 1px solid #BFDBFE; color: #1E40AF; }
+    .nota-ok    { background: #F0FDF4; border: 1px solid #BBF7D0; color: #14532D; }
+    .nota span  { flex-shrink: 0; font-size: 15px; }
+    .nota p     { line-height: 1.55; margin: 0; }
+
+    /* ── EMPLEADOS ── */
+    .empleados-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 12px 0; }
+    .empleado-card {
+      background: white; border: 1px solid var(--border); border-radius: 12px; padding: 16px;
+    }
+    .empleado-card h4 { font-size: 14px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+    .empleado-row { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; border-bottom: 1px solid #F1F5F9; }
+    .empleado-row:last-child { border-bottom: none; }
+    .empleado-row span:first-child { color: var(--slate); }
+    .empleado-row span:last-child  { font-weight: 700; color: var(--text); }
+
+    /* ── RESULTADOS ESPERADOS ── */
+    .resultados {
+      background: var(--navy-d); border-radius: 18px; padding: 28px 32px; margin: 32px 0;
+    }
+    .resultados h2 { font-size: 18px; font-weight: 900; color: white; margin-bottom: 6px; }
+    .resultados p  { font-size: 13px; color: #94A3B8; margin-bottom: 20px; }
+    .res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .res-item {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 14px 16px;
+    }
+    .res-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #64748B; margin-bottom: 4px; }
+    .res-value { font-size: 20px; font-weight: 900; color: white; }
+    .res-value.green  { color: #34D399; }
+    .res-value.amber  { color: #FCD34D; }
+    .res-value.blue   { color: #93C5FD; }
+    .res-value.violet { color: #C4B5FD; }
+
+    /* ── CHECKLIST ENTREGA ── */
+    .checklist {
+      background: #F8FAFC; border: 2px solid var(--border); border-radius: 16px;
+      padding: 24px 28px; margin: 28px 0;
+    }
+    .checklist h2 { font-size: 16px; font-weight: 900; color: var(--text); margin-bottom: 4px; }
+    .checklist p  { font-size: 13px; color: var(--slate); margin-bottom: 18px; }
+    .check-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: #334155;
+    }
+    .check-item:last-child { border-bottom: none; }
+    .check-box {
+      width: 20px; height: 20px; border-radius: 5px; border: 2px solid var(--border);
+      flex-shrink: 0; background: white;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-d); padding: 28px 24px; text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    footer p { font-size: 11px; color: #475569; line-height: 1.7; }
+    footer a { color: #93C5FD; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── PRINT ── */
+    @media print {
+      nav, .btn-print, footer { display: none !important; }
+      body { font-size: 11pt; }
+      .modulo-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .resultados    { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 24px; }
+      section.modulo { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-back">
+      ← GEST-AR
+    </a>
+    <span class="nav-title">Consigna Integral · NORTE Distribuciones</span>
+    <button class="btn-print" onclick="window.print()">Imprimir / PDF</button>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <span class="hero-tool-tag">Herramienta didáctica · GEST-AR</span>
+      <h1 class="hero-title">Consigna integral de gestión<br>administrativa para PyME comercial</h1>
+      <p class="hero-subtitle">
+        Caso de estudio: <strong style="color: #E2E8F0;">NORTE Distribuciones S.R.L.</strong> —
+        ciclo mensual completo en un entorno simulado.
+      </p>
+      <div class="hero-badges">
+        <span class="hero-badge hb-blue">🏛️ Módulo 1 — TRIBUT.AR: Inscripción</span>
+        <span class="hero-badge hb-green">📦 Módulo 2 — PyMEZ 360: Operaciones</span>
+        <span class="hero-badge hb-violet">👥 Módulo 3 — Sueldos 360: Nómina</span>
+        <span class="hero-badge hb-amber">✅ Módulo 4 — TRIBUT.AR: Cierre fiscal</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 40px 0 60px;">
+    <div class="container">
+
+      <!-- OBJETIVO -->
+      <div class="objetivo">
+        <div class="objetivo-icon">🎯</div>
+        <div class="objetivo-text">
+          <h3>Objetivo de aprendizaje</h3>
+          <p>
+            Al finalizar esta consigna, habrás operado el ciclo administrativo y fiscal completo de una PyME comercial argentina:
+            desde la inscripción ante los organismos nacionales y provinciales hasta el pago de impuestos, el cierre de tesorería
+            y la liquidación de sueldos del mes. El aprendizaje se produce en un entorno simulado, sin consecuencias reales,
+            que replica la lógica operativa de los sistemas ARCA/AFIP, ATM Misiones y la gestión empresarial integrada.
+          </p>
+        </div>
+      </div>
+
+      <!-- FICHA DE EMPRESA -->
+      <div class="ficha">
+        <div class="ficha-header">
+          <div class="ficha-header-icon">🏢</div>
+          <div>
+            <h2>NORTE Distribuciones S.R.L.</h2>
+            <p>Empresa simulada · Caso de estudio GEST-AR</p>
+          </div>
+        </div>
+        <div class="ficha-grid">
+          <div class="ficha-item">
+            <div class="ficha-label">CUIT (ficticio)</div>
+            <div class="ficha-value">30-71234567-8</div>
+          </div>
+          <div class="ficha-item">
+            <div class="ficha-label">Actividad</div>
+            <div class="ficha-value" style="font-size: 12px;">Venta minorista de artículos de librería, papelería y útiles escolares</div>
+          </div>
+          <div class="ficha-item">
+            <div class="ficha-label">Domicilio fiscal</div>
+            <div class="ficha-value">Av. San Martín 456<br><small>Posadas, Misiones (CP 3300)</small></div>
+          </div>
+          <div class="ficha-item">
+            <div class="ficha-label">Régimen nacional (ARCA)</div>
+            <div class="ficha-value">Responsable Inscripto<br><small>IVA · Ganancias (3.ª categoría)</small></div>
+          </div>
+          <div class="ficha-item">
+            <div class="ficha-label">Régimen provincial</div>
+            <div class="ficha-value">IIBB Misiones (ATM)<br><small>Convenio Multilateral</small></div>
+          </div>
+          <div class="ficha-item">
+            <div class="ficha-label">Punto de venta</div>
+            <div class="ficha-value">N.º 00001<br><small>Local Principal</small></div>
+          </div>
+          <div class="ficha-item">
+            <div class="ficha-label">Convenio laboral</div>
+            <div class="ficha-value">CCT N.º 130/75<br><small>Comercio — Empleados</small></div>
+          </div>
+          <div class="ficha-item">
+            <div class="ficha-label">Período trabajado</div>
+            <div class="ficha-value">Junio 2026<br><small>Ciclo mensual completo</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════════
+           MÓDULO 1 — TRIBUT.AR: ALTA E INSCRIPCIÓN
+      ══════════════════════════════════════════════════ -->
+      <section class="modulo mod-blue">
+        <div class="modulo-header">
+          <div class="modulo-num">1</div>
+          <div class="modulo-titles">
+            <h2>TRIBUT.AR — Alta e inscripción fiscal</h2>
+            <p>Plataforma: TRIBUT.AR &nbsp;·&nbsp; Tiempo estimado: 20 minutos</p>
+          </div>
+        </div>
+        <div class="modulo-body">
+          <div class="pasos">
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">1</div>
+                <span class="paso-title">Perfil del contribuyente</span>
+                <span class="paso-plat">TRIBUT.AR</span>
+              </div>
+              <div class="paso-body">
+                <p>Ingresá a <strong>TRIBUT.AR</strong> con tu usuario. En la pantalla principal, creá un nuevo perfil de contribuyente con los siguientes datos:</p>
+                <ul>
+                  <li>Razón social: <strong>NORTE Distribuciones S.R.L.</strong></li>
+                  <li>CUIT: <strong>30-71234567-8</strong></li>
+                  <li>Domicilio: Av. San Martín 456, Posadas, Misiones (CP 3300)</li>
+                  <li>Teléfono: 376-4201234</li>
+                  <li>Actividad: venta minorista de artículos de librería y papelería</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">2</div>
+                <span class="paso-title">Alta Registral — F.460/F</span>
+                <span class="paso-plat">TRIBUT.AR</span>
+              </div>
+              <div class="paso-body">
+                <p>Accedé al módulo <strong>Alta Registral</strong>. Completá la simulación del formulario F.460/F:</p>
+                <ul>
+                  <li>Seleccioná la actividad: venta minorista de papelería</li>
+                  <li>Confirmá la presentación</li>
+                  <li>Guardá o anotá el número de constancia que genera el sistema</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">3</div>
+                <span class="paso-title">Administrador de Relaciones — elección de régimen</span>
+                <span class="paso-plat">TRIBUT.AR</span>
+              </div>
+              <div class="paso-body">
+                <p>Ingresá al <strong>Administrador de Relaciones</strong>. Configurá el régimen tributario:</p>
+                <ul>
+                  <li>Régimen: <strong>Responsable Inscripto</strong> (IVA + Ganancias 3.ª categoría)</li>
+                  <li>Verificá que el sistema habilite los módulos de IVA y Ganancias en el menú lateral</li>
+                </ul>
+                <div class="nota nota-info">
+                  <span>ℹ️</span>
+                  <p>El Administrador de Relaciones es el módulo que define qué impuestos y obligaciones tenés habilitados. Elegir "Responsable Inscripto" habilita IVA y Ganancias; si eligieras Monotributo, esos módulos quedarían inaccesibles.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">4</div>
+                <span class="paso-title">Domicilio Fiscal Electrónico (DIFE)</span>
+                <span class="paso-plat">TRIBUT.AR</span>
+              </div>
+              <div class="paso-body">
+                <p>Accedé al módulo <strong>Domicilio Fiscal Electrónico</strong>. Registrá el domicilio fiscal de NORTE Distribuciones y confirmá la adhesión. El sistema simulará el acuse de recibo de la DIFE.</p>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">5</div>
+                <span class="paso-title">Habilitación del Punto de Venta</span>
+                <span class="paso-plat">TRIBUT.AR</span>
+              </div>
+              <div class="paso-body">
+                <p>Ingresá al módulo <strong>Puntos de Venta</strong>. Creá el siguiente Punto de Venta:</p>
+                <ul>
+                  <li>Número: <strong>00001</strong></li>
+                  <li>Nombre/descripción: Local Principal</li>
+                  <li>Tipo: Electrónico (CAE)</li>
+                </ul>
+                <div class="nota nota-warn">
+                  <span>⚠️</span>
+                  <p><strong>Muy importante:</strong> anotá el <strong>código de vinculación</strong> que el sistema genera una vez que habilitás el punto de venta. Lo vas a necesitar en el Módulo 2 para conectar PyMEZ 360 con TRIBUT.AR.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">6</div>
+                <span class="paso-title">Inscripción en ATM Misiones (IIBB provincial)</span>
+                <span class="paso-plat">TRIBUT.AR</span>
+              </div>
+              <div class="paso-body">
+                <p>Accedé al módulo <strong>ATM Misiones</strong>. Realizá el alta provincial de NORTE Distribuciones:</p>
+                <ul>
+                  <li>Seleccioná la actividad correspondiente</li>
+                  <li>Elegí la modalidad: Convenio Multilateral</li>
+                  <li>Verificá que el sistema genere el número de inscripción provincial</li>
+                </ul>
+                <div class="nota nota-info">
+                  <span>ℹ️</span>
+                  <p>Inscribirse en IIBB Misiones (ATM) es una obligación separada e independiente de la inscripción ante ARCA. Una empresa puede estar al día con AFIP y tener deuda con la ATM, o viceversa.</p>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /pasos -->
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════
+           MÓDULO 2 — PyMEZ 360: OPERACIONES DEL MES
+      ══════════════════════════════════════════════════ -->
+      <section class="modulo mod-green">
+        <div class="modulo-header">
+          <div class="modulo-num">2</div>
+          <div class="modulo-titles">
+            <h2>PyMEZ 360 — Operaciones comerciales de junio</h2>
+            <p>Plataforma: PyMEZ 360 &nbsp;·&nbsp; Tiempo estimado: 35 minutos</p>
+          </div>
+        </div>
+        <div class="modulo-body">
+          <div class="pasos">
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">7</div>
+                <span class="paso-title">Configuración y vinculación con TRIBUT.AR</span>
+                <span class="paso-plat">PyMEZ 360</span>
+              </div>
+              <div class="paso-body">
+                <p>Ingresá a <strong>PyMEZ 360</strong>. Creá la empresa NORTE Distribuciones con los mismos datos de la ficha. Luego vinculá la empresa con el Punto de Venta de TRIBUT.AR:</p>
+                <ul>
+                  <li>En la configuración de la empresa, ingresá el <strong>código de vinculación</strong> que anotaste en el Paso 5</li>
+                  <li>Verificá que el sistema confirme la conexión con TRIBUT.AR PV N.º 00001</li>
+                </ul>
+                <div class="nota nota-ok">
+                  <span>✅</span>
+                  <p>Una vez vinculada, las facturas que emitas en PyMEZ 360 estarán autorizadas por el CAE del Punto de Venta habilitado en TRIBUT.AR. Los datos de ventas se sincronizarán automáticamente con los módulos de IVA e IIBB.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">8</div>
+                <span class="paso-title">Registro de compras del mes</span>
+                <span class="paso-plat">PyMEZ 360</span>
+              </div>
+              <div class="paso-body">
+                <p>En el módulo <strong>Compras</strong>, ingresá las siguientes facturas de proveedores:</p>
+                <div class="tabla-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Fecha</th>
+                        <th>Proveedor</th>
+                        <th>Tipo</th>
+                        <th>Neto gravado</th>
+                        <th>IVA 21%</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>03/06/2026</td>
+                        <td>Distribuidora Sur S.A.</td>
+                        <td><span class="tipo-a">A</span></td>
+                        <td class="num">$180.000</td>
+                        <td class="num">$37.800</td>
+                        <td class="num">$217.800</td>
+                      </tr>
+                      <tr>
+                        <td>18/06/2026</td>
+                        <td>Ferretería Ríos</td>
+                        <td><span class="tipo-b">B</span></td>
+                        <td class="num">—</td>
+                        <td class="num">—</td>
+                        <td class="num">$12.100</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan="3"><strong>Total compras</strong></td>
+                        <td class="num">$180.000</td>
+                        <td class="num">$37.800</td>
+                        <td class="num">$229.900</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+                <div class="nota nota-warn">
+                  <span>⚠️</span>
+                  <p>La factura <strong>B de Ferretería Ríos</strong> está emitida a consumidor final: no discrimina IVA y no genera crédito fiscal para NORTE Distribuciones. No la ingresés como factura A.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">9</div>
+                <span class="paso-title">Registro de ventas del mes</span>
+                <span class="paso-plat">PyMEZ 360</span>
+              </div>
+              <div class="paso-body">
+                <p>En el módulo <strong>Ventas</strong>, emití las siguientes facturas. Verificá que el tipo de comprobante sea correcto según el cliente:</p>
+                <div class="tabla-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Fecha</th>
+                        <th>Cliente</th>
+                        <th>Tipo</th>
+                        <th>Neto gravado</th>
+                        <th>IVA 21%</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>06/06/2026</td>
+                        <td>Consumidor final</td>
+                        <td><span class="tipo-b">B</span></td>
+                        <td class="num">$37.190</td>
+                        <td class="num">$7.810</td>
+                        <td class="num">$45.000</td>
+                      </tr>
+                      <tr>
+                        <td>12/06/2026</td>
+                        <td>Colegio San José S.R.L.</td>
+                        <td><span class="tipo-a">A</span></td>
+                        <td class="num">$85.000</td>
+                        <td class="num">$17.850</td>
+                        <td class="num">$102.850</td>
+                      </tr>
+                      <tr>
+                        <td>22/06/2026</td>
+                        <td>Consumidor final</td>
+                        <td><span class="tipo-b">B</span></td>
+                        <td class="num">$31.405</td>
+                        <td class="num">$6.595</td>
+                        <td class="num">$38.000</td>
+                      </tr>
+                      <tr>
+                        <td>27/06/2026</td>
+                        <td>Imprenta Roja S.R.L.</td>
+                        <td><span class="tipo-a">A</span></td>
+                        <td class="num">$120.000</td>
+                        <td class="num">$25.200</td>
+                        <td class="num">$145.200</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan="3"><strong>Total ventas</strong></td>
+                        <td class="num">$273.595</td>
+                        <td class="num">$57.455</td>
+                        <td class="num">$331.050</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+                <div class="nota nota-info">
+                  <span>ℹ️</span>
+                  <p>Las facturas B se emiten a consumidores finales: el IVA va incluido en el precio. Las facturas A se emiten a Responsables Inscriptos y discriminan el IVA por separado. Colegio San José e Imprenta Roja son RI, por eso llevan factura A.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">10</div>
+                <span class="paso-title">Cobros y pagos del mes</span>
+                <span class="paso-plat">PyMEZ 360</span>
+              </div>
+              <div class="paso-body">
+                <p>En el módulo <strong>Cobros y pagos</strong>, registrá los siguientes movimientos:</p>
+                <ul>
+                  <li><strong>Pago</strong> a Distribuidora Sur S.A. → $217.800 por débito bancario (06/06)</li>
+                  <li><strong>Cobro</strong> ventas a consumidor final → $45.000 en efectivo (06/06)</li>
+                  <li><strong>Cobro</strong> Colegio San José S.R.L. → $102.850 por transferencia (14/06)</li>
+                  <li><strong>Cobro</strong> ventas a consumidor final → $38.000 en efectivo (22/06)</li>
+                  <li><strong>Cobro</strong> Imprenta Roja S.R.L. → $145.200 por transferencia (28/06)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">11</div>
+                <span class="paso-title">Verificación de tesorería</span>
+                <span class="paso-plat">PyMEZ 360</span>
+              </div>
+              <div class="paso-body">
+                <p>Accedé al módulo <strong>Tesorería</strong>. Verificá que los saldos de caja y cuenta bancaria reflejen correctamente todos los movimientos del mes.</p>
+                <ul>
+                  <li>¿El saldo de caja registra los $83.000 cobrados en efectivo?</li>
+                  <li>¿El banco muestra el débito de $217.800 y las transferencias recibidas?</li>
+                  <li>¿El resultado del período es coherente con las operaciones registradas?</li>
+                </ul>
+              </div>
+            </div>
+
+          </div><!-- /pasos -->
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════
+           MÓDULO 3 — SUELDOS 360: NÓMINA DE JUNIO
+      ══════════════════════════════════════════════════ -->
+      <section class="modulo mod-violet">
+        <div class="modulo-header">
+          <div class="modulo-num">3</div>
+          <div class="modulo-titles">
+            <h2>Sueldos 360 — Nómina de junio</h2>
+            <p>Plataforma: Sueldos 360 &nbsp;·&nbsp; Tiempo estimado: 25 minutos</p>
+          </div>
+        </div>
+        <div class="modulo-body">
+          <div class="pasos">
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">12</div>
+                <span class="paso-title">Alta de empleados</span>
+                <span class="paso-plat">Sueldos 360</span>
+              </div>
+              <div class="paso-body">
+                <p>Ingresá a <strong>Sueldos 360</strong>. En el módulo <strong>Empleados</strong>, registrá los dos trabajadores de NORTE Distribuciones:</p>
+                <div class="empleados-grid">
+                  <div class="empleado-card">
+                    <h4>Empleado 1</h4>
+                    <div class="empleado-row"><span>Nombre completo</span><span>María González</span></div>
+                    <div class="empleado-row"><span>CUIL (ficticio)</span><span>27-24567890-1</span></div>
+                    <div class="empleado-row"><span>Fecha de ingreso</span><span>15/06/2023</span></div>
+                    <div class="empleado-row"><span>Categoría CCT</span><span>A — Administrativo</span></div>
+                    <div class="empleado-row"><span>Básico convencional</span><span>$450.000</span></div>
+                    <div class="empleado-row"><span>Antigüedad</span><span>3 años</span></div>
+                  </div>
+                  <div class="empleado-card">
+                    <h4>Empleado 2</h4>
+                    <div class="empleado-row"><span>Nombre completo</span><span>Carlos Ríos</span></div>
+                    <div class="empleado-row"><span>CUIL (ficticio)</span><span>20-35678901-2</span></div>
+                    <div class="empleado-row"><span>Fecha de ingreso</span><span>01/03/2026</span></div>
+                    <div class="empleado-row"><span>Categoría CCT</span><span>B — Auxiliar de Ventas</span></div>
+                    <div class="empleado-row"><span>Básico convencional</span><span>$380.000</span></div>
+                    <div class="empleado-row"><span>Antigüedad</span><span>Sin antigüedad</span></div>
+                  </div>
+                </div>
+                <div class="nota nota-info">
+                  <span>ℹ️</span>
+                  <p>La antigüedad de María González se calcula desde el 15/06/2023. Al 30/06/2026 cumple exactamente 3 años de servicio, por lo que corresponde un adicional del 3% (1% por año) sobre el básico convencional, según el CCT N.º 130/75.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">13</div>
+                <span class="paso-title">Liquidación mensual de sueldos — junio</span>
+                <span class="paso-plat">Sueldos 360</span>
+              </div>
+              <div class="paso-body">
+                <p>En el módulo <strong>Liquidación</strong>, procesá la nómina de junio para ambos empleados. Verificá que el sistema calcule correctamente:</p>
+                <ul>
+                  <li>Sueldo básico según categoría CCT</li>
+                  <li>Adicional por antigüedad para María González (3% del básico)</li>
+                  <li>Descuentos al trabajador: jubilación (11%), obra social (3%), SUSS (0,6%)</li>
+                  <li>Sueldo neto a cobrar por cada empleado</li>
+                  <li>Contribuciones patronales a cargo de la empresa</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">14</div>
+                <span class="paso-title">Revisión de recibos de sueldo</span>
+                <span class="paso-plat">Sueldos 360</span>
+              </div>
+              <div class="paso-body">
+                <p>Accedé a los <strong>recibos de sueldo</strong> generados para junio. En cada recibo, identificá y anotá:</p>
+                <ul>
+                  <li>Sueldo bruto total (básico + adicionales)</li>
+                  <li>Total de descuentos al trabajador</li>
+                  <li>Sueldo neto a cobrar</li>
+                  <li>Costo laboral total para la empresa (bruto + contribuciones patronales)</li>
+                </ul>
+                <div class="nota nota-warn">
+                  <span>⚠️</span>
+                  <p>El <strong>costo laboral</strong> siempre es mayor que el sueldo bruto. La diferencia la paga la empresa en concepto de contribuciones patronales al SUSS, INSSJP, asignaciones familiares y otros. Este es un concepto clave para comprender la estructura del empleo formal en Argentina.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">15</div>
+                <span class="paso-title">F.931 — Declaración de cargas sociales</span>
+                <span class="paso-plat">Sueldos 360</span>
+              </div>
+              <div class="paso-body">
+                <p>En el módulo <strong>Cargas Sociales</strong>, generá el F.931 de junio para NORTE Distribuciones. Verificá:</p>
+                <ul>
+                  <li>Total de remuneraciones declaradas</li>
+                  <li>Total de aportes retenidos a los trabajadores</li>
+                  <li>Total de contribuciones patronales</li>
+                  <li>Importe total a ingresar al SUSS</li>
+                </ul>
+              </div>
+            </div>
+
+          </div><!-- /pasos -->
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════
+           MÓDULO 4 — TRIBUT.AR: CIERRE FISCAL
+      ══════════════════════════════════════════════════ -->
+      <section class="modulo mod-amber">
+        <div class="modulo-header">
+          <div class="modulo-num">4</div>
+          <div class="modulo-titles">
+            <h2>TRIBUT.AR — Cierre y declaraciones fiscales</h2>
+            <p>Plataforma: TRIBUT.AR &nbsp;·&nbsp; Tiempo estimado: 20 minutos</p>
+          </div>
+        </div>
+        <div class="modulo-body">
+          <div class="pasos">
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">16</div>
+                <span class="paso-title">DDJJ de IVA — Junio 2026</span>
+                <span class="paso-plat">TRIBUT.AR</span>
+              </div>
+              <div class="paso-body">
+                <p>En TRIBUT.AR, accedé al módulo <strong>IVA</strong>. Abrí la declaración jurada de junio. El sistema tomó los datos de PyMEZ 360 automáticamente. Verificá que los importes coincidan con lo registrado en el Módulo 2:</p>
+                <div class="tabla-wrap">
+                  <table>
+                    <thead>
+                      <tr><th>Concepto</th><th>Valor esperado</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Total débito fiscal (ventas)</td><td class="num">$57.455</td></tr>
+                      <tr><td>Total crédito fiscal (compras)</td><td class="num">$37.800</td></tr>
+                      <tr><td style="font-weight:700;">Saldo de IVA a ingresar</td><td class="num" style="font-weight:800;color:#B45309;">$19.655</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="nota nota-warn">
+                  <span>⚠️</span>
+                  <p>La factura B de Ferretería Ríos ($12.100) no generó crédito fiscal. Por eso el crédito es solo $37.800 (de la factura A de Distribuidora Sur). Si hubiera generado crédito, el saldo a pagar sería menor.</p>
+                </div>
+                <p style="margin-top:10px;">Confirmá la declaración. El sistema registrará el saldo a ingresar en la Billetera Fiscal.</p>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">17</div>
+                <span class="paso-title">DDJJ de IIBB — ATM Misiones, junio 2026</span>
+                <span class="paso-plat">TRIBUT.AR</span>
+              </div>
+              <div class="paso-body">
+                <p>En el módulo <strong>ATM Misiones → IIBB → DDJJ</strong>, accedé a la declaración de junio. Verificá la base imponible sincronizada desde PyMEZ 360:</p>
+                <div class="tabla-wrap">
+                  <table>
+                    <thead>
+                      <tr><th>Concepto</th><th>Valor esperado</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Base imponible (ventas netas totales)</td><td class="num">$273.595</td></tr>
+                      <tr><td>Alícuota IIBB Misiones</td><td class="num">3,00%</td></tr>
+                      <tr><td style="font-weight:700;">IIBB a pagar</td><td class="num" style="font-weight:800;color:#B45309;">$8.208</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="nota nota-info">
+                  <span>ℹ️</span>
+                  <p>La base imponible de IIBB es el total de los ingresos brutos del mes, sin deducir el IVA cobrado ni las compras. Es un impuesto sobre los ingresos, no sobre la ganancia.</p>
+                </div>
+                <p style="margin-top:10px;">Confirmá la declaración.</p>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">18</div>
+                <span class="paso-title">Generación de VEPs y pago en Billetera Fiscal</span>
+                <span class="paso-plat">TRIBUT.AR</span>
+              </div>
+              <div class="paso-body">
+                <p>En la <strong>Billetera Fiscal</strong>, generá los Volantes Electrónicos de Pago (VEPs) para cada obligación y registrá el pago simulado:</p>
+                <ul>
+                  <li>VEP IVA junio 2026 → $19.655 — <em>vencimiento: 22/07/2026</em></li>
+                  <li>VEP IIBB Misiones junio 2026 → $8.208 — <em>vencimiento: según ATM</em></li>
+                </ul>
+                <div class="nota nota-ok">
+                  <span>✅</span>
+                  <p>Registrado el pago, el estado de cada obligación cambiará a <strong>Cumplida</strong> en el Estado Fiscal Integral.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-header">
+                <div class="paso-num">19</div>
+                <span class="paso-title">Estado Fiscal Integral — cierre del mes</span>
+                <span class="paso-plat">TRIBUT.AR</span>
+              </div>
+              <div class="paso-body">
+                <p>Accedé al módulo <strong>Estado Fiscal Integral</strong>. Verificá que figuren cumplidas todas las obligaciones de junio:</p>
+                <ul>
+                  <li>✅ IVA junio — DDJJ presentada y pago registrado</li>
+                  <li>✅ IIBB Misiones junio — DDJJ presentada y pago registrado</li>
+                  <li>✅ F.931 junio — cargas sociales declaradas</li>
+                  <li>✅ Punto de Venta habilitado y activo</li>
+                </ul>
+                <p style="margin-top:10px;"><strong>Este es el cierre del ciclo mensual de NORTE Distribuciones.</strong> Tomá una captura del Estado Fiscal Integral para tu entrega.</p>
+              </div>
+            </div>
+
+          </div><!-- /pasos -->
+        </div>
+      </section>
+
+      <!-- RESULTADOS ESPERADOS -->
+      <div class="resultados">
+        <h2>📊 Resultados esperados — verificación</h2>
+        <p>Usá estos valores para verificar que tus registros son correctos antes de entregar.</p>
+        <div class="res-grid">
+          <div class="res-item">
+            <div class="res-label">Total ventas del mes</div>
+            <div class="res-value blue">$331.050</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">Total compras del mes</div>
+            <div class="res-value blue">$229.900</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">Débito fiscal IVA</div>
+            <div class="res-value amber">$57.455</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">Crédito fiscal IVA</div>
+            <div class="res-value green">$37.800</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">IVA a ingresar</div>
+            <div class="res-value amber">$19.655</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">Base imponible IIBB</div>
+            <div class="res-value blue">$273.595</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">IIBB Misiones (3%)</div>
+            <div class="res-value amber">$8.208</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">Nómina bruta total</div>
+            <div class="res-value violet">$843.500</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHECKLIST DE ENTREGA -->
+      <div class="checklist">
+        <h2>📋 Checklist de entrega</h2>
+        <p>Antes de entregar, verificá que tenés cada elemento. Tu docente puede pedirte capturas de pantalla o el acceso a tu cuenta.</p>
+        <div class="check-item"><div class="check-box"></div> Constancia de Alta Registral de NORTE Distribuciones en TRIBUT.AR</div>
+        <div class="check-item"><div class="check-box"></div> Punto de Venta N.º 00001 habilitado en TRIBUT.AR</div>
+        <div class="check-item"><div class="check-box"></div> Empresa vinculada en PyMEZ 360 con PV de TRIBUT.AR</div>
+        <div class="check-item"><div class="check-box"></div> Las 2 facturas de compra registradas en PyMEZ 360</div>
+        <div class="check-item"><div class="check-box"></div> Las 4 facturas de venta emitidas en PyMEZ 360 (tipos A y B correctos)</div>
+        <div class="check-item"><div class="check-box"></div> Panel de Tesorería de PyMEZ 360 con saldos actualizados</div>
+        <div class="check-item"><div class="check-box"></div> Recibos de sueldo de María González y Carlos Ríos (junio 2026)</div>
+        <div class="check-item"><div class="check-box"></div> F.931 de junio generado en Sueldos 360</div>
+        <div class="check-item"><div class="check-box"></div> DDJJ IVA junio presentada en TRIBUT.AR (saldo: $19.655)</div>
+        <div class="check-item"><div class="check-box"></div> DDJJ IIBB Misiones junio presentada (IIBB: $8.208)</div>
+        <div class="check-item"><div class="check-box"></div> Estado Fiscal Integral con todas las obligaciones cumplidas</div>
+      </div>
+
+    </div><!-- /container -->
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      <a href="index.html">← Volver a GEST-AR</a> &nbsp;·&nbsp;
+      Consigna de carácter educativo · Sin validez fiscal ni legal · Empresa y datos ficticios.
+    </p>
+    <p style="margin-top: 6px;">
+      GEST-AR · Proyecto personal de Juan Manuel Gómez ·
+      <a href="https://tributar2026nuevo.vercel.app/" target="_blank">TRIBUT.AR</a> ·
+      <a href="https://pymez-360.vercel.app/" target="_blank">PyMEZ 360</a> ·
+      <a href="https://sueldos360.vercel.app/" target="_blank">Sueldos 360</a>
+    </p>
+  </footer>
+
+</body>
+</html>
