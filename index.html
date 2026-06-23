@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GEST-AR · Ecosistema Digital para Ciencias Económicas</title>
-  <meta name="description" content="Tres plataformas integradas para la simulación y enseñanza del sistema impositivo argentino: TRIBUT.AR, PyMEZ 360 y Sueldos 360." />
+  <title>GEST-AR · Ecosistema Digital para el Aprendizaje de la Gestión Administrativa Integral</title>
+  <meta name="description" content="Ecosistema digital de simulación para el aprendizaje de la gestión administrativa integral: impuestos, contabilidad, comercio y relaciones laborales en un ciclo empresarial completo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -516,6 +516,112 @@
       line-height: 1.6;
     }
 
+    /* ── SABERES ── */
+    .saberes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .saber-card {
+      border-radius: 16px;
+      padding: 24px;
+      border: 1.5px solid var(--border);
+      background: white;
+    }
+    .saber-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .saber-title {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 4px;
+      letter-spacing: -0.2px;
+    }
+    .saber-tag {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .saber-list {
+      list-style: none;
+      font-size: 12.5px;
+      color: #475569;
+      line-height: 1.8;
+    }
+    .saber-list li::before { content: '→ '; color: #94A3B8; }
+
+    /* ── MODELO PEDAGÓGICO ── */
+    .modelo-bg {
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 60%, #1e2b4a 100%);
+    }
+    .modelo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .modelo-pillar {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .modelo-pillar-num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #93C5FD;
+      margin-bottom: 8px;
+    }
+    .modelo-pillar-title {
+      font-size: 17px;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+    .modelo-pillar-text {
+      font-size: 12.5px;
+      color: #94A3B8;
+      line-height: 1.7;
+    }
+    .modelo-quote {
+      margin-top: 36px;
+      border-left: 3px solid rgba(147,197,253,0.4);
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 0 12px 12px 0;
+    }
+    .modelo-quote p {
+      font-size: 13px;
+      color: #CBD5E1;
+      line-height: 1.7;
+      font-style: italic;
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .tech-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #CBD5E1;
+    }
+
     /* ── MOBILE ── */
     @media (max-width: 640px) {
       .nav-links .nav-link { padding: 5px 10px; font-size: 12px; }
@@ -552,16 +658,17 @@
       <span class="s2"></span>
       <span class="s3"></span>
     </div>
-    <p class="hero-eyebrow">Simulador fiscal educativo · Ciencias Económicas</p>
+    <p class="hero-eyebrow">Gestión administrativa integral · Ciencias Económicas</p>
     <h1 class="hero-title">GEST<span class="dot">-AR</span></h1>
     <p class="hero-subtitle">
-      Ecosistema digital para la simulación y enseñanza del sistema impositivo argentino.
+      Ecosistema digital para el aprendizaje de la gestión administrativa integral:
+      impuestos, comercio y relaciones laborales en un ciclo empresarial real.
       Tres plataformas integradas, gratuitas y sin instalación.
     </p>
     <div class="hero-badges">
-      <span class="hero-badge blue">🔵 TRIBUT.AR — Obligaciones fiscales</span>
-      <span class="hero-badge green">🟢 PyMEZ 360 — Gestión comercial</span>
-      <span class="hero-badge violet">🟣 Sueldos 360 — Recursos humanos</span>
+      <span class="hero-badge blue">🔵 TRIBUT.AR — Obligaciones impositivas</span>
+      <span class="hero-badge green">🟢 PyMEZ 360 — Gestión comercial y contable</span>
+      <span class="hero-badge violet">🟣 Sueldos 360 — Relaciones laborales</span>
     </div>
     <div class="hero-cta">
       <a href="#plataformas" class="btn-primary blue">
@@ -576,10 +683,11 @@
   <section id="plataformas">
     <div class="container">
       <p class="section-eyebrow" style="color: var(--blue)">Las tres plataformas</p>
-      <h2 class="section-title">Un ciclo completo de gestión empresarial</h2>
+      <h2 class="section-title">Un ciclo completo de gestión administrativa integral</h2>
       <p class="section-sub">
-        Cada plataforma simula un área real de la gestión de una PyME. Juntas cubren desde la inscripción
-        ante ARCA hasta la liquidación de sueldos y el cumplimiento provincial.
+        Cada plataforma simula un área real de la gestión de una organización. Juntas recrean el ciclo
+        completo: inscripción, facturación, declaraciones, relaciones laborales y cumplimiento fiscal en
+        dos jurisdicciones — sin necesidad de acceder a sistemas reales.
       </p>
 
       <div class="apps-grid">
@@ -669,6 +777,135 @@
       </div>
     </div>
   </section>
+
+  <!-- SABERES QUE SE ADQUIEREN -->
+  <section style="background: var(--slate-l); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <p class="section-eyebrow" style="color: var(--green)">Aprendizajes del ecosistema</p>
+      <h2 class="section-title">¿Qué saberes construye el estudiante?</h2>
+      <p class="section-sub">
+        Al operar el ciclo completo, el estudiante no solo practica procedimientos: construye una comprensión
+        integrada de la empresa como sistema. Los saberes adquiridos se organizan en tres ejes.
+      </p>
+
+      <div class="saberes-grid">
+        <div class="saber-card">
+          <div class="saber-icon">🏛️</div>
+          <div class="saber-tag" style="background: #DBEAFE; color: #1D4ED8;">Saber impositivo</div>
+          <p class="saber-title">Obligaciones tributarias y cumplimiento fiscal</p>
+          <ul class="saber-list">
+            <li>Alta registral y elección de régimen (Monotributo / RG)</li>
+            <li>Cálculo de IVA: débito, crédito fiscal y saldo técnico</li>
+            <li>Liquidación de IIBB: base imponible, alícuotas y DDJJ</li>
+            <li>Anticipos de Ganancias y ajuste anual</li>
+            <li>Generación de VEPs y pagos en Billetera Fiscal</li>
+            <li>Diferencia entre jurisdicción nacional (ARCA) y provincial (ATM)</li>
+          </ul>
+        </div>
+        <div class="saber-card">
+          <div class="saber-icon">⚖️</div>
+          <div class="saber-tag" style="background: #FEF3C7; color: #92400E;">Saber legal-laboral</div>
+          <p class="saber-title">Marco normativo y relaciones de trabajo</p>
+          <ul class="saber-list">
+            <li>Formalidades de la inscripción ante ARCA y DGR</li>
+            <li>Alta de empleados, categorías CCT y antigüedad</li>
+            <li>Diferencia entre sueldo bruto, neto y costo laboral</li>
+            <li>Retenciones al trabajador: jubilación, obra social, SUSS</li>
+            <li>Contribuciones patronales y presentación del F.931</li>
+            <li>Conceptos de retención de IIBB por agentes de retención</li>
+          </ul>
+        </div>
+        <div class="saber-card">
+          <div class="saber-icon">💻</div>
+          <div class="saber-tag" style="background: #F0FDF4; color: #166534;">Saber tecnológico</div>
+          <p class="saber-title">Gestión digital e integración de sistemas</p>
+          <ul class="saber-list">
+            <li>Navegación de sistemas integrados de gestión</li>
+            <li>Comprensión del flujo de datos entre plataformas</li>
+            <li>Facturación electrónica: tipos de comprobante y CAE</li>
+            <li>Vinculación de Punto de Venta entre ARCA y sistema comercial</li>
+            <li>Tesorería digital: cuentas, movimientos y saldos en tiempo real</li>
+            <li>Lectura e interpretación de dashboards e indicadores</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODELO PEDAGÓGICO -->
+  <div class="modelo-bg">
+    <section>
+      <div class="container">
+        <p class="section-eyebrow" style="color: #93C5FD;">Estrategia formativa</p>
+        <h2 class="section-title" style="color: white;">Modelo neuro-tecno-pedagógico</h2>
+        <p class="section-sub" style="color: #94A3B8;">
+          GEST-AR se apoya en un enfoque que integra principios de neuroeducación, tecnología educativa
+          y pedagogía activa para generar aprendizaje situado, significativo y transferible.
+        </p>
+
+        <div class="modelo-grid">
+          <div class="modelo-pillar">
+            <div class="modelo-pillar-num">Pilar 01 · Neuroeducación</div>
+            <div class="modelo-pillar-title">Aprender haciendo activa la memoria</div>
+            <p class="modelo-pillar-text">
+              La neuroeducación sostiene que el aprendizaje se consolida cuando hay contexto real,
+              carga emocional positiva y práctica repetida. Operar un ciclo empresarial completo
+              —vender, declarar, pagar sueldos— activa la memoria procedimental y la comprensión
+              sistémica de una manera que la lectura del cuadernillo no logra.
+            </p>
+          </div>
+          <div class="modelo-pillar">
+            <div class="modelo-pillar-num">Pilar 02 · Tecnología educativa</div>
+            <div class="modelo-pillar-title">La tecnología como mediadora del aprendizaje</div>
+            <p class="modelo-pillar-text">
+              Los sistemas reales de AFIP, ARCA y DGR no tienen entornos de prueba. GEST-AR cierra
+              esa brecha: ofrece entornos simulados que replican la lógica operativa sin las
+              consecuencias reales. El estudiante gana acceso a experiencias que antes solo eran
+              posibles en la vida profesional.
+            </p>
+          </div>
+          <div class="modelo-pillar">
+            <div class="modelo-pillar-num">Pilar 03 · Pedagogía activa</div>
+            <div class="modelo-pillar-title">Situación real, aprendizaje real</div>
+            <p class="modelo-pillar-text">
+              El enfoque constructivista y el aprendizaje situado proponen que el conocimiento
+              se construye en contacto con problemas auténticos. Aquí, el "problema" es gestionar
+              una empresa: elegir régimen, emitir comprobantes, liquidar sueldos, cumplir ante el
+              fisco. El error en el simulador genera reflexión, no consecuencias.
+            </p>
+          </div>
+        </div>
+
+        <div class="modelo-quote">
+          <p>
+            "No se aprende fiscalidad leyendo sobre fiscalidad. Se aprende operando en un entorno
+            que simule sus consecuencias. GEST-AR es esa práctica segura: un espacio donde equivocarse
+            cuesta cero y aprender vale todo."
+          </p>
+        </div>
+
+        <div style="margin-top: 28px;">
+          <p style="font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #64748B; margin-bottom: 12px;">
+            ⚙️ Tecnología que hace posible este ecosistema
+          </p>
+          <div class="tech-stack">
+            <span class="tech-badge">GitHub — control de versiones</span>
+            <span class="tech-badge">Supabase — base de datos y autenticación</span>
+            <span class="tech-badge">Vercel — despliegue y hosting</span>
+            <span class="tech-badge">Next.js — framework web</span>
+            <span class="tech-badge">ChatGPT — asistencia en desarrollo</span>
+            <span class="tech-badge">Claude (Anthropic) — asistencia en desarrollo</span>
+          </div>
+          <p style="font-size: 11px; color: #475569; margin-top: 12px; line-height: 1.6;">
+            ⚠️ GEST-AR es un <strong style="color: #64748B;">prototipo educativo en desarrollo activo</strong>.
+            Como toda tecnología innovadora, puede presentar errores o comportamientos inesperados.
+            Eso forma parte de su proceso de maduración — y también es parte de la experiencia: los estudiantes
+            aprenden a operar sistemas reales, con sus imperfecciones.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!-- INTEGRACIÓN -->
   <div class="integration-bg" id="integracion">
@@ -829,23 +1066,24 @@
 
       <!-- Créditos de autoría -->
       <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center;">
-        <p style="font-size: 10px; color: #475569; margin-bottom: 10px; letter-spacing: 2.5px; font-weight: 700; text-transform: uppercase;">Desarrollado por</p>
+        <p style="font-size: 10px; color: #475569; margin-bottom: 10px; letter-spacing: 2.5px; font-weight: 700; text-transform: uppercase;">Proyecto personal de autor</p>
         <p style="font-size: 19px; font-weight: 800; color: #E2E8F0; margin-bottom: 6px; letter-spacing: -0.3px;">Juan Manuel Gómez</p>
-        <p style="font-size: 12.5px; color: #94A3B8; line-height: 1.9; margin-bottom: 10px;">
+        <p style="font-size: 12.5px; color: #94A3B8; line-height: 1.9; margin-bottom: 6px;">
           Lic. en Educación (FASTA) · Profesor de Ciencias Económicas<br>
-          Experto en Tecnología Educativa e Inteligencia Artificial<br>
-          Facultad de Humanidades y Ciencias Sociales · UNaM
+          Experto en Tecnología Educativa e Inteligencia Artificial
         </p>
-        <p style="font-size: 11px; color: #475569; font-style: italic;">
-          Desarrollado desde <strong style="color: #64748B; font-style: normal;">Wanda, Misiones · Argentina</strong>
+        <p style="font-size: 11px; color: #475569; line-height: 1.6; margin-bottom: 10px;">
+          Esta es una iniciativa personal independiente, no institucional.<br>
+          Desarrollada desde <strong style="color: #64748B;">Wanda, Misiones · Argentina</strong>
         </p>
       </div>
 
       <p class="footer-disclaimer">
         ⚠️ <strong style="color: #64748B">SITIO EDUCATIVO — SIN VALIDEZ FISCAL NI LEGAL.</strong>
-        Las plataformas TRIBUT.AR, PyMEZ 360 y Sueldos 360 son simuladores didácticos desarrollados
-        con fines exclusivamente pedagógicos. No constituyen herramientas oficiales de AFIP, ARCA
-        ni ningún organismo público.
+        TRIBUT.AR, PyMEZ 360 y Sueldos 360 son simuladores pedagógicos de carácter personal,
+        desarrollados exclusivamente con fines formativos. No son herramientas oficiales de AFIP,
+        ARCA, ATM ni ningún organismo público. Este ecosistema es un prototipo en desarrollo activo
+        y puede presentar errores propios de una tecnología innovadora en construcción.
       </p>
     </div>
   </footer>
