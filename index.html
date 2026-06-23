@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GEST-AR · Ecosistema Digital para Ciencias Económicas</title>
+  <meta name="description" content="Tres plataformas integradas para la simulación y enseñanza del sistema impositivo argentino: TRIBUT.AR, PyMEZ 360 y Sueldos 360." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:   #185FA5;
+      --blue-l: #E8F1FA;
+      --blue-d: #0E3D6E;
+      --green:  #3B6D11;
+      --green-l:#EBF4E3;
+      --green-d:#264A0B;
+      --violet: #534AB7;
+      --violet-l:#EEEDf8;
+      --violet-d:#342D85;
+      --navy:   #1C2B4A;
+      --navy-d: #111827;
+      --slate:  #475569;
+      --slate-l:#F8FAFC;
+      --border: #E2E8F0;
+      --text:   #0F172A;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: white;
+      line-height: 1.6;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-logo-icon svg { width: 20px; height: 20px; fill: white; }
+    .nav-logo-name {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+    }
+    .nav-logo-name span {
+      color: var(--blue);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-link {
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .nav-link.blue   { color: var(--blue);   background: var(--blue-l); }
+    .nav-link.blue:hover { background: #d0e4f5; }
+    .nav-link.green  { color: var(--green);  background: var(--green-l); }
+    .nav-link.green:hover { background: #d8ecca; }
+    .nav-link.violet { color: var(--violet); background: var(--violet-l); }
+    .nav-link.violet:hover { background: #e0deF6; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy-d);
+      padding: 80px 24px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(24,95,165,0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-stripe {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 36px;
+    }
+    .hero-stripe span {
+      height: 5px;
+      width: 100px;
+    }
+    .hero-stripe .s1 { background: var(--blue);   border-radius: 3px 0 0 3px; }
+    .hero-stripe .s2 { background: var(--green); }
+    .hero-stripe .s3 { background: var(--violet); border-radius: 0 3px 3px 0; }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #93C5FD;
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-size: clamp(42px, 7vw, 72px);
+      font-weight: 900;
+      color: white;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .hero-title .dot { color: var(--blue); }
+    .hero-subtitle {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #CBD5E1;
+      max-width: 620px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .hero-badge {
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .hero-badge.blue   { background: rgba(24,95,165,0.25);  color: #93C5FD; border: 1px solid rgba(24,95,165,0.4); }
+    .hero-badge.green  { background: rgba(59,109,17,0.25);  color: #86EFAC; border: 1px solid rgba(59,109,17,0.4); }
+    .hero-badge.violet { background: rgba(83,74,183,0.25);  color: #C4B5FD; border: 1px solid rgba(83,74,183,0.4); }
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      padding: 13px 28px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary.blue { background: var(--blue); color: white; }
+    .btn-primary.blue:hover { background: #1450,90; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(24,95,165,0.35); }
+    .btn-outline {
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #CBD5E1;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.35); color: white; }
+
+    /* ── CONTAINER ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── SECCIÓN ── */
+    section { padding: 72px 0; }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--slate);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* ── APPS GRID ── */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .app-card {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s;
+    }
+    .app-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.1);
+    }
+    .app-card-header {
+      padding: 28px 28px 24px;
+    }
+    .app-card.blue  .app-card-header { background: var(--blue-l);   border-bottom: 2px solid rgba(24,95,165,0.12); }
+    .app-card.green .app-card-header { background: var(--green-l);  border-bottom: 2px solid rgba(59,109,17,0.12); }
+    .app-card.violet.app-card-header { background: var(--violet-l); border-bottom: 2px solid rgba(83,74,183,0.12); }
+    .app-card.violet .app-card-header { background: var(--violet-l); border-bottom: 2px solid rgba(83,74,183,0.12); }
+    .app-card-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .app-card.blue  .app-card-tag  { color: var(--blue); }
+    .app-card.green .app-card-tag  { color: var(--green); }
+    .app-card.violet .app-card-tag { color: var(--violet); }
+    .app-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
+    .app-card.blue  .app-card-icon { background: rgba(24,95,165,0.15);  }
+    .app-card.green .app-card-icon { background: rgba(59,109,17,0.15);  }
+    .app-card.violet .app-card-icon { background: rgba(83,74,183,0.15); }
+    .app-card-name {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .app-card.blue  .app-card-name  { color: var(--blue-d); }
+    .app-card.green .app-card-name  { color: var(--green-d); }
+    .app-card.violet .app-card-name { color: var(--violet-d); }
+    .app-card-desc {
+      font-size: 13px;
+      color: var(--slate);
+      line-height: 1.6;
+    }
+    .app-card-body {
+      padding: 20px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .app-features {
+      list-style: none;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+    .app-features li {
+      font-size: 13px;
+      color: #334155;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      line-height: 1.45;
+    }
+    .app-features li:last-child { border-bottom: none; }
+    .app-features li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .app-card.blue   .app-features li::before { background: var(--blue); }
+    .app-card.green  .app-features li::before { background: var(--green); }
+    .app-card.violet .app-features li::before { background: var(--violet); }
+    .app-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .app-card.blue   .app-btn { background: var(--blue);   color: white; }
+    .app-card.blue   .app-btn:hover { background: var(--blue-d); }
+    .app-card.green  .app-btn { background: var(--green);  color: white; }
+    .app-card.green  .app-btn:hover { background: var(--green-d); }
+    .app-card.violet .app-btn { background: var(--violet); color: white; }
+    .app-card.violet .app-btn:hover { background: var(--violet-d); }
+
+    /* ── INTEGRATION ── */
+    .integration-bg {
+      background: var(--slate-l);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .integration-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 48px 0 36px;
+      flex-wrap: wrap;
+    }
+    .flow-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 28px;
+      border-radius: 16px;
+      border: 2px solid;
+      min-width: 180px;
+    }
+    .flow-node.blue   { background: var(--blue-l);   border-color: rgba(24,95,165,0.3);  }
+    .flow-node.green  { background: var(--green-l);  border-color: rgba(59,109,17,0.3);  }
+    .flow-node.violet { background: var(--violet-l); border-color: rgba(83,74,183,0.3);  }
+    .flow-node-icon { font-size: 28px; }
+    .flow-node-name { font-size: 14px; font-weight: 800; }
+    .flow-node.blue   .flow-node-name  { color: var(--blue-d); }
+    .flow-node.green  .flow-node-name  { color: var(--green-d); }
+    .flow-node.violet .flow-node-name  { color: var(--violet-d); }
+    .flow-node-items { font-size: 11px; color: var(--slate); text-align: center; line-height: 1.5; }
+    .flow-arrow {
+      font-size: 22px;
+      color: #94A3B8;
+      padding: 0 8px;
+    }
+    .integration-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 0;
+    }
+    .integration-point {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      gap: 14px;
+    }
+    .integration-point-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .integration-point-text { font-size: 13px; color: #334155; line-height: 1.55; }
+    .integration-point-text strong { color: var(--text); display: block; font-weight: 700; margin-bottom: 2px; }
+
+    /* ── USE CASES ── */
+    .pills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 36px;
+    }
+    .pill {
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid;
+    }
+    .pill.blue   { background: var(--blue-l);   color: var(--blue-d);   border-color: rgba(24,95,165,0.25);  }
+    .pill.green  { background: var(--green-l);  color: var(--green-d);  border-color: rgba(59,109,17,0.25);  }
+    .pill.violet { background: var(--violet-l); color: var(--violet-d); border-color: rgba(83,74,183,0.25);  }
+    .pill.amber  { background: #FEF3C7; color: #92400E; border-color: rgba(245,158,11,0.3); }
+    .pill.teal   { background: #F0FDFA; color: #0F766E; border-color: rgba(20,184,166,0.3); }
+
+    /* ── DOCENTES ── */
+    .docentes-card {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-d) 100%);
+      border-radius: 24px;
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .docentes-card-content { flex: 1; min-width: 260px; }
+    .docentes-card h2 { font-size: 28px; font-weight: 900; color: white; margin-bottom: 10px; letter-spacing: -0.5px; }
+    .docentes-card p  { font-size: 15px; color: #CBD5E1; line-height: 1.7; margin-bottom: 24px; }
+    .docentes-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .docentes-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .docentes-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .docentes-step p { font-size: 13px; color: #CBD5E1; margin: 0; }
+    .docentes-step strong { color: white; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-d);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 24px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-logo-box {
+      width: 34px;
+      height: 34px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-logo-box svg { width: 18px; height: 18px; fill: white; }
+    .footer-logo span { font-size: 17px; font-weight: 900; color: white; letter-spacing: -0.5px; }
+    .footer-apps {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-app-link {
+      font-size: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .footer-app-link:hover { opacity: 0.8; }
+    .footer-app-link.blue   { color: #93C5FD; }
+    .footer-app-link.green  { color: #86EFAC; }
+    .footer-app-link.violet { color: #C4B5FD; }
+    .footer-disclaimer {
+      font-size: 11px;
+      color: #475569;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 640px) {
+      .nav-links .nav-link { padding: 5px 10px; font-size: 12px; }
+      .flow-arrow { display: none; }
+      .flow-node { min-width: 140px; padding: 16px 20px; }
+      .docentes-card { padding: 28px 24px; }
+    }
+    @media (max-width: 480px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <span class="nav-logo-name">GEST<span>-AR</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="https://tributar2026nuevo.vercel.app/" target="_blank" class="nav-link blue">TRIBUT.AR</a>
+      <a href="https://pymez-360.vercel.app/" target="_blank" class="nav-link green">PyMEZ 360</a>
+      <a href="https://sueldos360.vercel.app/" target="_blank" class="nav-link violet">Sueldos 360</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-stripe">
+      <span class="s1"></span>
+      <span class="s2"></span>
+      <span class="s3"></span>
+    </div>
+    <p class="hero-eyebrow">Diplomatura Superior en Ciencias Económicas</p>
+    <h1 class="hero-title">GEST<span class="dot">-AR</span></h1>
+    <p class="hero-subtitle">
+      Ecosistema digital para la simulación y enseñanza del sistema impositivo argentino.
+      Tres plataformas integradas, gratuitas y sin instalación.
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge blue">🔵 TRIBUT.AR — Obligaciones fiscales</span>
+      <span class="hero-badge green">🟢 PyMEZ 360 — Gestión comercial</span>
+      <span class="hero-badge violet">🟣 Sueldos 360 — Recursos humanos</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#plataformas" class="btn-primary blue">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Acceder al ecosistema
+      </a>
+      <a href="#integracion" class="btn-outline">Ver cómo se integran</a>
+    </div>
+  </div>
+
+  <!-- PLATAFORMAS -->
+  <section id="plataformas">
+    <div class="container">
+      <p class="section-eyebrow" style="color: var(--blue)">Las tres plataformas</p>
+      <h2 class="section-title">Un ciclo completo de gestión empresarial</h2>
+      <p class="section-sub">
+        Cada plataforma simula un área real de la gestión de una PyME. Juntas cubren desde la inscripción
+        ante ARCA hasta la liquidación de sueldos y el cumplimiento provincial.
+      </p>
+
+      <div class="apps-grid">
+
+        <!-- TRIBUT.AR -->
+        <div class="app-card blue">
+          <div class="app-card-header">
+            <p class="app-card-tag">Plataforma 01</p>
+            <div class="app-card-icon">🏛️</div>
+            <p class="app-card-name">TRIBUT.AR</p>
+            <p class="app-card-desc">
+              Simula la relación del contribuyente con AFIP/ARCA y la DGR provincial.
+              Cubre los dos regímenes más comunes en el aula.
+            </p>
+          </div>
+          <div class="app-card-body">
+            <ul class="app-features">
+              <li>Alta registral (F.460/F) y perfil de contribuyente</li>
+              <li>Monotributo — categorías, cuotas y recategorización</li>
+              <li>Régimen General — IVA, Ganancias y DDJJ</li>
+              <li>Habilitación de Puntos de Venta y facturación electrónica</li>
+              <li>IIBB Misiones — ATM simulado paso a paso</li>
+              <li>Billetera Fiscal — pago de VEPs simulados</li>
+              <li>Relaciones Laborales vinculado con Sueldos 360</li>
+            </ul>
+            <a href="https://tributar2026nuevo.vercel.app/" target="_blank" class="app-btn">
+              Abrir TRIBUT.AR
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- PyMEZ 360 -->
+        <div class="app-card green">
+          <div class="app-card-header">
+            <p class="app-card-tag">Plataforma 02</p>
+            <div class="app-card-icon">📦</div>
+            <p class="app-card-name">PyMEZ 360</p>
+            <p class="app-card-desc">
+              Gestión comercial integrada con TRIBUT.AR. Las ventas registradas acá
+              alimentan automáticamente la base imponible de IIBB.
+            </p>
+          </div>
+          <div class="app-card-body">
+            <ul class="app-features">
+              <li>Ventas con IVA — Facturas A, B y C según tipo de cliente</li>
+              <li>Compras — cómputo de crédito fiscal automático</li>
+              <li>Cobros y pagos — impacto en tesorería en tiempo real</li>
+              <li>Cuentas bancarias y caja — saldos y movimientos</li>
+              <li>Retenciones de IIBB por agentes de retención</li>
+              <li>Vinculación con Punto de Venta de TRIBUT.AR</li>
+            </ul>
+            <a href="https://pymez-360.vercel.app/" target="_blank" class="app-btn">
+              Abrir PyMEZ 360
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sueldos 360 -->
+        <div class="app-card violet">
+          <div class="app-card-header">
+            <p class="app-card-tag">Plataforma 03</p>
+            <div class="app-card-icon">👥</div>
+            <p class="app-card-name">Sueldos 360</p>
+            <p class="app-card-desc">
+              Gestión laboral completa. Permite trabajar el costo laboral real, la diferencia
+              entre bruto y neto, y las cargas sociales por convenio.
+            </p>
+          </div>
+          <div class="app-card-body">
+            <ul class="app-features">
+              <li>Alta de empleados con categoría CCT y antigüedad</li>
+              <li>Liquidación mensual automática por convenio</li>
+              <li>Descuentos al trabajador — jubilación y obra social</li>
+              <li>Contribuciones patronales — costo laboral total</li>
+              <li>Generación e impresión de recibos de sueldo</li>
+              <li>Sincronización F.931 con TRIBUT.AR</li>
+            </ul>
+            <a href="https://sueldos360.vercel.app/" target="_blank" class="app-btn">
+              Abrir Sueldos 360
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRACIÓN -->
+  <div class="integration-bg" id="integracion">
+    <section>
+      <div class="container">
+        <p class="section-eyebrow" style="color: var(--slate)">Integración entre plataformas</p>
+        <h2 class="section-title">Las tres plataformas se hablan entre sí</h2>
+        <p class="section-sub">
+          El alumno opera un ciclo real. Los datos de una plataforma alimentan automáticamente a las otras,
+          igual que en una empresa real.
+        </p>
+
+        <div class="integration-flow">
+          <div class="flow-node blue">
+            <div class="flow-node-icon">🏛️</div>
+            <div class="flow-node-name">TRIBUT.AR</div>
+            <div class="flow-node-items">Habilita PV · IIBB<br>F.931 · VEPs</div>
+          </div>
+          <div class="flow-arrow">⇄</div>
+          <div class="flow-node green">
+            <div class="flow-node-icon">📦</div>
+            <div class="flow-node-name">PyMEZ 360</div>
+            <div class="flow-node-items">Ventas · Compras<br>Tesorería</div>
+          </div>
+          <div class="flow-arrow">⇄</div>
+          <div class="flow-node violet">
+            <div class="flow-node-icon">👥</div>
+            <div class="flow-node-name">Sueldos 360</div>
+            <div class="flow-node-items">Personal · Sueldos<br>Cargas sociales</div>
+          </div>
+        </div>
+
+        <div class="integration-points">
+          <div class="integration-point">
+            <div class="integration-point-dot" style="background: var(--blue)"></div>
+            <div class="integration-point-text">
+              <strong>PV habilitado en TRIBUT.AR → PyMEZ 360</strong>
+              El Punto de Venta autorizado en TRIBUT.AR habilita la emisión de comprobantes desde PyMEZ 360 con CAE válido.
+            </div>
+          </div>
+          <div class="integration-point">
+            <div class="integration-point-dot" style="background: var(--green)"></div>
+            <div class="integration-point-text">
+              <strong>Ventas en PyMEZ 360 → Base de IIBB</strong>
+              Las ventas registradas en PyMEZ 360 se sincronizan automáticamente como base imponible para la DDJJ de IIBB en TRIBUT.AR.
+            </div>
+          </div>
+          <div class="integration-point">
+            <div class="integration-point-dot" style="background: var(--violet)"></div>
+            <div class="integration-point-text">
+              <strong>Sueldos 360 → Relaciones Laborales</strong>
+              Empleados, liquidaciones y F.931 de Sueldos 360 se sincronizan con el módulo Relaciones Laborales de TRIBUT.AR.
+            </div>
+          </div>
+          <div class="integration-point">
+            <div class="integration-point-dot" style="background: #F59E0B"></div>
+            <div class="integration-point-text">
+              <strong>Ciclo completo sin saltar entre sistemas</strong>
+              El alumno experimenta el flujo real de una empresa: vender, cobrar, declarar, pagar sueldos y cumplir ante AFIP.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- USOS PEDAGÓGICOS -->
+  <section id="docentes">
+    <div class="container">
+      <p class="section-eyebrow" style="color: var(--violet)">Potencial pedagógico</p>
+      <h2 class="section-title">¿Dónde lo podemos aplicar?</h2>
+      <p class="section-sub">
+        Adaptable a múltiples asignaturas, niveles y diseños curriculares según el alcance que el docente defina.
+      </p>
+
+      <div class="pills-wrap">
+        <span class="pill blue">Sistema impositivo</span>
+        <span class="pill blue">Liquidación de impuestos</span>
+        <span class="pill green">Contabilidad</span>
+        <span class="pill green">Gestión comercial</span>
+        <span class="pill violet">Liquidación de sueldos</span>
+        <span class="pill violet">Gestión de RRHH</span>
+        <span class="pill amber">Legales y tributación</span>
+        <span class="pill amber">Práctica profesionalizante</span>
+        <span class="pill teal">Economía de la empresa</span>
+        <span class="pill teal">Administración de PyMEs</span>
+      </div>
+
+      <div style="margin-top: 20px; padding: 14px 18px; background: var(--slate-l); border: 1px solid var(--border); border-radius: 12px;">
+        <p style="font-size: 13px; color: var(--slate);">
+          📚 <strong style="color: var(--text)">Niveles:</strong>
+          Secundaria técnica y bachiller · Institutos terciarios de gestión · Formación docente en Ciencias Económicas
+        </p>
+      </div>
+
+      <!-- Card para docentes -->
+      <div class="docentes-card" style="margin-top: 48px;">
+        <div class="docentes-card-content">
+          <h2>Guía de inicio para docentes</h2>
+          <p>
+            Para incorporar el ecosistema en tu aula solo necesitás que los alumnos creen
+            su usuario. No requiere instalación, es gratuito y está disponible desde cualquier dispositivo.
+          </p>
+          <div class="docentes-steps">
+            <div class="docentes-step">
+              <div class="docentes-step-num">1</div>
+              <p>Creá tu usuario en <strong>TRIBUT.AR</strong> con tu correo educativo y configurá una empresa del rubro que trabajás con tus estudiantes.</p>
+            </div>
+            <div class="docentes-step">
+              <div class="docentes-step-num">2</div>
+              <p>Registrá la misma empresa en <strong>PyMEZ 360</strong> y vinculala con el Punto de Venta habilitado en TRIBUT.AR.</p>
+            </div>
+            <div class="docentes-step">
+              <div class="docentes-step-num">3</div>
+              <p>Explorá el tablero, registrá ventas y compras de prueba. Cuando vayas a sueldos, ingresá en <strong>Sueldos 360</strong> con el código de sincronización.</p>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; min-width: 200px;">
+          <a href="https://tributar2026nuevo.vercel.app/" target="_blank"
+            style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 22px; background: var(--blue); color: white; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none;">
+            🏛️ TRIBUT.AR
+          </a>
+          <a href="https://pymez-360.vercel.app/" target="_blank"
+            style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 22px; background: var(--green); color: white; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none;">
+            📦 PyMEZ 360
+          </a>
+          <a href="https://sueldos360.vercel.app/" target="_blank"
+            style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 22px; background: var(--violet); color: white; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none;">
+            👥 Sueldos 360
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <div class="footer-logo-box">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>GEST-AR</span>
+      </div>
+      <div class="footer-apps">
+        <a href="https://tributar2026nuevo.vercel.app/" target="_blank" class="footer-app-link blue">TRIBUT.AR →</a>
+        <a href="https://pymez-360.vercel.app/" target="_blank" class="footer-app-link green">PyMEZ 360 →</a>
+        <a href="https://sueldos360.vercel.app/" target="_blank" class="footer-app-link violet">Sueldos 360 →</a>
+      </div>
+      <p class="footer-disclaimer">
+        ⚠️ <strong style="color: #64748B">SITIO EDUCATIVO — SIN VALIDEZ FISCAL NI LEGAL.</strong>
+        Las plataformas TRIBUT.AR, PyMEZ 360 y Sueldos 360 son simuladores didácticos desarrollados
+        con fines exclusivamente pedagógicos en el marco de la Diplomatura Superior en Ciencias Económicas.
+        No constituyen herramientas oficiales de AFIP, ARCA ni ningún organismo público.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
