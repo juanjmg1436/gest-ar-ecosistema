@@ -622,6 +622,116 @@
       color: #CBD5E1;
     }
 
+    /* ── CURSOS AUTOASISTIDOS ── */
+    .cursos-section {
+      border-top: 1px solid var(--border);
+      padding: 56px 0;
+      background: white;
+    }
+    .cursos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .curso-card {
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 22px;
+      background: white;
+      transition: all 0.22s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .curso-card:hover {
+      border-color: #CBD5E1;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
+    }
+    .curso-icon { font-size: 26px; line-height: 1; }
+    .curso-cat {
+      font-size: 9px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: #94A3B8;
+    }
+    .curso-name {
+      font-size: 15px; font-weight: 800; color: var(--navy);
+      letter-spacing: -0.2px; line-height: 1.3;
+    }
+    .curso-meta { display: flex; gap: 6px; flex-wrap: wrap; }
+    .curso-badge {
+      font-size: 10px; font-weight: 700; padding: 3px 9px;
+      border-radius: 999px; background: var(--slate-l);
+      color: #475569; border: 1px solid var(--border);
+    }
+    .curso-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12px; font-weight: 700; color: var(--blue);
+      text-decoration: none; padding-top: 8px;
+      border-top: 1px solid var(--border); margin-top: auto;
+      transition: color 0.15s;
+    }
+    .curso-link:hover { color: var(--blue-d); }
+    .cursos-cta {
+      text-align: center; margin-top: 32px;
+    }
+    .cursos-cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 30px; background: var(--navy); color: white;
+      border-radius: 12px; font-size: 14px; font-weight: 700;
+      text-decoration: none; transition: all 0.2s; letter-spacing: -0.2px;
+    }
+    .cursos-cta-btn:hover {
+      background: var(--navy-d); transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(28,43,74,0.25);
+    }
+
+    /* ── PORTADAS DE APPS ── */
+    .app-card-cover {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .app-card-cover img {
+      width: 100%;
+      height: 196px;
+      object-fit: cover;
+      object-position: left top;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .app-card:hover .app-card-cover img { transform: scale(1.03); }
+    .app-card-cover-tag {
+      position: absolute;
+      bottom: 10px;
+      left: 14px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(4px);
+    }
+    .app-card.blue   .app-card-cover-tag { color: var(--blue);   }
+    .app-card.green  .app-card-cover-tag { color: var(--green);  }
+    .app-card.violet .app-card-cover-tag { color: var(--violet); }
+
+    .comp-card-cover {
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .comp-card-cover img {
+      width: 100%;
+      height: 168px;
+      object-fit: cover;
+      object-position: left top;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .comp-card:hover .comp-card-cover img { transform: scale(1.03); }
+
     /* ── APPS COMPLEMENTARIAS ── */
     .complement-section {
       background: var(--slate-l);
@@ -778,14 +888,133 @@
     .nav-donar:hover { background: #FDE68A; }
 
     /* ── MOBILE ── */
-    @media (max-width: 640px) {
-      .nav-links .nav-link { padding: 5px 10px; font-size: 12px; }
-      .flow-arrow { display: none; }
-      .flow-node { min-width: 140px; padding: 16px 20px; }
-      .docentes-card { padding: 28px 24px; }
+
+    /* Tablet / pantalla mediana */
+    @media (max-width: 768px) {
+      .hero { padding: 60px 20px 52px; }
+      .hero-cta { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-outline { width: 100%; max-width: 300px; justify-content: center; }
+      section { padding: 52px 0; }
+      .integration-flow { flex-direction: column; align-items: center; gap: 6px; }
+      .flow-arrow { transform: rotate(90deg); padding: 2px 0; font-size: 20px; }
+      .flow-node { min-width: 220px; width: 100%; max-width: 300px; }
+      .integration-points { grid-template-columns: 1fr; }
+      .docentes-card { gap: 24px; }
+      .complement-grid { gap: 16px; }
+      .saberes-grid { gap: 14px; }
+      .modelo-grid { gap: 12px; }
     }
-    @media (max-width: 480px) {
-      .nav-links { display: none; }
+
+    /* Celular */
+    @media (max-width: 640px) {
+      /* Navbar: ocultar links de apps, mantener botón Apoyar */
+      .nav-links .nav-link { display: none; }
+      .nav-links { gap: 0; }
+      .nav-donar { font-size: 12px; padding: 6px 12px; }
+
+      /* Container */
+      .container { padding: 0 16px; }
+
+      /* Hero */
+      .hero { padding: 44px 16px 40px; }
+      .hero-eyebrow { font-size: 10px; letter-spacing: 2px; }
+      .hero-subtitle { font-size: 15px; margin-bottom: 28px; }
+      .hero-badge { font-size: 11px; padding: 5px 14px; }
+      .btn-primary, .btn-outline { max-width: 100%; }
+
+      /* Secciones */
+      section { padding: 40px 0; }
+      .section-title { font-size: 24px; letter-spacing: -0.5px; }
+      .section-sub { font-size: 14px; }
+
+      /* App cards */
+      .app-card-header { padding: 20px 18px 16px; }
+      .app-card-body { padding: 14px 18px 18px; }
+      .app-card-name { font-size: 20px; }
+      .app-card-icon { width: 44px; height: 44px; font-size: 20px; border-radius: 12px; }
+
+      /* Integración */
+      .integration-bg section { padding: 36px 0; }
+      .integration-flow { margin: 28px 0 24px; gap: 4px; }
+      .flow-node { padding: 14px 20px; min-width: 180px; }
+      .flow-node-icon { font-size: 22px; }
+      .flow-node-name { font-size: 13px; }
+      .flow-node-items { font-size: 10px; }
+      .integration-point { padding: 12px 14px; gap: 10px; }
+      .integration-point-text { font-size: 12px; }
+
+      /* Saberes */
+      .saber-card { padding: 20px 18px; }
+      .saber-title { font-size: 13px; }
+      .saber-list { font-size: 12px; line-height: 1.75; }
+
+      /* Modelo */
+      .modelo-pillar { padding: 20px 18px; }
+      .modelo-pillar-title { font-size: 15px; }
+      .modelo-pillar-text { font-size: 12px; }
+      .modelo-quote p { font-size: 12px; }
+      .tech-badge { font-size: 10px; }
+
+      /* Docentes */
+      .docentes-card { padding: 24px 18px; flex-direction: column; }
+      .docentes-card-content { min-width: unset; }
+      .docentes-card h2 { font-size: 22px; }
+      .docentes-card p { font-size: 13px; margin-bottom: 16px; }
+      .docentes-card > div:last-child { min-width: unset; width: 100%; }
+      .docentes-card > div:last-child a { width: 100%; box-sizing: border-box; }
+
+      /* Portadas */
+      .app-card-cover img { height: 160px; }
+      .comp-card-cover img { height: 140px; }
+
+      /* Cursos */
+      .cursos-section { padding: 40px 0; }
+      .cursos-grid { gap: 12px; margin-top: 24px; }
+      .curso-card { padding: 16px 16px; gap: 8px; }
+      .curso-name { font-size: 14px; }
+      .cursos-cta { margin-top: 24px; }
+      .cursos-cta-btn { padding: 12px 22px; font-size: 13px; width: 100%; justify-content: center; }
+
+      /* Complementos */
+      .complement-section { padding: 40px 0; }
+      .comp-card-header { padding: 18px 18px 14px; }
+      .comp-card-body { padding: 12px 18px 16px; }
+      .comp-name { font-size: 16px; }
+      .comp-desc { font-size: 12px; }
+      .comp-features li { font-size: 12px; }
+
+      /* Pills */
+      .pill { font-size: 12px; padding: 6px 14px; }
+
+      /* Footer */
+      footer { padding: 32px 16px; }
+      .footer-inner { gap: 14px; }
+      .footer-apps { gap: 10px; font-size: 11px; }
+      .footer-logo span { font-size: 15px; }
+    }
+
+    /* Celular pequeño */
+    @media (max-width: 400px) {
+      nav { padding: 0 14px; }
+      .nav-logo-name { font-size: 16px; }
+      .nav-logo-icon { width: 30px; height: 30px; border-radius: 8px; }
+
+      .hero { padding: 36px 14px 32px; }
+      .hero-stripe span { width: 60px; }
+      .hero-badges { gap: 6px; }
+
+      .container { padding: 0 14px; }
+      .section-title { font-size: 22px; }
+
+      /* Modal */
+      .modal-box { padding: 24px 18px; margin: 10px; border-radius: 18px; }
+      .donation-title { font-size: 18px; }
+      .donation-rationale { font-size: 12px; }
+      .donation-data { padding: 16px 16px; }
+      .donation-row-val { font-size: 13px; }
+
+      .docentes-card { padding: 20px 14px; }
+      .pills-wrap { gap: 7px; }
     }
   </style>
 </head>
@@ -850,15 +1079,9 @@
 
         <!-- TRIBUT.AR -->
         <div class="app-card blue">
-          <div class="app-card-header">
-            <p class="app-card-tag">Plataforma 01</p>
-            <div class="app-card-icon">🏛️</div>
-            <p class="app-card-name">TRIBUT.AR</p>
-            <p class="app-card-desc">
-              Simula las obligaciones impositivas en <strong>dos jurisdicciones</strong>:
-              la nacional ante ARCA/AFIP (IVA, Ganancias, Monotributo, Autónomos) y la provincial
-              ante la ATM Misiones (Ingresos Brutos y otros tributos locales).
-            </p>
+          <div class="app-card-cover">
+            <img src="img/banner-tributar.jpg" alt="TRIBUT.AR — Gestión fiscal y administrativa" loading="lazy">
+            <span class="app-card-cover-tag">Plataforma 01</span>
           </div>
           <div class="app-card-body">
             <ul class="app-features">
@@ -878,14 +1101,9 @@
 
         <!-- PyMEZ 360 -->
         <div class="app-card green">
-          <div class="app-card-header">
-            <p class="app-card-tag">Plataforma 02</p>
-            <div class="app-card-icon">📦</div>
-            <p class="app-card-name">PyMEZ 360</p>
-            <p class="app-card-desc">
-              Gestión comercial integrada con TRIBUT.AR. Las ventas registradas acá
-              alimentan automáticamente la base imponible de IIBB.
-            </p>
+          <div class="app-card-cover">
+            <img src="img/banner-pymez.jpg" alt="PyMEZ 360 — Gestión comercial y operativa" loading="lazy">
+            <span class="app-card-cover-tag">Plataforma 02</span>
           </div>
           <div class="app-card-body">
             <ul class="app-features">
@@ -905,14 +1123,9 @@
 
         <!-- Sueldos 360 -->
         <div class="app-card violet">
-          <div class="app-card-header">
-            <p class="app-card-tag">Plataforma 03</p>
-            <div class="app-card-icon">👥</div>
-            <p class="app-card-name">Sueldos 360</p>
-            <p class="app-card-desc">
-              Gestión laboral completa. Permite trabajar el costo laboral real, la diferencia
-              entre bruto y neto, y las cargas sociales por convenio.
-            </p>
+          <div class="app-card-cover">
+            <img src="img/banner-sueldos.jpg" alt="Sueldos 360 — Liquidación y administración de sueldos" loading="lazy">
+            <span class="app-card-cover-tag">Plataforma 03</span>
           </div>
           <div class="app-card-body">
             <ul class="app-features">
@@ -934,6 +1147,113 @@
     </div>
   </section>
 
+  <!-- CONSIGNA DE INICIO PARA DOCENTES -->
+  <section style="background: var(--slate-l); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 0;">
+    <div class="container">
+      <p class="section-eyebrow" style="color: var(--blue);">Consigna de inicio · Ecosistema administrativo</p>
+      <h2 class="section-title">Primeros pasos en el ecosistema</h2>
+      <p class="section-sub" style="margin-bottom: 36px;">
+        Una consigna sencilla para que docentes y estudiantes recorran el ciclo completo
+        de las tres plataformas por primera vez. No requiere conocimiento previo.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+        <div style="background: white; border: 2px solid rgba(24,95,165,0.2); border-radius: 18px; padding: 24px 22px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--blue-l); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">🏛️</div>
+            <div>
+              <p style="font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 1px;">Paso 1 · TRIBUT.AR</p>
+              <p style="font-size: 15px; font-weight: 800; color: var(--blue-d); letter-spacing: -0.2px;">Configurá la empresa</p>
+            </div>
+          </div>
+          <ol style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--blue-l); color: var(--blue); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">1</span>
+              Creá un usuario con tu correo educativo.
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--blue-l); color: var(--blue); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">2</span>
+              Registrá una empresa con el rubro que trabajás en clase.
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--blue-l); color: var(--blue); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">3</span>
+              Elegí régimen (Monotributo o General) y habilitá un Punto de Venta.
+            </li>
+          </ol>
+          <a href="https://tributar2026nuevo.vercel.app/" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 7px; padding: 11px 16px; background: var(--blue); color: white; border-radius: 10px; font-size: 13px; font-weight: 700; text-decoration: none; margin-top: auto;">
+            Abrir TRIBUT.AR →
+          </a>
+        </div>
+
+        <div style="background: white; border: 2px solid rgba(59,109,17,0.2); border-radius: 18px; padding: 24px 22px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--green-l); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">📦</div>
+            <div>
+              <p style="font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 1px;">Paso 2 · PyMEZ 360</p>
+              <p style="font-size: 15px; font-weight: 800; color: var(--green-d); letter-spacing: -0.2px;">Registrá operaciones</p>
+            </div>
+          </div>
+          <ol style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--green-l); color: var(--green); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">1</span>
+              Ingresá a PyMEZ 360 con el mismo correo.
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--green-l); color: var(--green); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">2</span>
+              Registrá al menos una venta y una compra del mes.
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--green-l); color: var(--green); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">3</span>
+              Observá cómo las ventas impactan en el IVA y la base de IIBB en TRIBUT.AR.
+            </li>
+          </ol>
+          <a href="https://pymez-360.vercel.app/" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 7px; padding: 11px 16px; background: var(--green); color: white; border-radius: 10px; font-size: 13px; font-weight: 700; text-decoration: none; margin-top: auto;">
+            Abrir PyMEZ 360 →
+          </a>
+        </div>
+
+        <div style="background: white; border: 2px solid rgba(83,74,183,0.2); border-radius: 18px; padding: 24px 22px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--violet-l); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">👥</div>
+            <div>
+              <p style="font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--violet); margin-bottom: 1px;">Paso 3 · Sueldos 360</p>
+              <p style="font-size: 15px; font-weight: 800; color: var(--violet-d); letter-spacing: -0.2px;">Liquidá sueldos</p>
+            </div>
+          </div>
+          <ol style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--violet-l); color: var(--violet); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">1</span>
+              Abrí Sueldos 360 e ingresá la misma empresa.
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--violet-l); color: var(--violet); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">2</span>
+              Dá de alta un empleado con su categoría y sueldo básico.
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--violet-l); color: var(--violet); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">3</span>
+              Liquidá el mes y generá el recibo de sueldo.
+            </li>
+          </ol>
+          <a href="https://sueldos360.vercel.app/" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 7px; padding: 11px 16px; background: var(--violet); color: white; border-radius: 10px; font-size: 13px; font-weight: 700; text-decoration: none; margin-top: auto;">
+            Abrir Sueldos 360 →
+          </a>
+        </div>
+
+      </div>
+
+      <div style="margin-top: 20px; padding: 14px 18px; background: white; border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: flex-start; gap: 12px;">
+        <span style="font-size: 18px; flex-shrink: 0;">💡</span>
+        <p style="font-size: 13px; color: #475569; line-height: 1.65;">
+          <strong style="color: var(--text);">¿Querés una consigna más completa?</strong>
+          El caso de estudio <em>NORTE Distribuciones S.R.L.</em> guía un ciclo mensual completo
+          con 4 módulos y 19 pasos. Podés usarla como modelo para diseñar tus propias consignas.
+          <a href="consigna.html" style="color: var(--blue); font-weight: 700; text-decoration: none;">Ver consigna completa →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- APPS COMPLEMENTARIAS -->
   <div class="complement-section">
     <div class="container">
@@ -947,14 +1267,11 @@
 
         <!-- EmprendePlan -->
         <div class="comp-card orange">
-          <div class="comp-card-header">
+          <div class="comp-card-cover">
+            <img src="img/banner-emprende.jpg" alt="EmprendePlan — Planificación para emprendedores" loading="lazy">
+          </div>
+          <div class="comp-card-header" style="padding: 12px 24px 10px;">
             <span class="comp-badge">Complemento · Emprendimiento</span>
-            <div class="comp-icon">🚀</div>
-            <p class="comp-name">EmprendePlan</p>
-            <p class="comp-desc">
-              Herramienta de planificación para emprendedores. Ayuda a estructurar
-              la idea de negocio, proyectar ingresos y organizar el plan de acción.
-            </p>
           </div>
           <div class="comp-card-body">
             <ul class="comp-features">
@@ -972,14 +1289,11 @@
 
         <!-- Documentar -->
         <div class="comp-card teal">
-          <div class="comp-card-header">
+          <div class="comp-card-cover">
+            <img src="img/banner-documentar.jpg" alt="Documentar — Documentos profesionales con IA" loading="lazy">
+          </div>
+          <div class="comp-card-header" style="padding: 12px 24px 10px;">
             <span class="comp-badge">Complemento · Documentación</span>
-            <div class="comp-icon">📝</div>
-            <p class="comp-name">Documentar</p>
-            <p class="comp-desc">
-              Generador de documentos profesionales para la gestión administrativa.
-              Contratos, notas, informes y formularios listos para usar.
-            </p>
           </div>
           <div class="comp-card-body">
             <ul class="comp-features">
@@ -995,6 +1309,117 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </div>
+
+  <!-- CURSOS AUTOASISTIDOS -->
+  <div class="cursos-section">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;">
+        <p class="section-eyebrow" style="color: #94A3B8; margin-bottom: 0;">Tercer nivel · Campus Virtual ENS N°9</p>
+        <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A;">🚧 En desarrollo</span>
+      </div>
+      <h2 class="section-title">Formación autoasistida y gratuita</h2>
+      <p class="section-sub">
+        Cursos libres y sin instalación para ampliar la formación integral del estudiante más allá
+        de la gestión administrativa. <strong style="color: #92400E;">Los cursos están en proceso de desarrollo activo</strong> —
+        algunos pueden estar incompletos o en revisión. Disponibles en el Campus Virtual con certificado al completar.
+      </p>
+
+      <div class="cursos-grid">
+
+        <div class="curso-card">
+          <div class="curso-icon">💰</div>
+          <p class="curso-cat">Educación Financiera</p>
+          <p class="curso-name">Finanzas Personales para Jóvenes</p>
+          <p style="font-size:12px;color:#475569;line-height:1.5;">Aprendé a manejar tu dinero, armar un presupuesto, ahorrar e invertir desde el inicio de tu vida económica.</p>
+          <div class="curso-meta">
+            <span class="curso-badge">⏱ 15 horas</span>
+            <span class="curso-badge">📖 31 clases</span>
+          </div>
+          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
+            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="curso-card">
+          <div class="curso-icon">💼</div>
+          <p class="curso-cat">Empleabilidad</p>
+          <p class="curso-name">Ruta al Empleo</p>
+          <p style="font-size:12px;color:#475569;line-height:1.5;">Búsqueda de empleo, CV, LinkedIn y preparación para entrevistas laborales.</p>
+          <div class="curso-meta">
+            <span class="curso-badge">⏱ 20 horas</span>
+            <span class="curso-badge">📖 8 clases</span>
+          </div>
+          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
+            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="curso-card">
+          <div class="curso-icon">🤖</div>
+          <p class="curso-cat">Ciudadanía Digital</p>
+          <p class="curso-name">Ciudadanía Digital, IA e Inclusión</p>
+          <p style="font-size:12px;color:#475569;line-height:1.5;">Identidad digital, inteligencia artificial, desinformación y derechos digitales.</p>
+          <div class="curso-meta">
+            <span class="curso-badge">⏱ 10 horas</span>
+            <span class="curso-badge">📖 8 clases</span>
+          </div>
+          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
+            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="curso-card">
+          <div class="curso-icon">🌱</div>
+          <p class="curso-cat">Ambiente y Ciudadanía</p>
+          <p class="curso-name">Ambiente, Comunidad y Participación Ciudadana</p>
+          <p style="font-size:12px;color:#475569;line-height:1.5;">Cambio climático, biodiversidad, economía circular y proyectos de impacto local.</p>
+          <div class="curso-meta">
+            <span class="curso-badge">⏱ 8 horas</span>
+            <span class="curso-badge">📖 8 clases</span>
+          </div>
+          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
+            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="curso-card">
+          <div class="curso-icon">🏃</div>
+          <p class="curso-cat">Salud y Bienestar</p>
+          <p class="curso-name">Nutrición y Actividad Física</p>
+          <p style="font-size:12px;color:#475569;line-height:1.5;">Alimentación, hidratación, movimiento y hábitos saludables sostenibles.</p>
+          <div class="curso-meta">
+            <span class="curso-badge">⏱ 10 horas</span>
+            <span class="curso-badge">📖 8 clases</span>
+          </div>
+          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
+            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="curso-card">
+          <div class="curso-icon">🚦</div>
+          <p class="curso-cat">Seguridad Vial</p>
+          <p class="curso-name">Educación Vial: Normas para Todos</p>
+          <p style="font-size:12px;color:#475569;line-height:1.5;">Señales de tránsito, derechos y responsabilidades de peatones y conductores.</p>
+          <div class="curso-meta">
+            <span class="curso-badge">⏱ 8 horas</span>
+            <span class="curso-badge">📖 8 clases</span>
+          </div>
+          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
+            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="cursos-cta">
+        <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="cursos-cta-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Ver todos los cursos en el Campus Virtual
+        </a>
       </div>
     </div>
   </div>
@@ -1387,6 +1812,7 @@
         <a href="https://sueldos360.vercel.app/" target="_blank" class="footer-app-link violet">Sueldos 360 →</a>
         <a href="https://emprendeplan.vercel.app/" target="_blank" class="footer-app-link" style="color:#FB923C;">EmprendePlan →</a>
         <a href="https://documentar.vercel.app/" target="_blank" class="footer-app-link" style="color:#2DD4BF;">Documentar →</a>
+        <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="footer-app-link" style="color:#94A3B8;">Campus Virtual →</a>
       </div>
 
       <button onclick="openDonation()"
