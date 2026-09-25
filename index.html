@@ -757,12 +757,14 @@
     }
     .comp-card.orange .comp-card-header { background: #FFF7ED; border-bottom: 1.5px solid rgba(249,115,22,0.15); }
     .comp-card.teal   .comp-card-header { background: #F0FDFA; border-bottom: 1.5px solid rgba(20,184,166,0.15); }
+    .comp-card.indigo .comp-card-header { background: #EEF2FF; border-bottom: 1.5px solid rgba(99,102,241,0.15); }
     .comp-badge {
       font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
       padding: 2px 8px; border-radius: 999px; display: inline-block; margin-bottom: 12px;
     }
     .comp-card.orange .comp-badge { background: #FED7AA; color: #C2410C; }
     .comp-card.teal   .comp-badge { background: #CCFBF1; color: #0F766E; }
+    .comp-card.indigo .comp-badge { background: #E0E7FF; color: #3730A3; }
     .comp-icon {
       width: 44px; height: 44px; border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
@@ -770,11 +772,13 @@
     }
     .comp-card.orange .comp-icon { background: rgba(249,115,22,0.12); }
     .comp-card.teal   .comp-icon { background: rgba(20,184,166,0.12); }
+    .comp-card.indigo .comp-icon { background: rgba(99,102,241,0.12); }
     .comp-name {
       font-size: 18px; font-weight: 900; letter-spacing: -0.3px; margin-bottom: 4px;
     }
     .comp-card.orange .comp-name { color: #9A3412; }
     .comp-card.teal   .comp-name { color: #134E4A; }
+    .comp-card.indigo .comp-name { color: #312E81; }
     .comp-desc { font-size: 12.5px; color: var(--slate); line-height: 1.55; }
     .comp-card-body { padding: 16px 24px 20px; }
     .comp-features { list-style: none; margin-bottom: 18px; }
@@ -1064,6 +1068,32 @@
     </div>
   </div>
 
+  <!-- VIDEO EXPLICATIVO -->
+  <section id="video">
+    <div class="container">
+      <p class="section-eyebrow" style="color: var(--blue)">Video explicativo</p>
+      <h2 class="section-title">Conocé el ecosistema en pocos minutos</h2>
+      <p class="section-sub">
+        Un recorrido por las tres plataformas y por el circuito completo que atraviesa el estudiante,
+        desde el alta fiscal hasta las declaraciones juradas.
+      </p>
+      <div style="max-width: 880px; margin: 32px auto 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(15,23,42,.18); background: #000;">
+        <div style="position: relative; padding-top: 56.25%;">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/VpPVyYvSmFM"
+            title="Ecosistema GEST-AR — video explicativo"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 14px; font-size: 13px; color: #64748B;">
+        ¿No carga el video? <a href="https://youtu.be/VpPVyYvSmFM" target="_blank" rel="noopener" style="color: var(--blue); font-weight: 600;">Verlo en YouTube</a>
+      </p>
+    </div>
+  </section>
+
   <!-- PLATAFORMAS -->
   <section id="plataformas">
     <div class="container">
@@ -1261,9 +1291,38 @@
       <h2 class="section-title">Más recursos del ecosistema</h2>
       <p class="section-sub">
         Aplicaciones independientes que amplían las posibilidades del ecosistema.
-        Se pueden usar de forma autónoma o como complemento de las tres plataformas principales.
+        <strong style="color: #166534;">Banco Aula es de acceso público</strong> y puede usarlo cualquier persona.
+        En cambio, <strong style="color: #3730A3;">EmprendePlan y Documentar son de uso interno de la escuela</strong>:
+        se comparten con estudiantes y docentes de la institución.
       </p>
       <div class="complement-grid">
+
+        <!-- Banco Aula · Simulador de homebanking -->
+        <div class="comp-card indigo">
+          <div class="comp-card-cover">
+            <img src="img/banner-banco.jpg" alt="Banco Aula — Simulador de homebanking para banca empresas" loading="lazy">
+          </div>
+          <div class="comp-card-header" style="padding: 12px 24px 10px;">
+            <span class="comp-badge">Complemento · Tesorería</span>
+            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0;">🌐 Acceso público</span>
+          </div>
+          <div class="comp-card-body">
+            <ul class="comp-features">
+              <li>Transferencias, pago de servicios, haberes y VEP de obligaciones fiscales</li>
+              <li>Cobro de ventas y conciliación bancaria</li>
+              <li>Circuito de autorización real: el administrativo carga y el firmante autoriza</li>
+              <li>Jornada guiada de 10 desafíos, con espacios de práctica por grupo</li>
+            </ul>
+            <p style="font-size: 11.5px; color: #3730A3; background: #EEF2FF; border: 1px solid #C7D2FE; border-radius: 8px; padding: 9px 11px; margin: 0 0 14px; line-height: 1.55;">
+              🔒 <strong>No tiene base de datos externa.</strong> Todo queda guardado en el propio dispositivo:
+              los espacios de práctica no se comparten entre equipos y se puede exportar un respaldo para seguir en otro.
+            </p>
+            <a href="https://simuladorhomebanking.netlify.app/" target="_blank" class="comp-btn">
+              Abrir Banco Aula
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
 
         <!-- EmprendePlan -->
         <div class="comp-card orange">
@@ -1272,6 +1331,7 @@
           </div>
           <div class="comp-card-header" style="padding: 12px 24px 10px;">
             <span class="comp-badge">Complemento · Emprendimiento</span>
+            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #E0E7FF; color: #3730A3; border: 1px solid #C7D2FE;">🔒 Uso interno de la escuela</span>
           </div>
           <div class="comp-card-body">
             <ul class="comp-features">
@@ -1294,6 +1354,7 @@
           </div>
           <div class="comp-card-header" style="padding: 12px 24px 10px;">
             <span class="comp-badge">Complemento · Documentación</span>
+            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #E0E7FF; color: #3730A3; border: 1px solid #C7D2FE;">🔒 Uso interno de la escuela</span>
           </div>
           <div class="comp-card-body">
             <ul class="comp-features">
@@ -1319,12 +1380,13 @@
       <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;">
         <p class="section-eyebrow" style="color: #94A3B8; margin-bottom: 0;">Tercer nivel · Campus Virtual ENS N°9</p>
         <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A;">🚧 En desarrollo</span>
+        <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #E0E7FF; color: #3730A3; border: 1px solid #C7D2FE;">🔒 Uso interno de la escuela</span>
       </div>
       <h2 class="section-title">Formación autoasistida y gratuita</h2>
       <p class="section-sub">
         Cursos libres y sin instalación para ampliar la formación integral del estudiante más allá
         de la gestión administrativa. <strong style="color: #92400E;">Los cursos están en proceso de desarrollo activo</strong> —
-        algunos pueden estar incompletos o en revisión. Disponibles en el Campus Virtual con certificado al completar.
+        algunos pueden estar incompletos o en revisión. <strong style="color: #3730A3;">Son de uso interno de la escuela</strong>, disponibles en el Campus Virtual para estudiantes y docentes de la institución.
       </p>
 
       <div class="cursos-grid">
