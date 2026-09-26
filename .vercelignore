@@ -1,0 +1,3 @@
+# El portal se publica con `npx vercel deploy --prod` desde esta carpeta.
+# El material didactico se versiona acá pero no forma parte del sitio.
+material-didactico

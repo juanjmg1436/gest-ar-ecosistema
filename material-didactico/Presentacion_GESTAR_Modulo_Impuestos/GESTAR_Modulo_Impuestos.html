@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEST-AR: Modulo Impuestos</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; }
+    .slide {
+      width: 1280px;
+      height: 960px;
+      margin: 20px auto;
+      padding: 40px;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      page-break-after: always;
+      position: relative;
+    }
+    .slide.dark { background: #282828; color: white; }
+    .slide h1 { font-size: 48px; margin-bottom: 20px; text-align: center; }
+    .slide h2 { font-size: 36px; margin-bottom: 30px; color: #282828; }
+    .slide.dark h2 { color: white; }
+    .slide p, .slide li { font-size: 18px; margin: 10px 0; line-height: 1.6; }
+    .slide ul { margin-left: 40px; }
+    .platforms { display: flex; gap: 20px; margin-top: 40px; }
+    .platform {
+      flex: 1;
+      padding: 30px;
+      border-radius: 8px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 400px;
+    }
+    .platform.tributar { background: #0064FF; }
+    .platform.pymez { background: #00B464; }
+    .platform.sueldos { background: #B400C8; }
+    .platform h3 { font-size: 24px; margin-bottom: 20px; }
+    .qr-container {
+      display: flex;
+      gap: 40px;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-top: 40px;
+    }
+    .qr-item {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .qr-item img {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #ccc;
+      padding: 10px;
+      background: white;
+    }
+    .qr-label {
+      margin-top: 15px;
+      font-weight: bold;
+      white-space: pre-line;
+      color: white;
+      font-size: 14px;
+    }
+    .flow { text-align: center; font-size: 20px; margin: 15px 0; }
+    .flow-arrow { font-size: 24px; margin: 10px 0; }
+  </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide dark">
+  <h1 style="margin-top: 100px; font-size: 64px;">GEST-AR</h1>
+  <p style="text-align: center; margin-top: 50px; font-size: 28px; color: #C8C8C8;">
+    Ecosistema Digital para la Gestion Administrativa<br>
+    Modulo: Impuestos
+  </p>
+</div>
+
+<!-- Slide 2: Introduccion -->
+<div class="slide">
+  <h2>¿Que es GEST-AR?</h2>
+  <ul>
+    <li>Plataforma educativa de gestion administrativa integral</li>
+    <li>Simula operaciones reales de una empresa</li>
+    <li>Integra 3 modulos interdependientes</li>
+    <li>Ideal para diplomaturas y programas de capacitacion</li>
+    <li>Acceso 100% en linea</li>
+  </ul>
+</div>
+
+<!-- Slide 3: Las 3 plataformas -->
+<div class="slide">
+  <h2>El Ecosistema en 3 Plataformas</h2>
+  <div class="platforms">
+    <div class="platform tributar">
+      <h3>TRIBUT.AR</h3>
+      <p><strong>Obligaciones Impositivas</strong></p>
+      <ul style="list-style: none; text-align: center;">
+        <li>• IVA</li>
+        <li>• Ganancias</li>
+        <li>• Monotributo</li>
+        <li>• IIBB</li>
+      </ul>
+    </div>
+    <div class="platform pymez">
+      <h3>PyMEZ 360</h3>
+      <p><strong>Gestion Comercial</strong></p>
+      <ul style="list-style: none; text-align: center;">
+        <li>• Ventas</li>
+        <li>• Compras</li>
+        <li>• Tesoreria</li>
+        <li>• Vinculacion fiscal</li>
+      </ul>
+    </div>
+    <div class="platform sueldos">
+      <h3>Sueldos 360</h3>
+      <p><strong>Relaciones Laborales</strong></p>
+      <ul style="list-style: none; text-align: center;">
+        <li>• Empleados</li>
+        <li>• Liquidacion</li>
+        <li>• Aportes</li>
+        <li>• Recibos</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 4: TRIBUT.AR -->
+<div class="slide">
+  <h2>TRIBUT.AR - Obligaciones Impositivas</h2>
+  <ul>
+    <li>Configurar empresa y domicilio fiscal</li>
+    <li>Registrar impuestos nacionales y provinciales</li>
+    <li>Liquidar IVA mensualmente</li>
+    <li>Calcular impuesto a las Ganancias</li>
+    <li>Gestionar Monotributo o regimen general</li>
+    <li>Integracion con Billetera Fiscal (VEPs)</li>
+  </ul>
+</div>
+
+<!-- Slide 5: PyMEZ 360 -->
+<div class="slide">
+  <h2>PyMEZ 360 - Gestion Comercial</h2>
+  <ul>
+    <li>Registrar ventas con facturas A, B, C</li>
+    <li>Registrar compras y computo de credito fiscal</li>
+    <li>Controlar cobros y pagos</li>
+    <li>Gestionar tesoreria (caja y bancos)</li>
+    <li>Retenciones de IIBB automaticas</li>
+    <li>Vinculacion automatica con TRIBUT.AR</li>
+  </ul>
+</div>
+
+<!-- Slide 6: Sueldos 360 -->
+<div class="slide">
+  <h2>Sueldos 360 - Relaciones Laborales</h2>
+  <ul>
+    <li>Alta de empleados por categoria CCT</li>
+    <li>Liquidacion automatica mensual</li>
+    <li>Calculo de descuentos (jubilacion, O.S.)</li>
+    <li>Contribuciones patronales</li>
+    <li>Generacion e impresion de recibos</li>
+    <li>Sincronizacion de datos con TRIBUT.AR</li>
+  </ul>
+</div>
+
+<!-- Slide 7: Flujo integrado -->
+<div class="slide">
+  <h2>Flujo Integrado del Ecosistema</h2>
+  <div class="flow">
+    <div class="flow-arrow">1. TRIBUT.AR: Configurar empresa y regimen fiscal</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-arrow">2. PyMEZ 360: Registrar operaciones (ventas y compras)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-arrow">3. Sueldos 360: Liquidar nomina de empleados</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-arrow">4. TRIBUT.AR: Declara impuestos con datos actualizados</div>
+  </div>
+</div>
+
+<!-- Slide 8: QR Codes -->
+<div class="slide dark">
+  <h2 style="color: white; text-align: center; margin-bottom: 40px;">Acceso Rapido - Escanea los codigos</h2>
+  <div class="qr-container">
+    <div class="qr-item">
+      <img src="qr_gestar.png" alt="GEST-AR">
+      <div class="qr-label">GEST-AR<br>Ecosistema</div>
+    </div>
+    <div class="qr-item">
+      <img src="qr_tributar.png" alt="TRIBUT.AR">
+      <div class="qr-label">TRIBUT.AR<br>Impuestos</div>
+    </div>
+    <div class="qr-item">
+      <img src="qr_pymez.png" alt="PyMEZ 360">
+      <div class="qr-label">PyMEZ 360<br>Comercial</div>
+    </div>
+    <div class="qr-item">
+      <img src="qr_sueldos.png" alt="Sueldos 360">
+      <div class="qr-label">Sueldos 360<br>Laborales</div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 9: Proximos pasos -->
+<div class="slide">
+  <h2>Proximos Pasos</h2>
+  <ul>
+    <li>1. Acceder a TRIBUT.AR y crear una empresa</li>
+    <li>2. Configurar el regimen fiscal (Monotributo o General)</li>
+    <li>3. Registrar operaciones en PyMEZ 360</li>
+    <li>4. Gestionar nomina en Sueldos 360</li>
+    <li>5. Generar declaraciones impositivas en TRIBUT.AR</li>
+    <li style="margin-top: 30px; font-weight: bold;">✓ Ciclo administrativo completo</li>
+  </ul>
+</div>
+
+<script>
+  // For printing to PDF, use browser print function
+  // File can be converted to PPTX using LibreOffice or online converters
+</script>
+
+</body>
+</html>

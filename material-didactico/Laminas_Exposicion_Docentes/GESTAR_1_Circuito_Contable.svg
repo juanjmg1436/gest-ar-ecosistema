@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#eef2f7"/>
+    </linearGradient>
+    <linearGradient id="motor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <!-- ══ HEADER ══ -->
+  <rect x="0" y="0" width="1920" height="8" fill="#2563eb"/>
+  <rect x="640" y="0" width="640" height="8" fill="#059669"/>
+  <rect x="1280" y="0" width="640" height="8" fill="#9333ea"/>
+
+  <text x="80" y="88" font-size="46" font-weight="700" fill="#0f172a">Cómo se aprende contabilidad en GEST-AR</text>
+  <text x="80" y="128" font-size="24" fill="#64748b">Del hecho económico al estado contable: un ciclo completo con tres plataformas integradas</text>
+
+  <g transform="translate(1620,52)">
+    <rect x="0" y="0" width="220" height="64" rx="12" fill="#0f172a"/>
+    <text x="110" y="30" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">GEST-AR</text>
+    <text x="110" y="52" font-size="13" fill="#94a3b8" text-anchor="middle">Ecosistema digital educativo</text>
+  </g>
+
+  <!-- ══ FILA 1 — LAS TRES PLATAFORMAS ══ -->
+  <text x="80" y="196" font-size="17" font-weight="700" fill="#94a3b8" letter-spacing="2">1 · DONDE OCURRE EL HECHO ECONÓMICO</text>
+
+  <!-- TRIBUT.AR -->
+  <g transform="translate(80,214)">
+    <rect x="4" y="6" width="560" height="196" rx="20" fill="#0f172a" opacity="0.06"/>
+    <rect x="0" y="0" width="560" height="196" rx="20" fill="#ffffff" stroke="#dbeafe" stroke-width="2"/>
+    <rect x="0" y="0" width="560" height="6" rx="3" fill="#2563eb"/>
+    <g transform="translate(34,38)">
+      <rect x="0" y="34" width="56" height="8" rx="2" fill="#2563eb"/>
+      <polygon points="28,2 58,26 -2,26" fill="#2563eb"/>
+      <rect x="4" y="44" width="8" height="30" fill="#60a5fa"/>
+      <rect x="24" y="44" width="8" height="30" fill="#60a5fa"/>
+      <rect x="44" y="44" width="8" height="30" fill="#60a5fa"/>
+      <rect x="-4" y="76" width="64" height="8" rx="2" fill="#2563eb"/>
+    </g>
+    <text x="122" y="60" font-size="30" font-weight="700" fill="#1e3a8a">TRIBUT.AR</text>
+    <text x="122" y="88" font-size="18" fill="#64748b">El marco fiscal donde todo empieza</text>
+    <text x="122" y="126" font-size="18" fill="#334155">· Alta registral y elección de régimen</text>
+    <text x="122" y="152" font-size="18" fill="#334155">· Habilitación del punto de venta</text>
+    <text x="122" y="178" font-size="18" fill="#334155">· Declaraciones juradas y pagos</text>
+  </g>
+
+  <!-- PyMEZ 360 -->
+  <g transform="translate(680,214)">
+    <rect x="4" y="6" width="560" height="196" rx="20" fill="#0f172a" opacity="0.06"/>
+    <rect x="0" y="0" width="560" height="196" rx="20" fill="#ffffff" stroke="#d1fae5" stroke-width="2"/>
+    <rect x="0" y="0" width="560" height="6" rx="3" fill="#059669"/>
+    <g transform="translate(34,40)">
+      <rect x="-2" y="18" width="60" height="46" rx="4" fill="#059669"/>
+      <polygon points="-8,18 66,18 58,2 0,2" fill="#34d399"/>
+      <rect x="18" y="38" width="22" height="26" fill="#ffffff" opacity="0.9"/>
+      <circle cx="14" cy="76" r="6" fill="#059669"/>
+      <circle cx="44" cy="76" r="6" fill="#059669"/>
+    </g>
+    <text x="122" y="60" font-size="30" font-weight="700" fill="#065f46">PyMEZ 360</text>
+    <text x="122" y="88" font-size="18" fill="#64748b">La operación diaria de la empresa</text>
+    <text x="122" y="126" font-size="18" fill="#334155">· Ventas y compras con IVA discriminado</text>
+    <text x="122" y="152" font-size="18" fill="#334155">· Cobros, pagos y tesorería</text>
+    <text x="122" y="178" font-size="18" fill="#334155">· Stock, clientes y proveedores</text>
+  </g>
+
+  <!-- Sueldos 360 -->
+  <g transform="translate(1280,214)">
+    <rect x="4" y="6" width="560" height="196" rx="20" fill="#0f172a" opacity="0.06"/>
+    <rect x="0" y="0" width="560" height="196" rx="20" fill="#ffffff" stroke="#f3e8ff" stroke-width="2"/>
+    <rect x="0" y="0" width="560" height="6" rx="3" fill="#9333ea"/>
+    <g transform="translate(40,40)">
+      <circle cx="16" cy="18" r="13" fill="#9333ea"/>
+      <path d="M -2 62 A 18 18 0 0 1 34 62 Z" fill="#9333ea"/>
+      <circle cx="46" cy="26" r="11" fill="#c084fc"/>
+      <path d="M 30 62 A 16 16 0 0 1 62 62 Z" fill="#c084fc"/>
+    </g>
+    <text x="122" y="60" font-size="30" font-weight="700" fill="#6b21a8">Sueldos 360</text>
+    <text x="122" y="88" font-size="18" fill="#64748b">Las relaciones laborales</text>
+    <text x="122" y="126" font-size="18" fill="#334155">· Alta de empleados por convenio</text>
+    <text x="122" y="152" font-size="18" fill="#334155">· Liquidación mensual y recibos</text>
+    <text x="122" y="178" font-size="18" fill="#334155">· Aportes, contribuciones y F.931</text>
+  </g>
+
+  <!-- Flechas hacia el motor -->
+  <g fill="#94a3b8">
+    <rect x="356" y="424" width="4" height="30" rx="2"/>
+    <polygon points="348,452 368,452 358,468"/>
+    <rect x="958" y="424" width="4" height="30" rx="2"/>
+    <polygon points="950,452 970,452 960,468"/>
+    <rect x="1558" y="424" width="4" height="30" rx="2"/>
+    <polygon points="1550,452 1570,452 1560,468"/>
+  </g>
+
+  <!-- ══ MOTOR CONTABLE ══ -->
+  <g transform="translate(80,478)">
+    <rect x="0" y="0" width="1760" height="228" rx="22" fill="url(#motor)"/>
+    <text x="40" y="52" font-size="17" font-weight="700" fill="#7dd3fc" letter-spacing="2">2 · EL MOTOR CONTABLE</text>
+    <text x="40" y="96" font-size="30" font-weight="700" fill="#ffffff">Cada operación se convierte en un asiento por partida doble</text>
+    <text x="40" y="130" font-size="19" fill="#94a3b8">El estudiante registra una venta y ve, en el mismo instante, el asiento que ese hecho genera.</text>
+    <text x="40" y="158" font-size="19" fill="#94a3b8">La contabilidad deja de ser un ejercicio en papel: es la consecuencia de una decisión.</text>
+
+    <!-- Asiento ejemplo -->
+    <rect x="940" y="30" width="780" height="168" rx="14" fill="#ffffff" opacity="0.07"/>
+    <text x="968" y="60" font-size="16" font-weight="700" fill="#7dd3fc">EJEMPLO — VENTA A CRÉDITO CON IVA</text>
+    <line x1="968" y1="74" x2="1692" y2="74" stroke="#475569" stroke-width="1"/>
+
+    <text x="968"  y="104" font-size="19" font-weight="600" fill="#fbbf24">Debe</text>
+    <text x="1040" y="104" font-size="19" fill="#e2e8f0">Deudores por ventas</text>
+    <text x="1692" y="104" font-size="19" font-weight="600" fill="#e2e8f0" text-anchor="end">121.000,00</text>
+
+    <text x="1008"  y="136" font-size="19" font-weight="600" fill="#4ade80">Haber</text>
+    <text x="1090" y="136" font-size="19" fill="#e2e8f0">Ventas</text>
+    <text x="1692" y="136" font-size="19" fill="#e2e8f0" text-anchor="end">100.000,00</text>
+
+    <text x="1008"  y="168" font-size="19" font-weight="600" fill="#4ade80">Haber</text>
+    <text x="1090" y="168" font-size="19" fill="#e2e8f0">IVA Débito Fiscal</text>
+    <text x="1692" y="168" font-size="19" fill="#e2e8f0" text-anchor="end">21.000,00</text>
+  </g>
+
+  <!-- Flecha al bloque de libros -->
+  <g fill="#94a3b8">
+    <rect x="958" y="716" width="4" height="26" rx="2"/>
+    <polygon points="950,740 970,740 960,756"/>
+  </g>
+
+  <!-- ══ LIBROS Y SALIDAS ══ -->
+  <text x="80" y="792" font-size="17" font-weight="700" fill="#94a3b8" letter-spacing="2">3 · LO QUE EL ESTUDIANTE PUEDE MIRAR Y ENTENDER</text>
+
+  <g transform="translate(80,808)">
+    <g>
+      <rect x="0" y="0" width="330" height="104" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+      <rect x="24" y="30" width="34" height="44" rx="3" fill="#2563eb"/>
+      <rect x="30" y="38" width="22" height="4" fill="#ffffff"/>
+      <rect x="30" y="48" width="22" height="4" fill="#ffffff"/>
+      <rect x="30" y="58" width="14" height="4" fill="#ffffff"/>
+      <text x="78" y="46" font-size="21" font-weight="700" fill="#0f172a">Libro Diario</text>
+      <text x="78" y="72" font-size="16" fill="#64748b">Todos los asientos, en orden</text>
+    </g>
+    <g transform="translate(358,0)">
+      <rect x="0" y="0" width="330" height="104" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+      <rect x="24" y="30" width="34" height="44" rx="3" fill="#059669"/>
+      <rect x="30" y="38" width="10" height="28" fill="#ffffff"/>
+      <rect x="44" y="46" width="8" height="20" fill="#ffffff"/>
+      <text x="78" y="46" font-size="21" font-weight="700" fill="#0f172a">Libro Mayor</text>
+      <text x="78" y="72" font-size="16" fill="#64748b">El saldo de cada cuenta</text>
+    </g>
+    <g transform="translate(716,0)">
+      <rect x="0" y="0" width="330" height="104" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+      <rect x="24" y="30" width="34" height="44" rx="3" fill="#ea580c"/>
+      <rect x="28" y="42" width="26" height="3" fill="#ffffff"/>
+      <rect x="28" y="52" width="26" height="3" fill="#ffffff"/>
+      <rect x="28" y="62" width="26" height="3" fill="#ffffff"/>
+      <text x="78" y="46" font-size="21" font-weight="700" fill="#0f172a">Balance</text>
+      <text x="78" y="72" font-size="16" fill="#64748b">Sumas y saldos, 12 columnas</text>
+    </g>
+    <g transform="translate(1074,0)">
+      <rect x="0" y="0" width="330" height="104" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+      <polyline points="26,68 38,52 48,60 62,34" fill="none" stroke="#9333ea" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="78" y="46" font-size="21" font-weight="700" fill="#0f172a">Resultados</text>
+      <text x="78" y="72" font-size="16" fill="#64748b">Ganancia o pérdida del mes</text>
+    </g>
+    <g transform="translate(1432,0)">
+      <rect x="0" y="0" width="330" height="104" rx="16" fill="#0f172a"/>
+      <rect x="24" y="30" width="34" height="44" rx="3" fill="#38bdf8"/>
+      <text x="41" y="60" font-size="20" font-weight="700" fill="#0f172a" text-anchor="middle">$</text>
+      <text x="78" y="46" font-size="21" font-weight="700" fill="#ffffff">DDJJ y pagos</text>
+      <text x="78" y="72" font-size="16" fill="#94a3b8">IVA · IIBB · F.931</text>
+    </g>
+  </g>
+
+  <!-- ══ FRANJA INFERIOR — EL PRINCIPIO QUE SE REPITE ══ -->
+  <g transform="translate(80,944)">
+    <rect x="0" y="0" width="1760" height="106" rx="18" fill="#fff7ed" stroke="#fed7aa" stroke-width="2"/>
+    <text x="32" y="40" font-size="21" font-weight="700" fill="#9a3412">El mismo principio, tres veces: la obligación nace con el hecho y sólo desaparece cuando se paga</text>
+
+    <g transform="translate(32,58)" font-size="17">
+      <text x="0" y="18" font-weight="700" fill="#ea580c">IVA</text>
+      <text x="52" y="18" fill="#7c2d12">se devenga en cada venta y compra</text>
+      <text x="352" y="18" fill="#c2410c">→</text>
+      <text x="382" y="18" fill="#7c2d12">se liquida el período</text>
+      <text x="562" y="18" fill="#c2410c">→</text>
+      <text x="592" y="18" fill="#7c2d12">se paga o queda a favor</text>
+    </g>
+    <g transform="translate(920,58)" font-size="17">
+      <text x="0" y="18" font-weight="700" fill="#ea580c">IIBB</text>
+      <text x="52" y="18" fill="#7c2d12">nace con la venta</text>
+      <text x="232" y="18" fill="#c2410c">→</text>
+      <text x="262" y="18" fill="#7c2d12">se paga a la DGR</text>
+      <text x="422" y="18" fill="#c2410c">·</text>
+      <text x="446" y="18" font-weight="700" fill="#ea580c">Sueldos</text>
+      <text x="546" y="18" fill="#7c2d12">se devengan</text>
+      <text x="676" y="18" fill="#c2410c">→</text>
+      <text x="706" y="18" fill="#7c2d12">neto y F.931</text>
+    </g>
+  </g>
+</svg>

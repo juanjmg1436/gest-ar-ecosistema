@@ -1,0 +1,44 @@
+
+=================================================================
+  PRESENTACION GESTAR - INSTRUCCIONES
+=================================================================
+
+1. Se han generado los siguientes archivos:
+   ✓ GESTAR_Modulo_Impuestos.html
+   ✓ 4 codigos QR (qr_gestar.png, qr_tributar.png, qr_pymez.png, qr_sueldos.png)
+
+2. OPCION A - Usar el HTML directamente:
+   - Abre GESTAR_Modulo_Impuestos.html en cualquier navegador
+   - Presiona Ctrl+P o Cmd+P para imprimir
+   - Selecciona "Guardar como PDF"
+   - O puedes hacer screenshot de cada diapositiva
+
+3. OPCION B - Convertir a PowerPoint:
+   a) Imprime a PDF (ver opcion A)
+   b) Usa un convertidor online:
+      - https://smallpdf.com/pdf-to-pptx
+      - https://cloudconvert.com/pdf-to-pptx
+
+   c) O usa LibreOffice (si esta instalado):
+      soffice --headless --convert-to pptx GESTAR_Modulo_Impuestos.html
+
+4. OPCION C - Crear manualmente en PowerPoint:
+   - Copia el contenido del HTML a PowerPoint
+   - Agrega los QR codes en la diapositiva 8
+   - Imprime y listo!
+
+=================================================================
+CONTENIDO DE LA PRESENTACION:
+=================================================================
+
+Diapositiva 1: Titulo - GEST-AR (Portada)
+Diapositiva 2: ¿Que es GEST-AR?
+Diapositiva 3: El Ecosistema en 3 Plataformas
+Diapositiva 4: TRIBUT.AR - Obligaciones Impositivas
+Diapositiva 5: PyMEZ 360 - Gestion Comercial
+Diapositiva 6: Sueldos 360 - Relaciones Laborales
+Diapositiva 7: Flujo Integrado del Ecosistema
+Diapositiva 8: Codigos QR - Acceso Rapido
+Diapositiva 9: Proximos Pasos
+
+=================================================================
