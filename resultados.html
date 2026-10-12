@@ -93,6 +93,32 @@
   footer{border-top:1px solid var(--border);padding:22px 0 40px;color:var(--slate);font-size:12.5px}
   footer p{margin:0 0 5px;max-width:80ch}
 
+  /* Acceso con código e instrumento */
+  .acceso{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 19px}
+  .acceso-form{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:12px 0 0}
+  .acceso input{flex:1;min-width:170px;padding:10px 13px;border:1.5px solid var(--border);
+    border-radius:9px;font-family:inherit;font-size:14px;letter-spacing:1.5px;text-transform:uppercase}
+  .acceso input:focus{outline:none;border-color:var(--blue)}
+  .btn{padding:10px 20px;border:none;border-radius:9px;background:var(--blue);color:#fff;
+    font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer}
+  .btn:hover{background:var(--blue-d)}
+  .aviso{font-size:12.5px;margin:11px 0 0;padding:9px 12px;border-radius:8px;display:none}
+  .aviso.err{display:block;background:#FEF2F2;color:#991B1B;border:1px solid #FECACA}
+  .aviso.ok{display:block;background:var(--green-l);color:var(--green-d);border:1px solid #CBE3B4}
+  #encuesta{display:none;margin-top:18px;border-top:1px solid var(--border);padding-top:18px}
+  #encuesta.visible{display:block}
+  .preg{margin-bottom:17px}
+  .preg p{margin:0 0 7px;font-size:13.5px;font-weight:600;line-height:1.45}
+  .preg .nro{color:#94A3B8;font-weight:800;margin-right:5px}
+  .ops{display:flex;gap:7px;flex-wrap:wrap}
+  .op{font-size:12.5px;padding:6px 13px;border:1.5px solid var(--border);border-radius:999px;
+    background:var(--slate-l);color:var(--slate);cursor:default}
+  .op.fav{border-color:#CBE3B4;background:var(--green-l);color:var(--green-d);font-weight:600}
+  .abierta{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:9px;
+    font-family:inherit;font-size:13px;color:#94A3B8;background:var(--slate-l)}
+  .leyenda{font-size:12px;color:var(--slate);margin:14px 0 0;padding:10px 12px;
+    background:var(--blue-l);border:1px solid #C7DCF0;border-radius:8px}
+
   @media (max-width:560px){
     .valor{font-size:26px}
     header{padding:26px 0 24px}
@@ -257,6 +283,60 @@
   </section>
 
   <section>
+    <h2>El instrumento: encuesta semiestructurada a estudiantes</h2>
+    <p class="sub">Modelo del Anexo 1 del trabajo final. Cuatro preguntas cerradas de valoración
+       y dos de respuesta abierta. Las cerradas alimentan los indicadores SOC-01 y COM-01;
+       las abiertas se analizan por categorías recurrentes.</p>
+
+    <div class="acceso">
+      <p style="margin:0;font-size:13.5px;font-weight:600">Acceso con código de participante</p>
+      <p style="margin:5px 0 0;font-size:12.5px;color:var(--slate)">
+        Las encuestas oficiales del piloto verifican pertenencia a la población mediante invitación
+        individual, y admiten una sola respuesta válida por persona, instrumento y ronda.</p>
+      <div class="acceso-form">
+        <input id="cod" type="text" maxlength="12" placeholder="Código de invitación" autocomplete="off">
+        <button class="btn" id="btn">Acceder</button>
+      </div>
+      <p class="aviso" id="msg"></p>
+
+      <div id="encuesta">
+        <div class="preg"><p><span class="nro">1</span>¿Con qué frecuencia utilizaste los simuladores
+          administrativos o las aplicaciones web durante el período piloto?</p>
+          <div class="ops"><span class="op">Nunca</span><span class="op">Ocasionalmente</span><span class="op">Con frecuencia</span></div></div>
+
+        <div class="preg"><p><span class="nro">2</span>¿Considerás que las consignas y los criterios
+          de uso fueron claros?</p>
+          <div class="ops"><span class="op fav">Sí</span><span class="op">Parcialmente</span><span class="op">No</span></div></div>
+
+        <div class="preg"><p><span class="nro">3</span>¿Considerás útil lo trabajado para tu formación
+          técnica, tus estudios futuros, el empleo o un emprendimiento propio?</p>
+          <div class="ops"><span class="op fav">Sí</span><span class="op">Parcialmente</span><span class="op">No</span></div></div>
+
+        <div class="preg"><p><span class="nro">4</span>¿Pudiste completar las actividades sin necesitar
+          ayuda permanente?</p>
+          <div class="ops"><span class="op fav">Sí</span><span class="op">Parcialmente</span><span class="op">No</span></div></div>
+
+        <div class="preg"><p><span class="nro">5</span>¿Qué dificultades encontraste durante el uso
+          del ecosistema web?</p>
+          <input class="abierta" type="text" value="Respuesta abierta" disabled></div>
+
+        <div class="preg"><p><span class="nro">6</span>¿Qué mejorarías de la propuesta?</p>
+          <input class="abierta" type="text" value="Respuesta abierta" disabled></div>
+
+        <p class="leyenda"><strong>Regla de cómputo.</strong> Sólo «Sí» cuenta como respuesta favorable
+          — resaltado arriba. «Parcialmente» y «No» se informan por separado y no se suman al indicador.
+          Las omisiones se publican junto a invitados y respuestas recibidas. La escala no se altera
+          silenciosamente para mejorar un resultado.</p>
+      </div>
+    </div>
+
+    <p class="sub" style="margin-top:14px"><strong>Sobre este acceso.</strong> Esta página es estática
+       y la verificación se hace en el navegador: sirve para mostrar el circuito, no para proteger datos.
+       En la aplicación, la pertenencia a la población y la unicidad de respuesta se validan en el
+       servidor, y ninguna respuesta individual se expone en la vista pública.</p>
+  </section>
+
+  <section>
     <h2>Instrumentos</h2>
     <p class="sub">Estado de digitalización de los instrumentos descriptos en el trabajo final.</p>
     <div class="tabla-wrap">
@@ -285,5 +365,27 @@
   <p style="margin-top:12px"><a href="index.html">← Volver al ecosistema GEST-AR</a></p>
 </footer>
 
+<script>
+  // Demostración del circuito de acceso. La validación real es del servidor.
+  var CODIGOS = ["GESTAR2026", "PILOTO2026", "DEMO2026"];
+  var cod = document.getElementById("cod");
+  var msg = document.getElementById("msg");
+  var enc = document.getElementById("encuesta");
+  function entrar() {
+    var v = (cod.value || "").trim().toUpperCase();
+    if (!v) { msg.className = "aviso err"; msg.textContent = "Ingresá tu código de invitación."; return; }
+    if (CODIGOS.indexOf(v) === -1) {
+      msg.className = "aviso err";
+      msg.textContent = "Ese código no corresponde a la población del piloto.";
+      enc.className = ""; return;
+    }
+    msg.className = "aviso ok";
+    msg.textContent = "Código verificado. Vista del instrumento — las respuestas no se registran desde esta página.";
+    enc.className = "visible";
+    enc.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+  document.getElementById("btn").addEventListener("click", entrar);
+  cod.addEventListener("keydown", function (e) { if (e.key === "Enter") entrar(); });
+</script>
 </body>
 </html>
