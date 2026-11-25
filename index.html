@@ -1020,6 +1020,146 @@
       .docentes-card { padding: 20px 14px; }
       .pills-wrap { gap: 7px; }
     }
+  
+    /* ══════════ CATÁLOGO DE APLICACIONES ══════════ */
+    .catalogo-barra {
+      display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+      margin: 26px 0 30px;
+    }
+    .filtro {
+      font-size: 12.5px; font-weight: 700; padding: 8px 18px; border-radius: 999px;
+      border: 1.5px solid var(--border); background: #fff; color: var(--slate);
+      cursor: pointer; font-family: inherit; transition: all .18s ease;
+    }
+    .filtro:hover { border-color: #CBD5E1; background: var(--slate-l); }
+    .filtro.activo { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+    .catalogo {
+      display: grid; gap: 22px;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    }
+    .tile {
+      background: #fff; border: 1px solid var(--border); border-radius: 18px;
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 44px rgba(15, 23, 42, 0.13);
+      border-color: #CBD5E1;
+    }
+    .tile-cover { position: relative; overflow: hidden; background: var(--slate-l); }
+    .tile-cover img {
+      width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: left top;
+      display: block; transition: transform .45s ease;
+    }
+    .tile:hover .tile-cover img { transform: scale(1.045); }
+    .tile-origen {
+      position: absolute; top: 12px; left: 12px;
+      font-size: 10px; font-weight: 800; letter-spacing: .9px; text-transform: uppercase;
+      padding: 5px 11px; border-radius: 7px;
+      background: rgba(255,255,255,.94); color: var(--navy);
+      backdrop-filter: blur(6px); box-shadow: 0 2px 10px rgba(15,23,42,.16);
+    }
+    .tile-gratis {
+      position: absolute; top: 12px; right: 12px;
+      font-size: 10px; font-weight: 800; letter-spacing: .9px; text-transform: uppercase;
+      padding: 5px 11px; border-radius: 7px;
+      background: #16A34A; color: #fff; box-shadow: 0 2px 10px rgba(22,163,74,.35);
+    }
+    .tile-body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+    .tile-cat {
+      font-size: 10.5px; font-weight: 800; letter-spacing: 1.1px; text-transform: uppercase;
+      margin: 0 0 6px;
+    }
+    .tile-name { margin: 0 0 8px; font-size: 20px; font-weight: 900; letter-spacing: -.5px; color: var(--text); }
+    .tile-desc { margin: 0 0 14px; font-size: 13px; line-height: 1.6; color: var(--slate); flex: 1; }
+    .tile-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .chip {
+      font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px;
+      background: var(--slate-l); color: var(--slate); border: 1px solid var(--border);
+    }
+    .tile-pie { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .tile-meta { font-size: 11.5px; color: #94A3B8; font-weight: 600; }
+    .tile-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 10px 18px; border-radius: 10px; font-size: 13px; font-weight: 700;
+      text-decoration: none; color: #fff; background: var(--navy);
+      transition: background .18s ease, transform .18s ease;
+    }
+    .tile-btn:hover { background: #0B1220; transform: translateX(2px); }
+
+    .tile.t-fiscal   .tile-cat { color: var(--blue); }
+    .tile.t-fiscal   .tile-btn { background: var(--blue); }
+    .tile.t-fiscal   .tile-btn:hover { background: var(--blue-d); }
+    .tile.t-comercial .tile-cat { color: var(--green); }
+    .tile.t-comercial .tile-btn { background: var(--green); }
+    .tile.t-comercial .tile-btn:hover { background: var(--green-d); }
+    .tile.t-laboral  .tile-cat { color: var(--violet); }
+    .tile.t-laboral  .tile-btn { background: var(--violet); }
+    .tile.t-laboral  .tile-btn:hover { background: var(--violet-d); }
+    .tile.t-obra     .tile-cat { color: #C2410C; }
+    .tile.t-obra     .tile-btn { background: #C2410C; }
+    .tile.t-obra     .tile-btn:hover { background: #9A3412; }
+    .tile.t-formacion .tile-cat { color: #0F766E; }
+    .tile.t-formacion .tile-btn { background: #0F766E; }
+    .tile.t-formacion .tile-btn:hover { background: #115E59; }
+
+    .tile[hidden] { display: none; }
+
+    /* ══════════ CARRUSEL DE VIDEOS ══════════ */
+    .carrusel-wrap { position: relative; margin-top: 26px; }
+    .carrusel {
+      display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
+      padding: 4px 4px 18px; scroll-behavior: smooth;
+      scrollbar-width: thin; scrollbar-color: #CBD5E1 transparent;
+    }
+    .carrusel::-webkit-scrollbar { height: 7px; }
+    .carrusel::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 99px; }
+    .carrusel::-webkit-scrollbar-track { background: transparent; }
+    .video-card {
+      flex: 0 0 330px; scroll-snap-align: start;
+      background: #fff; border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .video-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(15,23,42,.14); }
+    .video-mini {
+      position: relative; cursor: pointer; background: #000; aspect-ratio: 16 / 9;
+      display: block; width: 100%; border: 0; padding: 0;
+    }
+    .video-mini img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .92; transition: opacity .2s ease; }
+    .video-card:hover .video-mini img { opacity: 1; }
+    .video-play {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      pointer-events: none;
+    }
+    .video-play span {
+      width: 54px; height: 54px; border-radius: 50%; background: rgba(220,38,38,.94);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 22px rgba(0,0,0,.4); transition: transform .2s ease;
+    }
+    .video-card:hover .video-play span { transform: scale(1.1); }
+    .video-dur {
+      position: absolute; bottom: 9px; right: 9px; font-size: 11px; font-weight: 700;
+      padding: 3px 8px; border-radius: 5px; background: rgba(0,0,0,.82); color: #fff;
+    }
+    .video-info { padding: 14px 16px 16px; }
+    .video-tit { margin: 0 0 5px; font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--text); }
+    .video-sub { margin: 0; font-size: 12px; color: #94A3B8; }
+    .carrusel-nav { display: flex; gap: 8px; justify-content: center; margin-top: 6px; }
+    .carrusel-btn {
+      width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--border);
+      background: #fff; color: var(--slate); cursor: pointer; font-size: 17px;
+      display: flex; align-items: center; justify-content: center; transition: all .18s ease;
+    }
+    .carrusel-btn:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+    @media (max-width: 560px) {
+      .catalogo { grid-template-columns: 1fr; gap: 18px; }
+      .video-card { flex-basis: 78vw; }
+      .tile-name { font-size: 18px; }
+    }
+
   </style>
 <body>
 
@@ -1087,309 +1227,282 @@
     </div>
   </div>
 
-  <!-- ══════════════ APLICACIONES ══════════════ -->
+  <!-- ══════════════ CATÁLOGO ══════════════ -->
   <section id="aplicaciones">
     <div class="container">
-      <p class="section-eyebrow" style="color: var(--blue)">Repositorio</p>
-      <h2 class="section-title">Todas las aplicaciones</h2>
+      <p class="section-eyebrow" style="color: var(--blue)">Catálogo</p>
+      <h2 class="section-title">Nueve aplicaciones, todas gratuitas</h2>
       <p class="section-sub">
-        Todas son de acceso público y se agrupan por origen: el <strong>núcleo integrado</strong>,
-        donde los datos de una plataforma alimentan a las otras, y los programas desarrollados en cada
-        escuela. El aval institucional dice dónde se probaron, no quién puede usarlas.
+        Desarrolladas en escuelas públicas de Wanda, Misiones. El origen dice dónde se probaron;
+        cualquier docente o institución puede usarlas.
       </p>
-    </div>
-  </section>
 
-  <!-- ── Núcleo integrado ── -->
-  <section id="nucleo" style="padding-top: 0;">
-    <div class="container">
-      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
-        <p class="section-eyebrow" style="color: var(--blue); margin-bottom:0;">Núcleo integrado · 3 plataformas</p>
-        <span style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:#DCFCE7;color:#166534;border:1px solid #BBF7D0;">🌐 Acceso público</span>
+      <div class="catalogo-barra">
+        <button class="filtro activo" data-filtro="todas">Todas · 9</button>
+        <button class="filtro" data-filtro="nucleo">Núcleo integrado · 3</button>
+        <button class="filtro" data-filtro="ens9">ENS N.º 9 · 5</button>
+        <button class="filtro" data-filtro="epet48">EPET N.º 48 · 1</button>
       </div>
-      <h2 class="section-title" style="font-size:24px;">El ciclo completo de una empresa</h2>
-      <p class="section-sub">
-        Las tres se hablan entre sí: el Punto de Venta habilitado en TRIBUT.AR permite facturar en
-        PyMEZ 360, esas ventas alimentan la DDJJ de IVA e IIBB, y las liquidaciones de Sueldos 360
-        vuelven como F.931. El estudiante opera un circuito real sin saltar entre sistemas sueltos.
-      </p>
 
-      <div class="apps-grid">
-
-        <div class="app-card blue">
-          <div class="app-card-cover">
-            <img src="img/banner-tributar.jpg" alt="TRIBUT.AR — Simulación fiscal" loading="lazy">
-            <span class="app-card-cover-tag">Plataforma 01</span>
+      <div class="catalogo" id="catalogo">
+        <article class="tile t-fiscal" data-grupo="nucleo">
+          <div class="tile-cover">
+            <img src="img/banner-tributar.jpg" alt="TRIBUT.AR" loading="lazy">
+            <span class="tile-origen">Ecosistema</span>
+            <span class="tile-gratis">Gratis</span>
           </div>
-          <div class="app-card-body">
-            <ul class="app-features">
-              <li>Alta registral (F.460/F), DIFE y Puntos de Venta con CAE</li>
-              <li><span style="font-size:9px;font-weight:700;background:#DBEAFE;color:#1D4ED8;padding:1px 6px;border-radius:3px;flex-shrink:0;">NACIONAL</span> IVA, Ganancias, Monotributo y Autónomos</li>
-              <li><span style="font-size:9px;font-weight:700;background:#FEF3C7;color:#92400E;padding:1px 6px;border-radius:3px;flex-shrink:0;">PROVINCIAL</span> IIBB Misiones (ATM): DDJJ, boletas y tributos locales</li>
-              <li>Billetera Fiscal con VEPs y Relaciones Laborales</li>
-            </ul>
-            <a href="https://tributar2026nuevo.vercel.app/" target="_blank" rel="noopener" class="app-btn">
-              Abrir TRIBUT.AR
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
+          <div class="tile-body">
+            <p class="tile-cat">Simulación fiscal</p>
+            <h3 class="tile-name">TRIBUT.AR</h3>
+            <p class="tile-desc">Alta registral, puntos de venta con CAE y el circuito completo de obligaciones: IVA, Ganancias, Monotributo e Ingresos Brutos de Misiones.</p>
+            <div class="tile-chips"><span class="chip">IVA</span><span class="chip">Ganancias</span><span class="chip">IIBB</span><span class="chip">Monotributo</span><span class="chip">VEPs</span></div>
+            <div class="tile-pie">
+              <span class="tile-meta">Nacional y provincial</span>
+              <a href="https://tributar2026nuevo.vercel.app/" target="_blank" rel="noopener" class="tile-btn">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
           </div>
-        </div>
-
-        <div class="app-card green">
-          <div class="app-card-cover">
-            <img src="img/banner-pymez.jpg" alt="PyMEZ 360 — Gestión comercial y contable" loading="lazy">
-            <span class="app-card-cover-tag">Plataforma 02</span>
+        </article>
+        <article class="tile t-comercial" data-grupo="nucleo">
+          <div class="tile-cover">
+            <img src="img/banner-pymez.jpg" alt="PyMEZ 360" loading="lazy">
+            <span class="tile-origen">ENS N.º 9</span>
+            <span class="tile-gratis">Gratis</span>
           </div>
-          <div class="app-card-body">
-            <ul class="app-features">
-              <li>Ventas y compras con comprobantes, IVA e IIBB devengado</li>
-              <li>Contabilidad por partida doble: libro diario, mayor y plan de cuentas</li>
-              <li>Tesorería, cuentas corrientes de clientes y proveedores</li>
-              <li>Inventario, costos y recorrido progresivo por desafíos</li>
-            </ul>
-            <a href="https://pymez-360.vercel.app/" target="_blank" rel="noopener" class="app-btn">
-              Abrir PyMEZ 360
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
+          <div class="tile-body">
+            <p class="tile-cat">Gestión comercial y contable</p>
+            <h3 class="tile-name">PyMEZ 360</h3>
+            <p class="tile-desc">El trabajo cotidiano de una PyME: atender un cliente y facturar, reponer stock, cobrar, pagar, registrar y cerrar el período.</p>
+            <div class="tile-chips"><span class="chip">Ventas</span><span class="chip">Compras</span><span class="chip">Partida doble</span><span class="chip">Tesorería</span><span class="chip">Stock</span></div>
+            <div class="tile-pie">
+              <span class="tile-meta">6.º año · Prácticas</span>
+              <a href="https://pymez-360.vercel.app/" target="_blank" rel="noopener" class="tile-btn">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
           </div>
-        </div>
-
-        <div class="app-card violet">
-          <div class="app-card-cover">
-            <img src="img/banner-sueldos.jpg" alt="Sueldos 360 — Liquidación de haberes" loading="lazy">
-            <span class="app-card-cover-tag">Plataforma 03</span>
+        </article>
+        <article class="tile t-laboral" data-grupo="nucleo">
+          <div class="tile-cover">
+            <img src="img/banner-sueldos.jpg" alt="Sueldos 360" loading="lazy">
+            <span class="tile-origen">ENS N.º 9</span>
+            <span class="tile-gratis">Gratis</span>
           </div>
-          <div class="app-card-body">
-            <ul class="app-features">
-              <li>Legajos, altas y categorías por convenio colectivo</li>
-              <li>Liquidación de haberes, SAC, vacaciones y horas extra</li>
-              <li>Aportes del trabajador y contribuciones patronales</li>
-              <li>Recibos, libro de sueldos y F.931 hacia TRIBUT.AR</li>
-            </ul>
-            <a href="https://sueldos360.vercel.app/" target="_blank" rel="noopener" class="app-btn">
-              Abrir Sueldos 360
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
+          <div class="tile-body">
+            <p class="tile-cat">Relaciones laborales</p>
+            <h3 class="tile-name">Sueldos 360</h3>
+            <p class="tile-desc">Un área de personal completa: legajos y convenio, novedades del mes, liquidación, recibo, Libro de Sueldos y F.931 simulado.</p>
+            <div class="tile-chips"><span class="chip">Legajos</span><span class="chip">CCT</span><span class="chip">SAC</span><span class="chip">F.931</span><span class="chip">Recibos</span></div>
+            <div class="tile-pie">
+              <span class="tile-meta">6.º año · Prácticas</span>
+              <a href="https://sueldos360.vercel.app/" target="_blank" rel="noopener" class="tile-btn">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
           </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Programa institucional ENS N.º 9 ── -->
-  <div class="complement-section">
-    <div class="container">
-      <p class="section-eyebrow" style="color: #B45309;">Desarrollado en la ENS N.º 9 · Ciclo 2026</p>
-      <h2 class="section-title">Un trayecto de complejidad creciente</h2>
-      <p class="section-sub">
-        Siete Proyectos Institucionales Pedagógicos Innovadores presentados ante el Consejo General
-        de Educación de Misiones. No son recursos sueltos: forman un recorrido que va de la primera
-        idea productiva, en primer año, al entrenamiento prelaboral previo a la pasantía.
-      </p>
-
-      <div class="complement-grid">
-
-        <div class="comp-card orange">
-          <div class="comp-card-cover">
-            <img src="img/banner-emprende.jpg" alt="EmprendePlan — Plan de negocios estudiantil" loading="lazy">
+        </article>
+        <article class="tile t-fiscal" data-grupo="ens9">
+          <div class="tile-cover">
+            <img src="img/banner-integrar.jpg" alt="INTEGR-AR ERP" loading="lazy">
+            <span class="tile-origen">ENS N.º 9</span>
+            <span class="tile-gratis">Gratis</span>
           </div>
-          <div class="comp-card-header" style="padding: 12px 24px 10px;">
-            <span class="comp-badge">1.º año · Punto de partida</span>
-            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0;">🌐 Público</span>
+          <div class="tile-body">
+            <p class="tile-cat">Gestión integral por sectores</p>
+            <h3 class="tile-name">INTEGR-AR ERP</h3>
+            <p class="tile-desc">El curso entero opera Forestal del Norte SRL repartido en nueve sectores. Hace visible cómo una decisión de un área repercute en las demás.</p>
+            <div class="tile-chips"><span class="chip">9 sectores</span><span class="chip">8 islas</span><span class="chip">Controles internos</span><span class="chip">Planta 3D</span></div>
+            <div class="tile-pie">
+              <span class="tile-meta">Aula-taller en islas</span>
+              <a href="https://integrar-erp.vercel.app/" target="_blank" rel="noopener" class="tile-btn">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
           </div>
-          <div class="comp-card-body">
-            <h3 style="margin:0 0 6px;font-size:16px;font-weight:800;">EmprendePlan</h3>
-            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
-              Recurso de <strong>Proyectos Productivos Básicos</strong>: cada equipo elige un producto,
-              lo planifica, calcula sus costos, produce un lote y lo expone en un stand ante una
-              evaluadora externa.
-            </p>
-            <ul class="comp-features">
-              <li>Idea, mercado, comercialización, producción y finanzas</li>
-              <li>Aspectos legales y análisis FODA con guías</li>
-              <li>Exportación del plan en PDF institucional</li>
-              <li>El docente sigue el avance de cada equipo</li>
-            </ul>
-            <a href="https://startlab-tau.vercel.app/" target="_blank" rel="noopener" class="comp-btn">
-              Abrir EmprendePlan
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
+        </article>
+        <article class="tile t-comercial" data-grupo="ens9">
+          <div class="tile-cover">
+            <img src="img/banner-banco.jpg" alt="Banco Aula" loading="lazy">
+            <span class="tile-origen">ENS N.º 9</span>
+            <span class="tile-gratis">Gratis</span>
           </div>
-        </div>
-
-        <div class="comp-card indigo">
-          <div class="comp-card-cover">
-            <img src="img/banner-banco.jpg" alt="Banco Aula — Simulador de banca empresarial" loading="lazy">
+          <div class="tile-body">
+            <p class="tile-cat">Banca empresarial</p>
+            <h3 class="tile-name">Banco Aula</h3>
+            <p class="tile-desc">Responsable administrativo de Maderas del Norte SRL: transferencias, servicios, haberes, VEP, DEBIN, ECHEQ y conciliación bancaria.</p>
+            <div class="tile-chips"><span class="chip">Transferencias</span><span class="chip">ECHEQ</span><span class="chip">Plazos fijos</span><span class="chip">Conciliación</span></div>
+            <div class="tile-pie">
+              <span class="tile-meta">Doble autorización</span>
+              <a href="https://simuladorhomebanking.netlify.app/" target="_blank" rel="noopener" class="tile-btn">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
           </div>
-          <div class="comp-card-header" style="padding: 12px 24px 10px;">
-            <span class="comp-badge">Etapa 2 · Operaciones bancarias</span>
-            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0;">🌐 Público</span>
+        </article>
+        <article class="tile t-formacion" data-grupo="ens9">
+          <div class="tile-cover">
+            <img src="img/banner-pasantias.jpg" alt="Red Territorial de Simuladores" loading="lazy">
+            <span class="tile-origen">ENS N.º 9</span>
+            <span class="tile-gratis">Gratis</span>
           </div>
-          <div class="comp-card-body">
-            <h3 style="margin:0 0 6px;font-size:16px;font-weight:800;">Banco Aula</h3>
-            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
-              El estudiante actúa como responsable administrativo de <strong>Maderas del Norte SRL</strong>
-              y opera la banca empresarial desde un espacio de práctica por grupo.
-            </p>
-            <ul class="comp-features">
-              <li>Transferencias, pago de servicios, haberes y VEP</li>
-              <li>Cobranzas, DEBIN, ECHEQ y tarjeta corporativa</li>
-              <li>Plazos fijos, préstamos y conciliación bancaria</li>
-              <li>Circuito de autorización: quien carga no es quien autoriza</li>
-            </ul>
-            <a href="https://simuladorhomebanking.netlify.app/" target="_blank" rel="noopener" class="comp-btn">
-              Abrir Banco Aula
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
+          <div class="tile-body">
+            <p class="tile-cat">Entrenamiento prelaboral</p>
+            <h3 class="tile-name">Red Territorial de Simuladores</h3>
+            <p class="tile-desc">Seis puestos administrativos inspirados en organizaciones de la región. Prepara el primer día de la pasantía.</p>
+            <div class="tile-chips"><span class="chip">Catastro</span><span class="chip">ProCoop</span><span class="chip">RISMI</span><span class="chip">Rivadavia PAS</span><span class="chip">SINALIC</span><span class="chip">IPS Salud</span></div>
+            <div class="tile-pie">
+              <span class="tile-meta">6 entornos</span>
+              <a href="https://simuladoresdepasantia2026.netlify.app/" target="_blank" rel="noopener" class="tile-btn">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
           </div>
-        </div>
-
-        <div class="comp-card blue">
-          <div class="comp-card-cover">
-            <img src="img/banner-integrar.jpg" alt="INTEGR-AR ERP — Sistema de gestión empresarial educativo" loading="lazy">
-          </div>
-          <div class="comp-card-header" style="padding: 12px 24px 10px;">
-            <span class="comp-badge">Etapa 3 · Integración por sectores</span>
-            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0;">🌐 Público</span>
-          </div>
-          <div class="comp-card-body">
-            <h3 style="margin:0 0 6px;font-size:16px;font-weight:800;">INTEGR-AR ERP</h3>
-            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
-              El curso entero opera <strong>Forestal del Norte SRL</strong> repartido en sectores. Ataca
-              la fragmentación: hace visible cómo una decisión de un área repercute en las demás.
-            </p>
-            <ul class="comp-features">
-              <li>Nueve sectores: Gerencia, Ventas, Depósito, Compras, Producción, Tesorería, Contabilidad, RRHH y Auditoría</li>
-              <li>Ocho islas de aula-taller con bandeja «Mi trabajo»</li>
-              <li>Controles internos, Banco Aula y fisco simulado integrados</li>
-              <li>Mapa vivo de la planta en 3D</li>
-            </ul>
-            <a href="https://integrar-erp.vercel.app/" target="_blank" rel="noopener" class="comp-btn">
-              Abrir INTEGR-AR
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="comp-card teal">
-          <div class="comp-card-cover">
-            <img src="img/banner-pasantias.jpg" alt="Red Territorial de Simuladores Educativos" loading="lazy">
-          </div>
-          <div class="comp-card-header" style="padding: 12px 24px 10px;">
-            <span class="comp-badge">Etapa 4 · Antes de la pasantía</span>
-            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0;">🌐 Público</span>
-          </div>
-          <div class="comp-card-body">
-            <h3 style="margin:0 0 6px;font-size:16px;font-weight:800;">Red Territorial de Simuladores</h3>
-            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
-              Seis puestos administrativos inspirados en organizaciones con las que la escuela tiene
-              vínculos reales. Prepara el primer día de la pasantía.
-            </p>
-            <ul class="comp-features">
-              <li><strong>Catastro</strong> — rentas y catastro municipal</li>
-              <li><strong>ProCoop</strong> — cooperativa de servicios públicos</li>
-              <li><strong>RISMI</strong> — admisión hospitalaria</li>
-              <li><strong>Rivadavia PAS</strong> — productor asesor de seguros</li>
-              <li><strong>SINALIC</strong> — emisión de licencias de conducir</li>
-              <li><strong>IPS Salud</strong> — obra social provincial</li>
-            </ul>
-            <a href="https://simuladoresdepasantia2026.netlify.app/" target="_blank" rel="noopener" class="comp-btn">
-              Abrir el laboratorio
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="comp-card teal">
-          <div class="comp-card-cover">
+        </article>
+        <article class="tile t-formacion" data-grupo="ens9">
+          <div class="tile-cover">
             <img src="img/banner-campus.jpg" alt="Campus Virtual ENS N.º 9" loading="lazy">
+            <span class="tile-origen">ENS N.º 9</span>
+            <span class="tile-gratis">Gratis</span>
           </div>
-          <div class="comp-card-header" style="padding: 12px 24px 10px;">
-            <span class="comp-badge">En paralelo · Toda la escuela</span>
-            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0;">🌐 Público</span>
+          <div class="tile-body">
+            <p class="tile-cat">Formación autoasistida</p>
+            <h3 class="tile-name">Campus Virtual ENS N.º 9</h3>
+            <p class="tile-desc">Siete cursos en dos ejes: proyecto de vida, empleabilidad y ciudadanía digital; y la ruta emprendedora aplicada, con certificación.</p>
+            <div class="tile-chips"><span class="chip">7 cursos</span><span class="chip">Finanzas personales</span><span class="chip">Costos</span><span class="chip">IA e inclusión</span></div>
+            <div class="tile-pie">
+              <span class="tile-meta">Toda la escuela</span>
+              <a href="https://campusvirtualensn9.vercel.app/" target="_blank" rel="noopener" class="tile-btn">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
           </div>
-          <div class="comp-card-body">
-            <h3 style="margin:0 0 6px;font-size:16px;font-weight:800;">Campus Virtual ENS N.º 9</h3>
-            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
-              Formación autoasistida con certificación institucional, para 4.º, 5.º y 6.º año.
-              Siete cursos organizados en dos ejes.
-            </p>
-            <ul class="comp-features">
-              <li><strong>Proyecto de Vida y Ciudadanía Digital</strong> — finanzas personales, ruta al empleo, IA e inclusión</li>
-              <li><strong>Ruta Emprendedora Aplicada</strong> — emprendimiento, costos y precios, identidad comercial y herramientas digitales</li>
-              <li>Taller práctico de costos integrado</li>
-            </ul>
-            <a href="https://campusvirtualensn9.vercel.app/" target="_blank" rel="noopener" class="comp-btn">
-              Ir al Campus
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
+        </article>
+        <article class="tile t-obra" data-grupo="ens9">
+          <div class="tile-cover">
+            <img src="img/banner-emprende.jpg" alt="EmprendePlan" loading="lazy">
+            <span class="tile-origen">ENS N.º 9</span>
+            <span class="tile-gratis">Gratis</span>
           </div>
-        </div>
-
+          <div class="tile-body">
+            <p class="tile-cat">Plan de negocios</p>
+            <h3 class="tile-name">EmprendePlan</h3>
+            <p class="tile-desc">De la idea a la muestra: cada equipo de primer año planifica un producto, calcula sus costos, produce un lote y lo expone en un stand.</p>
+            <div class="tile-chips"><span class="chip">FODA</span><span class="chip">Marketing</span><span class="chip">Producción</span><span class="chip">Exporta PDF</span></div>
+            <div class="tile-pie">
+              <span class="tile-meta">1.º año · Punto de partida</span>
+              <a href="https://startlab-tau.vercel.app/" target="_blank" rel="noopener" class="tile-btn">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article class="tile t-obra" data-grupo="epet48">
+          <div class="tile-cover">
+            <img src="img/banner-simulaobra.jpg" alt="SimulaObra" loading="lazy">
+            <span class="tile-origen">EPET N.º 48</span>
+            <span class="tile-gratis">Gratis</span>
+          </div>
+          <div class="tile-body">
+            <p class="tile-cat">Obra y construcción</p>
+            <h3 class="tile-name">SimulaObra</h3>
+            <p class="tile-desc">Cada equipo constituye una empresa constructora y arma su expediente legal, fiscal, comercial y laboral a lo largo del año.</p>
+            <div class="tile-chips"><span class="chip">ObraDocs</span><span class="chip">60 modelos</span><span class="chip">Contratos</span><span class="chip">Integra el núcleo</span></div>
+            <div class="tile-pie">
+              <span class="tile-meta">Maestro Mayor de Obras</span>
+              <a href="https://simulaobraepet48.netlify.app/" target="_blank" rel="noopener" class="tile-btn">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </article>
       </div>
-    </div>
-  </div>
 
-  <!-- ── EPET N.º 48 ── -->
-  <section id="simuladores">
-    <div class="container">
-      <p class="section-eyebrow" style="color: var(--violet)">Desarrollado en la EPET N.º 48 · Ciclo 2026</p>
-      <h2 class="section-title">Formación del Maestro Mayor de Obras</h2>
-      <p class="section-sub">
-        El mismo enfoque llevado a la construcción: el futuro Maestro Mayor de Obras dirigirá obras
-        con contratos, trabajadores y obligaciones fiscales. SimulaObra traduce esos contenidos
-        jurídicos y laborales a decisiones que se toman y tienen consecuencias.
+      <p class="section-sub" style="margin-top:26px;text-align:center;font-size:13px;">
+        Las tres del núcleo se hablan entre sí: el Punto de Venta habilitado en TRIBUT.AR permite
+        facturar en PyMEZ 360, esas ventas alimentan la DDJJ, y las liquidaciones de Sueldos 360
+        vuelven como F.931.
       </p>
-
-      <div class="complement-grid">
-        <div class="comp-card orange">
-          <div class="comp-card-cover">
-            <img src="img/banner-simulaobra.jpg" alt="SimulaObra — Simulación para Maestro Mayor de Obras" loading="lazy">
-          </div>
-          <div class="comp-card-header" style="padding: 12px 24px 10px;">
-            <span class="comp-badge">Legales II · 6.º año «A»</span>
-            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0;">🌐 Público</span>
-          </div>
-          <div class="comp-card-body">
-            <h3 style="margin:0 0 6px;font-size:16px;font-weight:800;">SimulaObra</h3>
-            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
-              Cada equipo constituye una empresa constructora simulada y arma su expediente legal,
-              fiscal, comercial y laboral a lo largo del año.
-            </p>
-            <ul class="comp-features">
-              <li><strong>ObraDocs</strong> — 60 modelos editables de documentos de obra</li>
-              <li><strong>Contratos Legales</strong> — contratación, obra y relación laboral</li>
-              <li>Integra TRIBUT.AR, PyMEZ 360 y Sueldos 360</li>
-              <li>Ruta de aprendizaje, glosario y autoevaluación</li>
-            </ul>
-            <a href="https://simulaobraepet48.netlify.app/" target="_blank" rel="noopener" class="comp-btn">
-              Abrir SimulaObra
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="comp-card blue">
-          <div class="comp-card-header" style="padding: 14px 24px 12px;">
-            <span class="comp-badge">Dónde guarda el trabajo</span>
-          </div>
-          <div class="comp-card-body">
-            <h3 style="margin:0 0 8px;font-size:16px;font-weight:800;">Sin base de datos externa</h3>
-            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
-              Banco Aula, la Red Territorial, SimulaObra y EmprendePlan guardan todo en el navegador
-              de la propia computadora: no hay servidor ni base externa.
-            </p>
-            <p style="font-size: 11.5px; color: #3730A3; background: #EEF2FF; border: 1px solid #C7D2FE; border-radius: 8px; padding: 9px 11px; margin: 0; line-height: 1.55;">
-              💾 El avance <strong>no se comparte entre equipos</strong>. Conviene descargar el respaldo
-              al terminar, que además sirve como evidencia para la carpeta de prácticas.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
+  <!-- ══════════════ VIDEOS ══════════════ -->
+  <div style="background:var(--slate-l);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <section>
+      <div class="container">
+        <p class="section-eyebrow" style="color: #DC2626">En video</p>
+        <h2 class="section-title">Mirá cómo funciona</h2>
+        <p class="section-sub">
+          Recorridos por las plataformas, clases completas y la experiencia del aula-taller.
+          Las miniaturas cargan al instante; el video sólo se descarga si lo abrís.
+        </p>
+
+        <div class="carrusel-wrap">
+          <div class="carrusel" id="carrusel">
+          <div class="video-card">
+            <button class="video-mini" data-video="VpPVyYvSmFM" aria-label="Reproducir Ecosistema GEST-AR">
+              <img src="https://i.ytimg.com/vi/VpPVyYvSmFM/hqdefault.jpg" alt="Ecosistema GEST-AR" loading="lazy">
+              <span class="video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="video-dur">8:04</span>
+            </button>
+            <div class="video-info">
+              <p class="video-tit">Ecosistema GEST-AR</p>
+              <p class="video-sub">Cómo se integran las plataformas</p>
+            </div>
+          </div>
+          <div class="video-card">
+            <button class="video-mini" data-video="KtZg-R4EAlk" aria-label="Reproducir GEST-AR: plataforma educativa">
+              <img src="https://i.ytimg.com/vi/KtZg-R4EAlk/hqdefault.jpg" alt="GEST-AR: plataforma educativa" loading="lazy">
+              <span class="video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="video-dur">24:05</span>
+            </button>
+            <div class="video-info">
+              <p class="video-tit">GEST-AR: plataforma educativa</p>
+              <p class="video-sub">Recorrido completo</p>
+            </div>
+          </div>
+          <div class="video-card">
+            <button class="video-mini" data-video="pojq1KlFsEc" aria-label="Reproducir ¡Elegí tu futuro!">
+              <img src="https://i.ytimg.com/vi/pojq1KlFsEc/hqdefault.jpg" alt="¡Elegí tu futuro!" loading="lazy">
+              <span class="video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="video-dur">3:20</span>
+            </button>
+            <div class="video-info">
+              <p class="video-tit">¡Elegí tu futuro!</p>
+              <p class="video-sub">Técnica en Gestión y Administración</p>
+            </div>
+          </div>
+          <div class="video-card">
+            <button class="video-mini" data-video="feI-Ojd9Nic" aria-label="Reproducir Nuestra Aula-Taller">
+              <img src="https://i.ytimg.com/vi/feI-Ojd9Nic/hqdefault.jpg" alt="Nuestra Aula-Taller" loading="lazy">
+              <span class="video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="video-dur">5:40</span>
+            </button>
+            <div class="video-info">
+              <p class="video-tit">Nuestra Aula-Taller</p>
+              <p class="video-sub">Crédito Fiscal INET 2026</p>
+            </div>
+          </div>
+          <div class="video-card">
+            <button class="video-mini" data-video="6eSQ96Z4kT8" aria-label="Reproducir Cálculo de costos y punto de equilibrio">
+              <img src="https://i.ytimg.com/vi/6eSQ96Z4kT8/hqdefault.jpg" alt="Cálculo de costos y punto de equilibrio" loading="lazy">
+              <span class="video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="video-dur">39:22</span>
+            </button>
+            <div class="video-info">
+              <p class="video-tit">Cálculo de costos y punto de equilibrio</p>
+              <p class="video-sub">Clase completa</p>
+            </div>
+          </div>
+          <div class="video-card">
+            <button class="video-mini" data-video="BhuZlwE2A68" aria-label="Reproducir Registro financiero para emprendedores">
+              <img src="https://i.ytimg.com/vi/BhuZlwE2A68/hqdefault.jpg" alt="Registro financiero para emprendedores" loading="lazy">
+              <span class="video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="video-dur">28:30</span>
+            </button>
+            <div class="video-info">
+              <p class="video-tit">Registro financiero para emprendedores</p>
+              <p class="video-sub">Planilla paso a paso</p>
+            </div>
+          </div>
+          </div>
+          <div class="carrusel-nav">
+            <button class="carrusel-btn" id="car-izq" aria-label="Anterior">‹</button>
+            <button class="carrusel-btn" id="car-der" aria-label="Siguiente">›</button>
+          </div>
+        </div>
+
+        <p style="text-align:center;margin-top:18px;">
+          <a href="https://www.youtube.com/@juanmanuelgomez734" target="_blank" rel="noopener"
+             style="color:var(--blue);font-weight:700;font-size:13.5px;text-decoration:none;">
+            Ver el canal completo ↗
+          </a>
+        </p>
+      </div>
+    </section>
+  </div>
 
   <!-- ══════════════ ENFOQUE ══════════════ -->
   <div class="modelo-bg" id="enfoque">
@@ -1606,17 +1719,7 @@
         Wanda, Misiones.
       </p>
 
-      <div style="max-width: 880px; margin: 26px auto 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(15,23,42,0.12);">
-        <div style="position: relative; padding-top: 56.25%;">
-          <iframe src="https://www.youtube.com/embed/VpPVyYvSmFM" title="GEST-AR — video explicativo"
-            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-        </div>
-      </div>
-      <p style="text-align:center;margin-top:14px;font-size:13px;color:#64748B;">
-        ¿No carga? <a href="https://youtu.be/VpPVyYvSmFM" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600;">Abrir en YouTube ↗</a>
-      </p>
+
 
       <div class="complement-grid" style="margin-top:28px;">
         <div class="comp-card orange">
@@ -1794,6 +1897,44 @@
         setTimeout(() => { el.style.display = 'none' }, 2000)
       })
     }
+  </script>
+
+  <script>
+    // Filtros del catálogo
+    document.querySelectorAll('.filtro').forEach(function (b) {
+      b.addEventListener('click', function () {
+        document.querySelectorAll('.filtro').forEach(function (x) { x.classList.remove('activo'); });
+        b.classList.add('activo');
+        var f = b.dataset.filtro;
+        document.querySelectorAll('#catalogo .tile').forEach(function (t) {
+          t.hidden = (f !== 'todas' && t.dataset.grupo !== f);
+        });
+      });
+    });
+
+    // El video se descarga sólo al tocarlo: la página carga liviana
+    document.querySelectorAll('.video-mini').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var id = b.dataset.video;
+        var marco = document.createElement('iframe');
+        marco.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+        marco.title = b.getAttribute('aria-label') || 'Video';
+        marco.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        marco.referrerPolicy = 'strict-origin-when-cross-origin';
+        marco.allowFullscreen = true;
+        marco.style.cssText = 'width:100%;aspect-ratio:16/9;border:0;display:block;';
+        b.replaceWith(marco);
+      });
+    });
+
+    // Carrusel
+    (function () {
+      var c = document.getElementById('carrusel');
+      if (!c) return;
+      var paso = function () { return (c.querySelector('.video-card') || {}).offsetWidth + 18 || 348; };
+      document.getElementById('car-izq').addEventListener('click', function () { c.scrollBy({ left: -paso(), behavior: 'smooth' }); });
+      document.getElementById('car-der').addEventListener('click', function () { c.scrollBy({ left: paso(), behavior: 'smooth' }); });
+    })();
   </script>
 </body>
 </html>
