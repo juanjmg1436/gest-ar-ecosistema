@@ -1021,7 +1021,6 @@
       .pills-wrap { gap: 7px; }
     }
   </style>
-</head>
 <body>
 
   <!-- NAVBAR -->
@@ -1033,140 +1032,121 @@
       <span class="nav-logo-name">GEST<span>-AR</span></span>
     </a>
     <div class="nav-links">
-      <a href="https://tributar2026nuevo.vercel.app/" target="_blank" class="nav-link blue">TRIBUT.AR</a>
-      <a href="https://pymez-360.vercel.app/" target="_blank" class="nav-link green">PyMEZ 360</a>
-      <a href="https://sueldos360.vercel.app/" target="_blank" class="nav-link violet">Sueldos 360</a>
+      <a href="#aplicaciones" class="nav-link blue">Aplicaciones</a>
+      <a href="#enfoque" class="nav-link green">Enfoque</a>
+      <a href="#docentes" class="nav-link violet">Docentes</a>
       <button class="nav-donar" onclick="openDonation()">❤️ Apoyar</button>
     </div>
   </nav>
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-stripe">
-      <span class="s1"></span>
-      <span class="s2"></span>
-      <span class="s3"></span>
-    </div>
-    <p class="hero-eyebrow">Gestión administrativa integral · Ciencias Económicas</p>
-    <h1 class="hero-title">GEST<span class="dot">-AR</span></h1>
-    <p class="hero-subtitle">
-      Ecosistema digital para el aprendizaje de la gestión administrativa integral:
-      impuestos, comercio y relaciones laborales en un ciclo empresarial real.
-      Tres plataformas integradas, gratuitas y sin instalación.
-    </p>
-    <div class="hero-badges">
-      <span class="hero-badge blue">🔵 TRIBUT.AR — Obligaciones impositivas</span>
-      <span class="hero-badge green">🟢 PyMEZ 360 — Gestión comercial y contable</span>
-      <span class="hero-badge violet">🟣 Sueldos 360 — Relaciones laborales</span>
-    </div>
-    <div class="hero-cta">
-      <a href="#plataformas" class="btn-primary blue">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Acceder al ecosistema
-      </a>
-      <a href="#integracion" class="btn-outline">Ver cómo se integran</a>
+    <div class="hero-stripe"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
+    <div class="container">
+      <p class="hero-eyebrow">Gestión administrativa integral · Ciencias Económicas</p>
+      <h1 class="hero-title">GEST<span class="dot">-AR</span></h1>
+      <p class="hero-subtitle">
+        Repositorio de simuladores y entornos de práctica para la enseñanza técnica en gestión
+        administrativa. Impuestos, comercio, contabilidad, relaciones laborales y obra, en
+        aplicaciones web gratuitas, sin instalación y con datos ficticios.
+      </p>
+      <div class="hero-badges">
+        <span class="hero-badge blue">Simulación fiscal</span>
+        <span class="hero-badge green">Gestión comercial y contable</span>
+        <span class="hero-badge violet">Relaciones laborales</span>
+        <span class="hero-badge" style="background:rgba(249,115,22,.22);color:#FDBA74;border:1px solid rgba(249,115,22,.4);">Obra y construcción</span>
+        <span class="hero-badge" style="background:rgba(20,184,166,.22);color:#5EEAD4;border:1px solid rgba(20,184,166,.4);">Talento humano</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#aplicaciones" class="btn-primary blue">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          Ver las aplicaciones
+        </a>
+        <a href="#enfoque" class="btn-outline">El enfoque que las sostiene</a>
+      </div>
     </div>
   </div>
 
-  <!-- VIDEO EXPLICATIVO -->
-  <section id="video">
+  <!-- ══════════════ APLICACIONES ══════════════ -->
+  <section id="aplicaciones">
     <div class="container">
-      <p class="section-eyebrow" style="color: var(--blue)">Video explicativo</p>
-      <h2 class="section-title">Conocé el ecosistema en pocos minutos</h2>
+      <p class="section-eyebrow" style="color: var(--blue)">Repositorio</p>
+      <h2 class="section-title">Todas las aplicaciones</h2>
       <p class="section-sub">
-        Un recorrido por las tres plataformas y por el circuito completo que atraviesa el estudiante,
-        desde el alta fiscal hasta las declaraciones juradas.
-      </p>
-      <div style="max-width: 880px; margin: 32px auto 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(15,23,42,.18); background: #000;">
-        <div style="position: relative; padding-top: 56.25%;">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/VpPVyYvSmFM"
-            title="Ecosistema GEST-AR — video explicativo"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-            loading="lazy"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-      <p style="text-align: center; margin-top: 14px; font-size: 13px; color: #64748B;">
-        ¿No carga el video? <a href="https://youtu.be/VpPVyYvSmFM" target="_blank" rel="noopener" style="color: var(--blue); font-weight: 600;">Verlo en YouTube</a>
+        Tres niveles: el <strong>núcleo integrado</strong>, donde los datos de una plataforma alimentan
+        a las otras; los <strong>proyectos institucionales</strong> avalados por su escuela; y los
+        <strong>simuladores de práctica</strong>, independientes entre sí.
       </p>
     </div>
   </section>
 
-  <!-- PLATAFORMAS -->
-  <section id="plataformas">
+  <!-- ── Núcleo integrado ── -->
+  <section id="nucleo" style="padding-top: 0;">
     <div class="container">
-      <p class="section-eyebrow" style="color: var(--blue)">Las tres plataformas</p>
-      <h2 class="section-title">Un ciclo completo de gestión administrativa integral</h2>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+        <p class="section-eyebrow" style="color: var(--blue); margin-bottom:0;">Núcleo integrado · 3 plataformas</p>
+        <span style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:#DCFCE7;color:#166534;border:1px solid #BBF7D0;">🌐 Acceso público</span>
+      </div>
+      <h2 class="section-title" style="font-size:24px;">El ciclo completo de una empresa</h2>
       <p class="section-sub">
-        Cada plataforma simula un área real de la gestión de una organización. Juntas recrean el ciclo
-        completo: inscripción, facturación, declaraciones, relaciones laborales y cumplimiento fiscal en
-        dos jurisdicciones — sin necesidad de acceder a sistemas reales.
+        Las tres se hablan entre sí: el Punto de Venta habilitado en TRIBUT.AR permite facturar en
+        PyMEZ 360, esas ventas alimentan la DDJJ de IVA e IIBB, y las liquidaciones de Sueldos 360
+        vuelven como F.931. El estudiante opera un circuito real sin saltar entre sistemas sueltos.
       </p>
 
       <div class="apps-grid">
 
-        <!-- TRIBUT.AR -->
         <div class="app-card blue">
           <div class="app-card-cover">
-            <img src="img/banner-tributar.jpg" alt="TRIBUT.AR — Gestión fiscal y administrativa" loading="lazy">
+            <img src="img/banner-tributar.jpg" alt="TRIBUT.AR — Simulación fiscal" loading="lazy">
             <span class="app-card-cover-tag">Plataforma 01</span>
           </div>
           <div class="app-card-body">
             <ul class="app-features">
-              <li>Alta registral (F.460/F), DIFE y Puntos de Venta (CAE)</li>
-              <li><span style="font-size:9px;font-weight:700;background:#DBEAFE;color:#1D4ED8;padding:1px 6px;border-radius:3px;flex-shrink:0;">NACIONAL</span> IVA — débito, crédito fiscal y DDJJ mensual</li>
-              <li><span style="font-size:9px;font-weight:700;background:#DBEAFE;color:#1D4ED8;padding:1px 6px;border-radius:3px;flex-shrink:0;">NACIONAL</span> Ganancias — anticipos y DDJJ anual</li>
-              <li><span style="font-size:9px;font-weight:700;background:#DBEAFE;color:#1D4ED8;padding:1px 6px;border-radius:3px;flex-shrink:0;">NACIONAL</span> Monotributo y Autónomos — cuotas y aportes</li>
-              <li><span style="font-size:9px;font-weight:700;background:#FEF3C7;color:#92400E;padding:1px 6px;border-radius:3px;flex-shrink:0;">PROVINCIAL</span> IIBB Misiones (ATM) — DDJJ, boletas y tributos locales</li>
-              <li>Billetera Fiscal (VEPs) · Relaciones Laborales (Sueldos 360)</li>
+              <li>Alta registral (F.460/F), DIFE y Puntos de Venta con CAE</li>
+              <li><span style="font-size:9px;font-weight:700;background:#DBEAFE;color:#1D4ED8;padding:1px 6px;border-radius:3px;flex-shrink:0;">NACIONAL</span> IVA, Ganancias, Monotributo y Autónomos</li>
+              <li><span style="font-size:9px;font-weight:700;background:#FEF3C7;color:#92400E;padding:1px 6px;border-radius:3px;flex-shrink:0;">PROVINCIAL</span> IIBB Misiones (ATM): DDJJ, boletas y tributos locales</li>
+              <li>Billetera Fiscal con VEPs y Relaciones Laborales</li>
             </ul>
-            <a href="https://tributar2026nuevo.vercel.app/" target="_blank" class="app-btn">
+            <a href="https://tributar2026nuevo.vercel.app/" target="_blank" rel="noopener" class="app-btn">
               Abrir TRIBUT.AR
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- PyMEZ 360 -->
         <div class="app-card green">
           <div class="app-card-cover">
-            <img src="img/banner-pymez.jpg" alt="PyMEZ 360 — Gestión comercial y operativa" loading="lazy">
+            <img src="img/banner-pymez.jpg" alt="PyMEZ 360 — Gestión comercial y contable" loading="lazy">
             <span class="app-card-cover-tag">Plataforma 02</span>
           </div>
           <div class="app-card-body">
             <ul class="app-features">
-              <li>Ventas con IVA — Facturas A, B y C según tipo de cliente</li>
-              <li>Compras — cómputo de crédito fiscal automático</li>
-              <li>Cobros y pagos — impacto en tesorería en tiempo real</li>
-              <li>Cuentas bancarias y caja — saldos y movimientos</li>
-              <li>Retenciones de IIBB por agentes de retención</li>
-              <li>Vinculación con Punto de Venta de TRIBUT.AR</li>
+              <li>Ventas y compras con comprobantes, IVA e IIBB devengado</li>
+              <li>Contabilidad por partida doble: libro diario, mayor y plan de cuentas</li>
+              <li>Tesorería, cuentas corrientes de clientes y proveedores</li>
+              <li>Inventario, costos y recorrido progresivo por desafíos</li>
             </ul>
-            <a href="https://pymez-360.vercel.app/" target="_blank" class="app-btn">
+            <a href="https://pymez-360.vercel.app/" target="_blank" rel="noopener" class="app-btn">
               Abrir PyMEZ 360
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Sueldos 360 -->
         <div class="app-card violet">
           <div class="app-card-cover">
-            <img src="img/banner-sueldos.jpg" alt="Sueldos 360 — Liquidación y administración de sueldos" loading="lazy">
+            <img src="img/banner-sueldos.jpg" alt="Sueldos 360 — Liquidación de haberes" loading="lazy">
             <span class="app-card-cover-tag">Plataforma 03</span>
           </div>
           <div class="app-card-body">
             <ul class="app-features">
-              <li>Alta de empleados con categoría CCT y antigüedad</li>
-              <li>Liquidación mensual automática por convenio</li>
-              <li>Descuentos al trabajador — jubilación y obra social</li>
-              <li>Contribuciones patronales — costo laboral total</li>
-              <li>Generación e impresión de recibos de sueldo</li>
-              <li>Sincronización F.931 con TRIBUT.AR</li>
+              <li>Legajos, altas y categorías por convenio colectivo</li>
+              <li>Liquidación de haberes, SAC, vacaciones y horas extra</li>
+              <li>Aportes del trabajador y contribuciones patronales</li>
+              <li>Recibos, libro de sueldos y F.931 hacia TRIBUT.AR</li>
             </ul>
-            <a href="https://sueldos360.vercel.app/" target="_blank" class="app-btn">
+            <a href="https://sueldos360.vercel.app/" target="_blank" rel="noopener" class="app-btn">
               Abrir Sueldos 360
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
@@ -1177,166 +1157,126 @@
     </div>
   </section>
 
-  <!-- CONSIGNA DE INICIO PARA DOCENTES -->
-  <section style="background: var(--slate-l); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 0;">
-    <div class="container">
-      <p class="section-eyebrow" style="color: var(--blue);">Consigna de inicio · Ecosistema administrativo</p>
-      <h2 class="section-title">Primeros pasos en el ecosistema</h2>
-      <p class="section-sub" style="margin-bottom: 36px;">
-        Una consigna sencilla para que docentes y estudiantes recorran el ciclo completo
-        de las tres plataformas por primera vez. No requiere conocimiento previo.
-      </p>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
-
-        <div style="background: white; border: 2px solid rgba(24,95,165,0.2); border-radius: 18px; padding: 24px 22px; display: flex; flex-direction: column; gap: 14px;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--blue-l); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">🏛️</div>
-            <div>
-              <p style="font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 1px;">Paso 1 · TRIBUT.AR</p>
-              <p style="font-size: 15px; font-weight: 800; color: var(--blue-d); letter-spacing: -0.2px;">Configurá la empresa</p>
-            </div>
-          </div>
-          <ol style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
-            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
-              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--blue-l); color: var(--blue); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">1</span>
-              Creá un usuario con tu correo educativo.
-            </li>
-            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
-              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--blue-l); color: var(--blue); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">2</span>
-              Registrá una empresa con el rubro que trabajás en clase.
-            </li>
-            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
-              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--blue-l); color: var(--blue); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">3</span>
-              Elegí régimen (Monotributo o General) y habilitá un Punto de Venta.
-            </li>
-          </ol>
-          <a href="https://tributar2026nuevo.vercel.app/" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 7px; padding: 11px 16px; background: var(--blue); color: white; border-radius: 10px; font-size: 13px; font-weight: 700; text-decoration: none; margin-top: auto;">
-            Abrir TRIBUT.AR →
-          </a>
-        </div>
-
-        <div style="background: white; border: 2px solid rgba(59,109,17,0.2); border-radius: 18px; padding: 24px 22px; display: flex; flex-direction: column; gap: 14px;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--green-l); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">📦</div>
-            <div>
-              <p style="font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 1px;">Paso 2 · PyMEZ 360</p>
-              <p style="font-size: 15px; font-weight: 800; color: var(--green-d); letter-spacing: -0.2px;">Registrá operaciones</p>
-            </div>
-          </div>
-          <ol style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
-            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
-              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--green-l); color: var(--green); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">1</span>
-              Ingresá a PyMEZ 360 con el mismo correo.
-            </li>
-            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
-              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--green-l); color: var(--green); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">2</span>
-              Registrá al menos una venta y una compra del mes.
-            </li>
-            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
-              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--green-l); color: var(--green); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">3</span>
-              Observá cómo las ventas impactan en el IVA y la base de IIBB en TRIBUT.AR.
-            </li>
-          </ol>
-          <a href="https://pymez-360.vercel.app/" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 7px; padding: 11px 16px; background: var(--green); color: white; border-radius: 10px; font-size: 13px; font-weight: 700; text-decoration: none; margin-top: auto;">
-            Abrir PyMEZ 360 →
-          </a>
-        </div>
-
-        <div style="background: white; border: 2px solid rgba(83,74,183,0.2); border-radius: 18px; padding: 24px 22px; display: flex; flex-direction: column; gap: 14px;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--violet-l); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">👥</div>
-            <div>
-              <p style="font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--violet); margin-bottom: 1px;">Paso 3 · Sueldos 360</p>
-              <p style="font-size: 15px; font-weight: 800; color: var(--violet-d); letter-spacing: -0.2px;">Liquidá sueldos</p>
-            </div>
-          </div>
-          <ol style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
-            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
-              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--violet-l); color: var(--violet); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">1</span>
-              Abrí Sueldos 360 e ingresá la misma empresa.
-            </li>
-            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
-              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--violet-l); color: var(--violet); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">2</span>
-              Dá de alta un empleado con su categoría y sueldo básico.
-            </li>
-            <li style="display: flex; gap: 10px; font-size: 13px; color: #334155; line-height: 1.5;">
-              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--violet-l); color: var(--violet); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">3</span>
-              Liquidá el mes y generá el recibo de sueldo.
-            </li>
-          </ol>
-          <a href="https://sueldos360.vercel.app/" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 7px; padding: 11px 16px; background: var(--violet); color: white; border-radius: 10px; font-size: 13px; font-weight: 700; text-decoration: none; margin-top: auto;">
-            Abrir Sueldos 360 →
-          </a>
-        </div>
-
-      </div>
-
-      <div style="margin-top: 20px; padding: 14px 18px; background: white; border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: flex-start; gap: 12px;">
-        <span style="font-size: 18px; flex-shrink: 0;">💡</span>
-        <p style="font-size: 13px; color: #475569; line-height: 1.65;">
-          <strong style="color: var(--text);">¿Querés una consigna más completa?</strong>
-          El caso de estudio <em>NORTE Distribuciones S.R.L.</em> guía un ciclo mensual completo
-          con 4 módulos y 19 pasos. Podés usarla como modelo para diseñar tus propias consignas.
-          <a href="consigna.html" style="color: var(--blue); font-weight: 700; text-decoration: none;">Ver consigna completa →</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- APPS COMPLEMENTARIAS -->
+  <!-- ── Proyectos institucionales ── -->
   <div class="complement-section">
     <div class="container">
-      <p class="section-eyebrow" style="color: #64748B;">Herramientas complementarias</p>
-      <h2 class="section-title">Más recursos del ecosistema</h2>
+      <p class="section-eyebrow" style="color: #B45309;">Proyectos institucionales · Ciclo 2026</p>
+      <h2 class="section-title">Programas con aval de su escuela</h2>
       <p class="section-sub">
-        Aplicaciones independientes de <strong style="color:#166534;">acceso público</strong>: puede usarlas cualquier persona,
-        sin registro ni instalación. Las dos funcionan igual —
-        <strong style="color:#3730A3;">no tienen base de datos ni servidor</strong>: todo lo que hace el estudiante queda
-        guardado en el navegador de su propia computadora.
+        Proyectos Institucionales Pedagógicos Innovadores presentados ante el Consejo General de
+        Educación de Misiones. Cada uno reúne sus propios simuladores y su recorrido de aula.
       </p>
+
       <div class="complement-grid">
 
-        <!-- Banco Aula · Simulador de homebanking -->
-        <div class="comp-card indigo">
+        <div class="comp-card orange">
           <div class="comp-card-cover">
-            <img src="img/banner-banco.jpg" alt="Banco Aula — Simulador de homebanking para banca empresas" loading="lazy">
+            <img src="img/banner-simulaobra.jpg" alt="SimulaObra — Simulación para Maestro Mayor de Obras" loading="lazy">
           </div>
           <div class="comp-card-header" style="padding: 12px 24px 10px;">
-            <span class="comp-badge">Complemento · Tesorería</span>
+            <span class="comp-badge">EPET N.º 48</span>
             <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0;">🌐 Acceso público</span>
+          </div>
+          <div class="comp-card-body">
+            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
+              Procesos jurídicos, laborales y administrativos aplicados a microemprendimientos de la
+              construcción. Cada equipo constituye una empresa constructora y arma su expediente
+              legal, fiscal, comercial y laboral.
+            </p>
+            <ul class="comp-features">
+              <li><strong>ObraDocs</strong> — 60 modelos editables de documentos de obra</li>
+              <li><strong>Contratos Legales</strong> — contratación, obra y relación laboral</li>
+              <li>Integra <strong>TRIBUT.AR, PyMEZ 360 y Sueldos 360</strong> en un proyecto anual</li>
+              <li>Ruta de aprendizaje, glosario y autoevaluación</li>
+            </ul>
+            <p style="font-size:11.5px;color:#64748B;margin:0 0 14px;">
+              Legales II · 6.º año «A» · Prof. Juan Manuel Gómez
+            </p>
+            <a href="https://simulaobraepet48.netlify.app/" target="_blank" rel="noopener" class="comp-btn">
+              Abrir SimulaObra
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="comp-card teal">
+          <div class="comp-card-cover">
+            <img src="img/banner-talentohumano.jpg" alt="Aula en Acción — Repositorio pedagógico de Talento Humano 2030" loading="lazy">
+          </div>
+          <div class="comp-card-header" style="padding: 12px 24px 10px;">
+            <span class="comp-badge">ENS N.º 9</span>
+            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0;">🌐 Acceso público</span>
+          </div>
+          <div class="comp-card-body">
+            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
+              Aprendizaje basado en proyectos: los equipos crean y gestionan agencias simuladas de
+              talento humano que asesoran a organizaciones de la región con mirada al futuro del
+              trabajo hacia 2030.
+            </p>
+            <ul class="comp-features">
+              <li>Repositorio pedagógico «Aula en Acción» con experiencias y producciones</li>
+              <li>Selección por habilidades, capacitación, bienestar y analítica</li>
+              <li>Sección «Mirada 2030» y galería de la Expo Técnica</li>
+              <li>Acompaña el ciclo «Voces del Mundo Profesional»</li>
+            </ul>
+            <p style="font-size:11.5px;color:#64748B;margin:0 0 14px;">
+              3.º año «B» · Autoría: <strong>Prof. Ivana Ramírez</strong>
+            </p>
+            <a href="https://talentohumano2030.netlify.app/" target="_blank" rel="noopener" class="comp-btn">
+              Abrir Aula en Acción
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Simuladores de práctica ── -->
+  <section id="simuladores">
+    <div class="container">
+      <p class="section-eyebrow" style="color: var(--violet)">Simuladores de práctica</p>
+      <h2 class="section-title">Entornos independientes</h2>
+      <p class="section-sub">
+        Funcionan por separado y se usan según la consigna. Todos son de acceso público y
+        <strong style="color:#3730A3;">no tienen base de datos ni servidor</strong>: lo que hace el
+        estudiante queda guardado en el navegador de su propia computadora.
+      </p>
+
+      <div class="complement-grid">
+
+        <div class="comp-card indigo">
+          <div class="comp-card-cover">
+            <img src="img/banner-banco.jpg" alt="Banco Aula — Simulador de homebanking" loading="lazy">
+          </div>
+          <div class="comp-card-header" style="padding: 12px 24px 10px;">
+            <span class="comp-badge">Tesorería</span>
           </div>
           <div class="comp-card-body">
             <ul class="comp-features">
               <li>Transferencias, pago de servicios, haberes y VEP de obligaciones fiscales</li>
               <li>Cobro de ventas y conciliación bancaria</li>
-              <li>Circuito de autorización real: el administrativo carga y el firmante autoriza</li>
-              <li>Jornada guiada de 10 desafíos, con espacios de práctica por grupo</li>
+              <li>Circuito de autorización: el administrativo carga y el firmante autoriza</li>
+              <li>Jornada guiada de 10 desafíos</li>
             </ul>
-            <p style="font-size: 11.5px; color: #3730A3; background: #EEF2FF; border: 1px solid #C7D2FE; border-radius: 8px; padding: 9px 11px; margin: 0 0 14px; line-height: 1.55;">
-              💾 <strong>Sin base de datos: guardado local.</strong> Todo queda en el propio dispositivo:
-              los espacios de práctica no se comparten entre equipos y se puede exportar un respaldo para seguir en otro.
-            </p>
-            <a href="https://simuladorhomebanking.netlify.app/" target="_blank" class="comp-btn">
+            <a href="https://simuladorhomebanking.netlify.app/" target="_blank" rel="noopener" class="comp-btn">
               Abrir Banco Aula
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Simuladores de pasantías educativas 2026 -->
         <div class="comp-card teal">
           <div class="comp-card-cover">
-            <img src="img/banner-pasantias.jpg" alt="Simuladores de sistemas de gestión para pasantías educativas 2026" loading="lazy">
+            <img src="img/banner-pasantias.jpg" alt="Simuladores de sistemas de gestión para pasantías 2026" loading="lazy">
           </div>
           <div class="comp-card-header" style="padding: 12px 24px 10px;">
-            <span class="comp-badge">Complemento · Pasantías</span>
-            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0;">🌐 Acceso público</span>
+            <span class="comp-badge">Pasantías 2026</span>
           </div>
           <div class="comp-card-body">
             <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
-              Cinco sistemas de gestión para entrenar las tareas de un puesto administrativo antes de
-              la pasantía. Cada estudiante practica en el entorno que le toca.
+              Cinco sistemas para entrenar las tareas de un puesto administrativo antes de la pasantía.
             </p>
             <ul class="comp-features">
               <li><strong>Catastro</strong> — Municipalidad: contribuyentes, habilitaciones y caja</li>
@@ -1345,10 +1285,6 @@
               <li><strong>RISMI</strong> — Salud: pacientes, agenda e historias clínicas</li>
               <li><strong>SINALIC</strong> — Licencias: documentación, evaluación y emisión</li>
             </ul>
-            <p style="font-size: 11.5px; color: #3730A3; background: #EEF2FF; border: 1px solid #C7D2FE; border-radius: 8px; padding: 9px 11px; margin: 0 0 14px; line-height: 1.55;">
-              💾 <strong>Sin base de datos: guardado local.</strong> Cada simulador conserva la práctica en ese navegador y esa computadora.
-              El avance no se comparte entre equipos: conviene descargar el respaldo al terminar, para el informe de pasantía.
-            </p>
             <a href="https://simuladorespasantias2026.netlify.app/" target="_blank" rel="noopener" class="comp-btn">
               Abrir los simuladores
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -1356,437 +1292,360 @@
           </div>
         </div>
 
+        <div class="comp-card indigo">
+          <div class="comp-card-cover">
+            <img src="img/banner-nexotalento.jpg" alt="Agencia de Talento Humano 2030 — Simulador" loading="lazy">
+          </div>
+          <div class="comp-card-header" style="padding: 12px 24px 10px;">
+            <span class="comp-badge">Talento humano</span>
+          </div>
+          <div class="comp-card-body">
+            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
+              Cada equipo dirige una agencia que asesora a empresas de la región: identidad propia,
+              diez desafíos que se validan solos, modo muestra y portal de empleo.
+            </p>
+            <ul class="comp-features">
+              <li>Selección por habilidades y liquidación tercerizada</li>
+              <li>Capacitación, bienestar y analítica con IA</li>
+              <li>Escenarios 2030: trabajo híbrido y semana de cuatro días</li>
+            </ul>
+            <a href="https://simuladordetalentohumano.netlify.app/" target="_blank" rel="noopener" class="comp-btn">
+              Abrir el simulador
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="comp-card orange">
+          <div class="comp-card-cover">
+            <img src="img/banner-rrhh2030.jpg" alt="RRHH 2030 — Los trabajos que vienen" loading="lazy">
+          </div>
+          <div class="comp-card-header" style="padding: 12px 24px 10px;">
+            <span class="comp-badge">Orientación vocacional</span>
+          </div>
+          <div class="comp-card-body">
+            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
+              Explorador sobre el cambio del mundo del trabajo, con datos del Foro Económico Mundial.
+              Fue el recurso de la muestra escolar.
+            </p>
+            <ul class="comp-features">
+              <li>Seis sectores con sus trabajos nuevos</li>
+              <li>Competencias más valoradas y tres perfiles que se buscarán</li>
+              <li>Test vocacional y trivia</li>
+            </ul>
+            <a href="https://rrhh2026.netlify.app/" target="_blank" rel="noopener" class="comp-btn">
+              Abrir el explorador
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- CURSOS AUTOASISTIDOS -->
-  <div class="cursos-section">
+  <!-- ══════════════ ENFOQUE ══════════════ -->
+  <div class="modelo-bg" id="enfoque">
     <div class="container">
-      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;">
-        <p class="section-eyebrow" style="color: #94A3B8; margin-bottom: 0;">Tercer nivel · Campus Virtual ENS N°9</p>
-        <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A;">🚧 En desarrollo</span>
-        <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #E0E7FF; color: #3730A3; border: 1px solid #C7D2FE;">🔒 Uso interno de la escuela</span>
-      </div>
-      <h2 class="section-title">Formación autoasistida y gratuita</h2>
-      <p class="section-sub">
-        Cursos libres y sin instalación para ampliar la formación integral del estudiante más allá
-        de la gestión administrativa. <strong style="color: #92400E;">Los cursos están en proceso de desarrollo activo</strong> —
-        algunos pueden estar incompletos o en revisión. <strong style="color: #3730A3;">Son de uso interno de la escuela</strong>, disponibles en el Campus Virtual para estudiantes y docentes de la institución.
+      <p class="section-eyebrow" style="color: #93C5FD;">Estrategia formativa</p>
+      <h2 class="section-title" style="color: #fff;">Enfoque neuro-tecno-pedagógico</h2>
+      <p class="section-sub" style="color: #CBD5E1;">
+        Tres principios explican por qué el ecosistema está hecho de simuladores y no de apuntes.
       </p>
 
-      <div class="cursos-grid">
-
-        <div class="curso-card">
-          <div class="curso-icon">💰</div>
-          <p class="curso-cat">Educación Financiera</p>
-          <p class="curso-name">Finanzas Personales para Jóvenes</p>
-          <p style="font-size:12px;color:#475569;line-height:1.5;">Aprendé a manejar tu dinero, armar un presupuesto, ahorrar e invertir desde el inicio de tu vida económica.</p>
-          <div class="curso-meta">
-            <span class="curso-badge">⏱ 15 horas</span>
-            <span class="curso-badge">📖 31 clases</span>
-          </div>
-          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
-            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+      <div class="modelo-grid">
+        <div class="modelo-pillar">
+          <span class="modelo-pillar-num">Pilar 01 · Neuroeducación</span>
+          <h3 class="modelo-pillar-title">Aprender haciendo consolida la memoria</h3>
+          <p class="modelo-pillar-text">
+            El aprendizaje se afianza cuando hay contexto real, consecuencia inmediata y
+            retroalimentación. Equivocarse al liquidar un impuesto y ver el error en el mismo acto
+            fija más que leer la norma.
+          </p>
         </div>
-
-        <div class="curso-card">
-          <div class="curso-icon">💼</div>
-          <p class="curso-cat">Empleabilidad</p>
-          <p class="curso-name">Ruta al Empleo</p>
-          <p style="font-size:12px;color:#475569;line-height:1.5;">Búsqueda de empleo, CV, LinkedIn y preparación para entrevistas laborales.</p>
-          <div class="curso-meta">
-            <span class="curso-badge">⏱ 20 horas</span>
-            <span class="curso-badge">📖 8 clases</span>
-          </div>
-          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
-            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+        <div class="modelo-pillar">
+          <span class="modelo-pillar-num">Pilar 02 · Tecnología educativa</span>
+          <h3 class="modelo-pillar-title">La tecnología como mediadora</h3>
+          <p class="modelo-pillar-text">
+            Los sistemas reales de ARCA y las direcciones de rentas no tienen entornos de prueba.
+            Estas aplicaciones cierran esa brecha: permiten operar los circuitos sin consecuencias
+            legales ni riesgo para nadie.
+          </p>
         </div>
-
-        <div class="curso-card">
-          <div class="curso-icon">🤖</div>
-          <p class="curso-cat">Ciudadanía Digital</p>
-          <p class="curso-name">Ciudadanía Digital, IA e Inclusión</p>
-          <p style="font-size:12px;color:#475569;line-height:1.5;">Identidad digital, inteligencia artificial, desinformación y derechos digitales.</p>
-          <div class="curso-meta">
-            <span class="curso-badge">⏱ 10 horas</span>
-            <span class="curso-badge">📖 8 clases</span>
-          </div>
-          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
-            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+        <div class="modelo-pillar">
+          <span class="modelo-pillar-num">Pilar 03 · Pedagogía activa</span>
+          <h3 class="modelo-pillar-title">Situación real, aprendizaje real</h3>
+          <p class="modelo-pillar-text">
+            El aprendizaje situado sostiene que el conocimiento se construye resolviendo problemas
+            con sentido. El estudiante no estudia una empresa: dirige una, y sostiene las
+            consecuencias de sus decisiones.
+          </p>
         </div>
-
-        <div class="curso-card">
-          <div class="curso-icon">🌱</div>
-          <p class="curso-cat">Ambiente y Ciudadanía</p>
-          <p class="curso-name">Ambiente, Comunidad y Participación Ciudadana</p>
-          <p style="font-size:12px;color:#475569;line-height:1.5;">Cambio climático, biodiversidad, economía circular y proyectos de impacto local.</p>
-          <div class="curso-meta">
-            <span class="curso-badge">⏱ 8 horas</span>
-            <span class="curso-badge">📖 8 clases</span>
-          </div>
-          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
-            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-        <div class="curso-card">
-          <div class="curso-icon">🏃</div>
-          <p class="curso-cat">Salud y Bienestar</p>
-          <p class="curso-name">Nutrición y Actividad Física</p>
-          <p style="font-size:12px;color:#475569;line-height:1.5;">Alimentación, hidratación, movimiento y hábitos saludables sostenibles.</p>
-          <div class="curso-meta">
-            <span class="curso-badge">⏱ 10 horas</span>
-            <span class="curso-badge">📖 8 clases</span>
-          </div>
-          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
-            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-        <div class="curso-card">
-          <div class="curso-icon">🚦</div>
-          <p class="curso-cat">Seguridad Vial</p>
-          <p class="curso-name">Educación Vial: Normas para Todos</p>
-          <p style="font-size:12px;color:#475569;line-height:1.5;">Señales de tránsito, derechos y responsabilidades de peatones y conductores.</p>
-          <div class="curso-meta">
-            <span class="curso-badge">⏱ 8 horas</span>
-            <span class="curso-badge">📖 8 clases</span>
-          </div>
-          <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="curso-link">
-            Ir al curso <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
       </div>
 
-      <div class="cursos-cta">
-        <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="cursos-cta-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          Ver todos los cursos en el Campus Virtual
-        </a>
+      <p class="modelo-quote">
+        «No se aprende fiscalidad leyendo sobre fiscalidad. Se aprende operando en un entorno
+        que simula sus reglas y devuelve sus consecuencias.»
+      </p>
+
+      <div class="tech-stack">
+        <span class="tech-badge">Next.js</span>
+        <span class="tech-badge">Supabase</span>
+        <span class="tech-badge">Vercel</span>
+        <span class="tech-badge">Netlify</span>
+        <span class="tech-badge">GitHub</span>
+        <span class="tech-badge">Claude (Anthropic)</span>
+        <span class="tech-badge">ChatGPT</span>
       </div>
+      <p style="text-align:center;color:#94A3B8;font-size:12.5px;margin:18px 0 0;">
+        ⚠️ Prototipos educativos en desarrollo activo. Los datos son ficticios y las operaciones
+        no tienen validez administrativa ni legal.
+      </p>
     </div>
   </div>
 
-  <!-- SABERES QUE SE ADQUIEREN -->
-  <section style="background: var(--slate-l); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <!-- ══════════════ QUÉ SE APRENDE ══════════════ -->
+  <section id="saberes">
     <div class="container">
-      <p class="section-eyebrow" style="color: var(--green)">Aprendizajes del ecosistema</p>
-      <h2 class="section-title">¿Qué saberes construye el estudiante?</h2>
+      <p class="section-eyebrow" style="color: var(--green)">Aprendizajes</p>
+      <h2 class="section-title">Qué construye el estudiante</h2>
       <p class="section-sub">
-        Al operar el ciclo completo, el estudiante no solo practica procedimientos: construye una comprensión
-        integrada de la empresa como sistema. Los saberes adquiridos se organizan en tres ejes.
+        Al operar el ciclo completo no practica procedimientos sueltos: entiende por qué una
+        obligación nace, cómo se calcula y cuándo se extingue.
       </p>
 
       <div class="saberes-grid">
         <div class="saber-card">
           <div class="saber-icon">🏛️</div>
-          <div class="saber-tag" style="background: #DBEAFE; color: #1D4ED8;">Saber impositivo</div>
-          <p class="saber-title">Obligaciones tributarias y cumplimiento fiscal</p>
+          <h3 class="saber-title">Saber impositivo</h3>
+          <span class="saber-tag">Obligaciones tributarias</span>
           <ul class="saber-list">
-            <li>Alta registral y elección de régimen (Monotributo / RG)</li>
-            <li>Cálculo de IVA: débito, crédito fiscal y saldo técnico</li>
-            <li>Liquidación de IIBB: base imponible, alícuotas y DDJJ</li>
+            <li>Alta registral y elección de régimen</li>
+            <li>IVA: débito, crédito fiscal y saldo técnico</li>
+            <li>IIBB: base imponible, alícuota por actividad y DDJJ</li>
             <li>Anticipos de Ganancias y ajuste anual</li>
-            <li>Generación de VEPs y pagos en Billetera Fiscal</li>
-            <li>Diferencia entre jurisdicción nacional (ARCA) y provincial (ATM)</li>
+            <li>Jurisdicción nacional frente a provincial</li>
           </ul>
         </div>
         <div class="saber-card">
           <div class="saber-icon">⚖️</div>
-          <div class="saber-tag" style="background: #FEF3C7; color: #92400E;">Saber legal-laboral</div>
-          <p class="saber-title">Marco normativo y relaciones de trabajo</p>
+          <h3 class="saber-title">Saber legal-laboral</h3>
+          <span class="saber-tag">Relaciones de trabajo</span>
           <ul class="saber-list">
-            <li>Formalidades de la inscripción ante ARCA y DGR</li>
-            <li>Alta de empleados, categorías CCT y antigüedad</li>
-            <li>Diferencia entre sueldo bruto, neto y costo laboral</li>
-            <li>Retenciones al trabajador: jubilación, obra social, SUSS</li>
-            <li>Contribuciones patronales y presentación del F.931</li>
-            <li>Conceptos de retención de IIBB por agentes de retención</li>
+            <li>Alta de empleados, categorías de convenio y antigüedad</li>
+            <li>Sueldo bruto, neto y costo laboral</li>
+            <li>Aportes del trabajador y contribuciones patronales</li>
+            <li>Presentación del F.931</li>
+            <li>Contratos de obra y de trabajo</li>
+          </ul>
+        </div>
+        <div class="saber-card">
+          <div class="saber-icon">📊</div>
+          <h3 class="saber-title">Saber contable</h3>
+          <span class="saber-tag">Registro y análisis</span>
+          <ul class="saber-list">
+            <li>Partida doble: todo asiento cierra</li>
+            <li>Libro diario, mayor y plan de cuentas</li>
+            <li>Devengar frente a percibir</li>
+            <li>Cuentas corrientes y conciliación bancaria</li>
+            <li>Costos e inventario</li>
           </ul>
         </div>
         <div class="saber-card">
           <div class="saber-icon">💻</div>
-          <div class="saber-tag" style="background: #F0FDF4; color: #166534;">Saber tecnológico</div>
-          <p class="saber-title">Gestión digital e integración de sistemas</p>
+          <h3 class="saber-title">Saber tecnológico</h3>
+          <span class="saber-tag">Gestión digital</span>
           <ul class="saber-list">
-            <li>Navegación de sistemas integrados de gestión</li>
-            <li>Comprensión del flujo de datos entre plataformas</li>
-            <li>Facturación electrónica: tipos de comprobante y CAE</li>
-            <li>Vinculación de Punto de Venta entre ARCA y sistema comercial</li>
-            <li>Tesorería digital: cuentas, movimientos y saldos en tiempo real</li>
-            <li>Lectura e interpretación de dashboards e indicadores</li>
+            <li>Operar sistemas de gestión con autonomía</li>
+            <li>Integrar datos entre plataformas distintas</li>
+            <li>Resguardar evidencias y exportar información</li>
+            <li>Leer un reporte y detectar inconsistencias</li>
+            <li>Trabajar con identidad digital y permisos</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- MODELO PEDAGÓGICO -->
-  <div class="modelo-bg">
-    <section>
-      <div class="container">
-        <p class="section-eyebrow" style="color: #93C5FD;">Estrategia formativa</p>
-        <h2 class="section-title" style="color: white;">Modelo neuro-tecno-pedagógico</h2>
-        <p class="section-sub" style="color: #94A3B8;">
-          GEST-AR se apoya en un enfoque que integra principios de neuroeducación, tecnología educativa
-          y pedagogía activa para generar aprendizaje situado, significativo y transferible.
-        </p>
-
-        <div class="modelo-grid">
-          <div class="modelo-pillar">
-            <div class="modelo-pillar-num">Pilar 01 · Neuroeducación</div>
-            <div class="modelo-pillar-title">Aprender haciendo activa la memoria</div>
-            <p class="modelo-pillar-text">
-              La neuroeducación sostiene que el aprendizaje se consolida cuando hay contexto real,
-              carga emocional positiva y práctica repetida. Operar un ciclo empresarial completo
-              —vender, declarar, pagar sueldos— activa la memoria procedimental y la comprensión
-              sistémica de una manera que la lectura del cuadernillo no logra.
-            </p>
-          </div>
-          <div class="modelo-pillar">
-            <div class="modelo-pillar-num">Pilar 02 · Tecnología educativa</div>
-            <div class="modelo-pillar-title">La tecnología como mediadora del aprendizaje</div>
-            <p class="modelo-pillar-text">
-              Los sistemas reales de AFIP, ARCA y DGR no tienen entornos de prueba. GEST-AR cierra
-              esa brecha: ofrece entornos simulados que replican la lógica operativa sin las
-              consecuencias reales. El estudiante gana acceso a experiencias que antes solo eran
-              posibles en la vida profesional.
-            </p>
-          </div>
-          <div class="modelo-pillar">
-            <div class="modelo-pillar-num">Pilar 03 · Pedagogía activa</div>
-            <div class="modelo-pillar-title">Situación real, aprendizaje real</div>
-            <p class="modelo-pillar-text">
-              El enfoque constructivista y el aprendizaje situado proponen que el conocimiento
-              se construye en contacto con problemas auténticos. Aquí, el "problema" es gestionar
-              una empresa: elegir régimen, emitir comprobantes, liquidar sueldos, cumplir ante el
-              fisco. El error en el simulador genera reflexión, no consecuencias.
-            </p>
-          </div>
-        </div>
-
-        <div class="modelo-quote">
-          <p>
-            "No se aprende fiscalidad leyendo sobre fiscalidad. Se aprende operando en un entorno
-            que simule sus consecuencias. GEST-AR es esa práctica segura: un espacio donde equivocarse
-            cuesta cero y aprender vale todo."
-          </p>
-        </div>
-
-        <div style="margin-top: 28px;">
-          <p style="font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #64748B; margin-bottom: 12px;">
-            ⚙️ Tecnología que hace posible este ecosistema
-          </p>
-          <div class="tech-stack">
-            <span class="tech-badge">GitHub — control de versiones</span>
-            <span class="tech-badge">Supabase — base de datos y autenticación</span>
-            <span class="tech-badge">Vercel — despliegue y hosting</span>
-            <span class="tech-badge">Next.js — framework web</span>
-            <span class="tech-badge">ChatGPT — asistencia en desarrollo</span>
-            <span class="tech-badge">Claude (Anthropic) — asistencia en desarrollo</span>
-          </div>
-          <p style="font-size: 11px; color: #475569; margin-top: 12px; line-height: 1.6;">
-            ⚠️ GEST-AR es un <strong style="color: #64748B;">prototipo educativo en desarrollo activo</strong>.
-            Como toda tecnología innovadora, puede presentar errores o comportamientos inesperados.
-            Eso forma parte de su proceso de maduración — y también es parte de la experiencia: los estudiantes
-            aprenden a operar sistemas reales, con sus imperfecciones.
-          </p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- INTEGRACIÓN -->
-  <div class="integration-bg" id="integracion">
-    <section>
-      <div class="container">
-        <p class="section-eyebrow" style="color: var(--slate)">Integración entre plataformas</p>
-        <h2 class="section-title">Las tres plataformas se hablan entre sí</h2>
-        <p class="section-sub">
-          El alumno opera un ciclo real. Los datos de una plataforma alimentan automáticamente a las otras,
-          igual que en una empresa real.
-        </p>
-
-        <div class="integration-flow">
-          <div class="flow-node blue">
-            <div class="flow-node-icon">🏛️</div>
-            <div class="flow-node-name">TRIBUT.AR</div>
-            <div class="flow-node-items">IVA · Ganancias · Mono<br>IIBB · PV · F.931 · VEPs</div>
-          </div>
-          <div class="flow-arrow">⇄</div>
-          <div class="flow-node green">
-            <div class="flow-node-icon">📦</div>
-            <div class="flow-node-name">PyMEZ 360</div>
-            <div class="flow-node-items">Ventas · Compras<br>Tesorería</div>
-          </div>
-          <div class="flow-arrow">⇄</div>
-          <div class="flow-node violet">
-            <div class="flow-node-icon">👥</div>
-            <div class="flow-node-name">Sueldos 360</div>
-            <div class="flow-node-items">Personal · Sueldos<br>Cargas sociales</div>
-          </div>
-        </div>
-
-        <div class="integration-points">
-          <div class="integration-point">
-            <div class="integration-point-dot" style="background: var(--blue)"></div>
-            <div class="integration-point-text">
-              <strong>PV habilitado en TRIBUT.AR → PyMEZ 360</strong>
-              El Punto de Venta autorizado en TRIBUT.AR habilita la emisión de comprobantes desde PyMEZ 360 con CAE válido.
-            </div>
-          </div>
-          <div class="integration-point">
-            <div class="integration-point-dot" style="background: var(--green)"></div>
-            <div class="integration-point-text">
-              <strong>Ventas en PyMEZ 360 → IVA y Ganancias (ARCA/AFIP)</strong>
-              Las facturas emitidas en PyMEZ 360 alimentan automáticamente el débito fiscal de IVA y la base de ingresos para Ganancias en TRIBUT.AR, replicando el ciclo real de una empresa inscripta en Régimen General o como Autónomo.
-            </div>
-          </div>
-          <div class="integration-point">
-            <div class="integration-point-dot" style="background: #F97316"></div>
-            <div class="integration-point-text">
-              <strong>Ventas en PyMEZ 360 → Base de IIBB (ATM Misiones)</strong>
-              Esas mismas ventas se sincronizan como base imponible para la DDJJ de Ingresos Brutos ante la ATM Misiones — distinguiendo así los dos ámbitos: nacional (ARCA) y provincial (DGR).
-            </div>
-          </div>
-          <div class="integration-point">
-            <div class="integration-point-dot" style="background: var(--violet)"></div>
-            <div class="integration-point-text">
-              <strong>Sueldos 360 → Relaciones Laborales</strong>
-              Empleados, liquidaciones y F.931 de Sueldos 360 se sincronizan con el módulo Relaciones Laborales de TRIBUT.AR.
-            </div>
-          </div>
-          <div class="integration-point">
-            <div class="integration-point-dot" style="background: #F59E0B"></div>
-            <div class="integration-point-text">
-              <strong>Ciclo completo sin saltar entre sistemas</strong>
-              El alumno experimenta el flujo real de una empresa: vender, cobrar, declarar, pagar sueldos y cumplir ante AFIP.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- USOS PEDAGÓGICOS -->
-  <section id="docentes">
-    <div class="container">
-      <p class="section-eyebrow" style="color: var(--violet)">Potencial pedagógico</p>
-      <h2 class="section-title">¿Dónde lo podemos aplicar?</h2>
-      <p class="section-sub">
-        Adaptable a múltiples asignaturas, niveles y diseños curriculares según el alcance que el docente defina.
-      </p>
 
       <div class="pills-wrap">
-        <span class="pill blue">Sistema impositivo</span>
-        <span class="pill blue">Liquidación de impuestos</span>
+        <span class="pill blue">Legales y tributación</span>
         <span class="pill green">Contabilidad</span>
-        <span class="pill green">Gestión comercial</span>
-        <span class="pill violet">Liquidación de sueldos</span>
         <span class="pill violet">Gestión de RRHH</span>
-        <span class="pill amber">Legales y tributación</span>
         <span class="pill amber">Práctica profesionalizante</span>
         <span class="pill teal">Economía de la empresa</span>
-        <span class="pill teal">Administración de PyMEs</span>
+        <span class="pill blue">Administración de PyMEs</span>
       </div>
+      <p style="text-align:center;font-size:12.5px;color:#64748B;margin:14px 0 0;">
+        <strong>Niveles:</strong> secundaria técnica y bachiller · institutos terciarios de gestión ·
+        formación docente en Ciencias Económicas
+      </p>
+    </div>
+  </section>
 
-      <div style="margin-top: 20px; padding: 14px 18px; background: var(--slate-l); border: 1px solid var(--border); border-radius: 12px;">
-        <p style="font-size: 13px; color: var(--slate);">
-          📚 <strong style="color: var(--text)">Niveles:</strong>
-          Secundaria técnica y bachiller · Institutos terciarios de gestión · Formación docente en Ciencias Económicas
-        </p>
-      </div>
+  <!-- ══════════════ DOCENTES ══════════════ -->
+  <section id="docentes">
+    <div class="container">
+      <p class="section-eyebrow" style="color: var(--amber, #B45309)">Para el aula</p>
+      <h2 class="section-title">Cómo empezar</h2>
+      <p class="section-sub">
+        No requiere instalación ni licencias. Sólo que cada estudiante cree su usuario.
+      </p>
 
-      <!-- Card para docentes -->
-      <div class="docentes-card" style="margin-top: 48px;">
+      <div class="docentes-card">
         <div class="docentes-card-content">
-          <h2>Guía de inicio para docentes</h2>
-          <p>
-            Para incorporar el ecosistema en tu aula solo necesitás que los alumnos creen
-            su usuario. No requiere instalación, es gratuito y está disponible desde cualquier dispositivo.
-          </p>
           <div class="docentes-steps">
             <div class="docentes-step">
-              <div class="docentes-step-num">1</div>
-              <p>Creá tu usuario en <strong>TRIBUT.AR</strong> con tu correo educativo y configurá una empresa del rubro que trabajás con tus estudiantes.</p>
+              <span class="docentes-step-num">1</span>
+              <p>Creá tu usuario en <strong>TRIBUT.AR</strong> con tu correo educativo y configurá una
+                 empresa del rubro que trabajás con tus estudiantes.</p>
             </div>
             <div class="docentes-step">
-              <div class="docentes-step-num">2</div>
-              <p>Registrá la misma empresa en <strong>PyMEZ 360</strong> y vinculala con el Punto de Venta habilitado en TRIBUT.AR.</p>
+              <span class="docentes-step-num">2</span>
+              <p>Registrá la misma empresa en <strong>PyMEZ 360</strong> y vinculala con el Punto de
+                 Venta habilitado en TRIBUT.AR.</p>
             </div>
             <div class="docentes-step">
-              <div class="docentes-step-num">3</div>
-              <p>Explorá el tablero, registrá ventas y compras de prueba. Cuando vayas a sueldos, ingresá en <strong>Sueldos 360</strong> con el código de sincronización.</p>
+              <span class="docentes-step-num">3</span>
+              <p>Explorá el tablero, registrá ventas y compras de prueba. Cuando llegues a sueldos,
+                 ingresá en <strong>Sueldos 360</strong> con el código de sincronización.</p>
             </div>
           </div>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; min-width: 200px;">
-          <a href="https://tributar2026nuevo.vercel.app/" target="_blank"
-            style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 22px; background: var(--blue); color: white; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none;">
-            🏛️ TRIBUT.AR
-          </a>
-          <a href="https://pymez-360.vercel.app/" target="_blank"
-            style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 22px; background: var(--green); color: white; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none;">
-            📦 PyMEZ 360
-          </a>
-          <a href="https://sueldos360.vercel.app/" target="_blank"
-            style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 22px; background: var(--violet); color: white; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none;">
-            👥 Sueldos 360
-          </a>
+      </div>
+
+      <div class="complement-grid" style="margin-top:26px;">
+        <div class="comp-card blue">
+          <div class="comp-card-header" style="padding: 14px 24px 12px;">
+            <span class="comp-badge">Caso de estudio</span>
+          </div>
+          <div class="comp-card-body">
+            <h3 style="margin:0 0 8px;font-size:16px;font-weight:800;">Consigna integral: NORTE Distribuciones S.R.L.</h3>
+            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
+              Ejercicio completo de ciclo mensual para una PyME comercial: 4 módulos y 19 pasos
+              guiados que recorren IVA, IIBB, sueldos y F.931.
+            </p>
+            <a href="consigna.html" class="comp-btn">
+              Ver la consigna
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="comp-card teal">
+          <div class="comp-card-header" style="padding: 14px 24px 12px;">
+            <span class="comp-badge">Seguimiento</span>
+          </div>
+          <div class="comp-card-body">
+            <h3 style="margin:0 0 8px;font-size:16px;font-weight:800;">Panel de evaluación del piloto</h3>
+            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
+              Seis indicadores con su estado real de medición, el circuito de recolección de
+              evidencia y los instrumentos aplicados. Corte fechado y reproducible.
+            </p>
+            <a href="resultados.html" class="comp-btn">
+              Ver el panel
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="comp-card orange">
+          <div class="comp-card-header" style="padding: 14px 24px 12px;">
+            <span class="comp-badge">Campus Virtual</span>
+            <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: #E0E7FF; color: #3730A3; border: 1px solid #C7D2FE;">🔒 Uso interno</span>
+          </div>
+          <div class="comp-card-body">
+            <h3 style="margin:0 0 8px;font-size:16px;font-weight:800;">Cursos autoasistidos</h3>
+            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
+              Formación complementaria en educación financiera, ciudadanía digital y herramientas
+              de oficina. Disponibles para estudiantes y docentes de la institución.
+            </p>
+            <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" rel="noopener" class="comp-btn">
+              Ir al Campus
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONSIGNA INTEGRAL -->
-  <section style="background: var(--slate-l); border-top: 1px solid var(--border);">
+  <!-- ══════════════ AUTOR ══════════════ -->
+  <section id="autor" style="background:#F8FAFC;">
     <div class="container">
-      <div style="
-        background: linear-gradient(135deg, var(--navy) 0%, var(--navy-d) 100%);
-        border-radius: 24px; padding: 40px 44px;
-        display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
-      ">
-        <div style="flex: 1; min-width: 260px;">
-          <p style="font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #93C5FD; margin-bottom: 10px;">
-            Herramienta didáctica · Caso de estudio
-          </p>
-          <h2 style="font-size: clamp(20px, 3vw, 28px); font-weight: 900; color: white; letter-spacing: -0.5px; margin-bottom: 10px; line-height: 1.2;">
-            Consigna integral:<br>NORTE Distribuciones S.R.L.
-          </h2>
-          <p style="font-size: 14px; color: #94A3B8; line-height: 1.7; margin-bottom: 20px;">
-            Ejercicio completo de ciclo mensual para una PyME comercial. Guía paso a paso
-            que recorre las tres plataformas: inscripción fiscal, operaciones comerciales,
-            liquidación de sueldos y cierre impositivo.
-          </p>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <span style="font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; background: rgba(24,95,165,0.3); color: #93C5FD; border: 1px solid rgba(24,95,165,0.4);">4 módulos</span>
-            <span style="font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; background: rgba(59,109,17,0.3); color: #86EFAC; border: 1px solid rgba(59,109,17,0.4);">19 pasos guiados</span>
-            <span style="font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; background: rgba(83,74,183,0.3); color: #C4B5FD; border: 1px solid rgba(83,74,183,0.4);">Ciclo mensual completo</span>
-            <span style="font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; background: rgba(180,83,9,0.3); color: #FCD34D; border: 1px solid rgba(180,83,9,0.4);">IVA · IIBB · Sueldos · F.931</span>
+      <p class="section-eyebrow" style="color: var(--blue)">Quién está detrás</p>
+      <h2 class="section-title">El autor y sus canales</h2>
+      <p class="section-sub">
+        Juan Manuel Gómez · Profesor en Ciencias Económicas · Licenciado en Educación ·
+        Wanda, Misiones.
+      </p>
+
+      <div style="max-width: 880px; margin: 26px auto 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(15,23,42,0.12);">
+        <div style="position: relative; padding-top: 56.25%;">
+          <iframe src="https://www.youtube.com/embed/VpPVyYvSmFM" title="GEST-AR — video explicativo"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:14px;font-size:13px;color:#64748B;">
+        ¿No carga? <a href="https://youtu.be/VpPVyYvSmFM" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600;">Abrir en YouTube ↗</a>
+      </p>
+
+      <div class="complement-grid" style="margin-top:28px;">
+        <div class="comp-card orange">
+          <div class="comp-card-header" style="padding: 14px 24px 12px;">
+            <span class="comp-badge">YouTube</span>
+          </div>
+          <div class="comp-card-body">
+            <h3 style="margin:0 0 8px;font-size:16px;font-weight:800;">Canal del profesor</h3>
+            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
+              Tutoriales de uso de las plataformas, explicaciones de los circuitos administrativos
+              y registro de las experiencias de aula.
+            </p>
+            <a href="https://www.youtube.com/@juanmanuelgomez734" target="_blank" rel="noopener" class="comp-btn">
+              Ver el canal
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
           </div>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 10px; min-width: 180px;">
-          <a href="consigna.html"
-            style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 28px; background: white; color: var(--navy); border-radius: 14px; font-size: 15px; font-weight: 800; text-decoration: none; transition: all 0.2s; letter-spacing: -0.3px;"
-            onmouseover="this.style.background='#F1F5F9'" onmouseout="this.style.background='white'">
-            Ver consigna
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="consigna.html" target="_blank"
-            style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 20px; background: transparent; color: #94A3B8; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; font-size: 13px; font-weight: 600; text-decoration: none;">
-            Abrir en nueva pestaña ↗
-          </a>
+
+        <div class="comp-card blue">
+          <div class="comp-card-header" style="padding: 14px 24px 12px;">
+            <span class="comp-badge">Trayectoria</span>
+          </div>
+          <div class="comp-card-body">
+            <h3 style="margin:0 0 8px;font-size:16px;font-weight:800;">Sitio profesional</h3>
+            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
+              Formación, antecedentes docentes, publicaciones y proyectos presentados ante el
+              Consejo General de Educación de Misiones.
+            </p>
+            <a href="https://sitiowebprofejuanmagomez.netlify.app/" target="_blank" rel="noopener" class="comp-btn">
+              Ver el currículum
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="comp-card teal">
+          <div class="comp-card-header" style="padding: 14px 24px 12px;">
+            <span class="comp-badge">ENS N.º 9</span>
+          </div>
+          <div class="comp-card-body">
+            <h3 style="margin:0 0 8px;font-size:16px;font-weight:800;">Voces del Mundo Profesional</h3>
+            <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 12px;">
+              Ciclo de charlas con egresados y profesionales de la región para fortalecer el proyecto
+              de vida y la empleabilidad. Autoría: Prof. Ivana Ramírez.
+            </p>
+            <a href="https://youtube.com/shorts/ogvLgrwQl9I" target="_blank" rel="noopener" class="comp-btn">
+              Ver el video
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MODAL DONACIONES -->
+
+<!-- MODAL DONACIONES -->
   <div id="donation-modal" class="modal-overlay" onclick="closeDonation()">
     <div class="modal-box" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeDonation()">✕</button>
@@ -1845,7 +1704,8 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  
+<!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">
@@ -1858,9 +1718,12 @@
         <a href="https://tributar2026nuevo.vercel.app/" target="_blank" class="footer-app-link blue">TRIBUT.AR →</a>
         <a href="https://pymez-360.vercel.app/" target="_blank" class="footer-app-link green">PyMEZ 360 →</a>
         <a href="https://sueldos360.vercel.app/" target="_blank" class="footer-app-link violet">Sueldos 360 →</a>
+        <a href="https://simulaobraepet48.netlify.app/" target="_blank" rel="noopener" class="footer-app-link" style="color:#FB923C;">SimulaObra →</a>
+        <a href="https://talentohumano2030.netlify.app/" target="_blank" rel="noopener" class="footer-app-link" style="color:#2DD4BF;">Aula en Acción →</a>
         <a href="https://simuladorhomebanking.netlify.app/" target="_blank" rel="noopener" class="footer-app-link" style="color:#818CF8;">Banco Aula →</a>
-        <a href="https://simuladorespasantias2026.netlify.app/" target="_blank" rel="noopener" class="footer-app-link" style="color:#2DD4BF;">Simuladores de pasantías →</a>
-        <a href="resultados.html" class="footer-app-link" style="color:#FBBF24;">Seguimiento y evaluación →</a>
+        <a href="https://simuladorespasantias2026.netlify.app/" target="_blank" rel="noopener" class="footer-app-link" style="color:#34D399;">Pasantías 2026 →</a>
+        <a href="resultados.html" class="footer-app-link" style="color:#FBBF24;">Seguimiento →</a>
+        <a href="https://sitiowebprofejuanmagomez.netlify.app/" target="_blank" rel="noopener" class="footer-app-link" style="color:#94A3B8;">Currículum →</a>
         <a href="https://campus-virtual-ens9-smoky.vercel.app/cursos" target="_blank" class="footer-app-link" style="color:#94A3B8;">Campus Virtual →</a>
       </div>
 
